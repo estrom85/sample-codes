@@ -1,0 +1,66 @@
+/* 
+    Document   : post
+    Created on : 2.9.2012, 17:00:02
+    Author     : mato
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.display_post{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-width: 0px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-style: groove;
+    position: relative;
+}
+.released{
+    background-color: gainsboro;   
+}
+
+.post_time{
+    position: absolute;
+    top:0px;
+    right:0px;
+    font-size: 12px;
+}
+
+.post_cat{
+    font-size: 12px;
+    font-weight: bold;
+    color: crimson;
+}
+
+.post_name{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: underline;
+    border-width: 0px;
+    border-top-width: 1px;
+    border-style: dotted;
+}
+
+.post_content{
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-style: dotted;
+    padding-bottom: 10px;
+}
+
+.post_button{
+    font-size: 12px;
+    color: blue;
+}
+
+.post_button:hover{
+    color:red;
+    cursor: pointer;
+}
+

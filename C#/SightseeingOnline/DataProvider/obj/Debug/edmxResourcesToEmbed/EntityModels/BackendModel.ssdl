@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BackendEntityModel.Store" Alias="Self" Provider="IBM.Data.DB2" ProviderManifestToken="DB2/NT, 10.05.0003, 4668063, 0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BackendEntityModelStoreContainer">
+    <EntitySet Name="AREAS" EntityType="BackendEntityModel.Store.AREAS" store:Type="Tables" Schema="CAS4BACKEND" />
+    <EntitySet Name="AREAS_ROLES" EntityType="BackendEntityModel.Store.AREAS_ROLES" store:Type="Tables" store:Schema="CAS4BACKEND" store:Name="AREAS_ROLES">
+      <DefiningQuery>SELECT 
+      AREAS_ROLES.ROLE_ID AS ROLE_ID, 
+      AREAS_ROLES.AREA_ID AS AREA_ID
+      FROM CAS4BACKEND.AREAS_ROLES AS AREAS_ROLES</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CUSTOMERS" EntityType="BackendEntityModel.Store.CUSTOMERS" store:Type="Tables" Schema="CAS4BACKEND" />
+    <EntitySet Name="MEDIA" EntityType="BackendEntityModel.Store.MEDIA" store:Type="Tables" Schema="CAS4BACKEND" />
+    <EntitySet Name="MEDIA_POIS" EntityType="BackendEntityModel.Store.MEDIA_POIS" store:Type="Tables" store:Schema="CAS4BACKEND" store:Name="MEDIA_POIS">
+      <DefiningQuery>SELECT 
+      MEDIA_POIS.POI_ID AS POI_ID, 
+      MEDIA_POIS.MEDIUM_ID AS MEDIUM_ID
+      FROM CAS4BACKEND.MEDIA_POIS AS MEDIA_POIS</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ORDERITEMS" EntityType="BackendEntityModel.Store.ORDERITEMS" store:Type="Tables" Schema="CAS4BACKEND" />
+    <EntitySet Name="ORDERS" EntityType="BackendEntityModel.Store.ORDERS" store:Type="Tables" Schema="CAS4BACKEND" />
+    <EntitySet Name="PASSES" EntityType="BackendEntityModel.Store.PASSES" store:Type="Tables" Schema="CAS4BACKEND" />
+    <EntitySet Name="POIS" EntityType="BackendEntityModel.Store.POIS" store:Type="Tables" Schema="CAS4BACKEND" />
+    <EntitySet Name="POIS_PRODUCTS" EntityType="BackendEntityModel.Store.POIS_PRODUCTS" store:Type="Tables" store:Schema="CAS4BACKEND" store:Name="POIS_PRODUCTS">
+      <DefiningQuery>SELECT 
+      POIS_PRODUCTS.PRODUCT_ID AS PRODUCT_ID, 
+      POIS_PRODUCTS.POI_ID AS POI_ID
+      FROM CAS4BACKEND.POIS_PRODUCTS AS POIS_PRODUCTS</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PRODUCTCATEGORIES" EntityType="BackendEntityModel.Store.PRODUCTCATEGORIES" store:Type="Tables" Schema="CAS4BACKEND" />
+    <EntitySet Name="PRODUCTCATEGORIES_PRODUCTS" EntityType="BackendEntityModel.Store.PRODUCTCATEGORIES_PRODUCTS" store:Type="Tables" store:Schema="CAS4BACKEND" store:Name="PRODUCTCATEGORIES_PRODUCTS">
+      <DefiningQuery>SELECT 
+      PRODUCTCATEGORIES_PRODUCTS.PRODUCT_ID AS PRODUCT_ID, 
+      PRODUCTCATEGORIES_PRODUCTS.PRODUCTCATEGORY_ID AS PRODUCTCATEGORY_ID
+      FROM CAS4BACKEND.PRODUCTCATEGORIES_PRODUCTS AS PRODUCTCATEGORIES_PRODUCTS</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PRODUCTREVIEWS" EntityType="BackendEntityModel.Store.PRODUCTREVIEWS" store:Type="Tables" Schema="CAS4BACKEND" />
+    <EntitySet Name="PRODUCTS" EntityType="BackendEntityModel.Store.PRODUCTS" store:Type="Tables" Schema="CAS4BACKEND" />
+    <EntitySet Name="PRODUCTVARIANTATTRIBUTES" EntityType="BackendEntityModel.Store.PRODUCTVARIANTATTRIBUTES" store:Type="Tables" Schema="CAS4BACKEND" />
+    <EntitySet Name="PRODUCTVARIANTATTRIBUTEVALUES" EntityType="BackendEntityModel.Store.PRODUCTVARIANTATTRIBUTEVALUES" store:Type="Tables" Schema="CAS4BACKEND" />
+    <EntitySet Name="PRODUCTVARIANTATTRIBUTEVALUES_PRODUCTVARIANTS" EntityType="BackendEntityModel.Store.PRODUCTVARIANTATTRIBUTEVALUES_PRODUCTVARIANTS" store:Type="Tables" store:Schema="CAS4BACKEND" store:Name="PRODUCTVARIANTATTRIBUTEVALUES_PRODUCTVARIANTS">
+      <DefiningQuery>SELECT 
+      PRODUCTVARIANTATTRIBUTEVALUES_PRODUCTVARIANTS.PRODUCTVARIANT_ID AS PRODUCTVARIANT_ID, 
+      PRODUCTVARIANTATTRIBUTEVALUES_PRODUCTVARIANTS.PRODUCTVARIANTATTRIBUTEVALUE_ID AS PRODUCTVARIANTATTRIBUTEVALUE_ID
+      FROM CAS4BACKEND.PRODUCTVARIANTATTRIBUTEVALUES_PRODUCTVARIANTS AS PRODUCTVARIANTATTRIBUTEVALUES_PRODUCTVARIANTS</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PRODUCTVARIANTS" EntityType="BackendEntityModel.Store.PRODUCTVARIANTS" store:Type="Tables" Schema="CAS4BACKEND" />
+    <EntitySet Name="ROLES" EntityType="BackendEntityModel.Store.ROLES" store:Type="Tables" Schema="CAS4BACKEND" />
+    <EntitySet Name="ROLES_USERS" EntityType="BackendEntityModel.Store.ROLES_USERS" store:Type="Tables" store:Schema="CAS4BACKEND" store:Name="ROLES_USERS">
+      <DefiningQuery>SELECT 
+      ROLES_USERS.USER_ID AS USER_ID, 
+      ROLES_USERS.ROLE_ID AS ROLE_ID
+      FROM CAS4BACKEND.ROLES_USERS AS ROLES_USERS</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="USERS" EntityType="BackendEntityModel.Store.USERS" store:Type="Tables" Schema="CAS4BACKEND" />
+  </EntityContainer>
+  <EntityType Name="AREAS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="varchar" Nullable="false" MaxLength="36" />
+    <Property Name="NAME" Type="varchar" MaxLength="255" />
+    <Property Name="CREATED_AT" Type="timestamp" />
+    <Property Name="UPDATED_AT" Type="timestamp" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'FST3_PRO.CAS4BACKEND.AREAS_ROLES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="AREAS_ROLES">
+    <Key>
+      <PropertyRef Name="ROLE_ID" />
+      <PropertyRef Name="AREA_ID" />
+    </Key>
+    <Property Name="ROLE_ID" Type="integer" Nullable="false" />
+    <Property Name="AREA_ID" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CUSTOMERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="varchar" Nullable="false" MaxLength="36" />
+    <Property Name="FRONTEND_ID" Type="integer" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="255" />
+    <Property Name="FIRSTNAME" Type="varchar" MaxLength="255" />
+    <Property Name="LASTNAME" Type="varchar" MaxLength="255" />
+    <Property Name="COMPANY" Type="varchar" MaxLength="255" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="255" />
+    <Property Name="STREET" Type="varchar" MaxLength="255" />
+    <Property Name="ZIP" Type="varchar" MaxLength="255" />
+    <Property Name="CITY" Type="varchar" MaxLength="255" />
+    <Property Name="STATE" Type="varchar" MaxLength="255" />
+    <Property Name="COUNTRY" Type="varchar" MaxLength="255" />
+    <Property Name="PHONE" Type="varchar" MaxLength="255" />
+    <Property Name="CREATED_AT" Type="timestamp" />
+    <Property Name="UPDATED_AT" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="MEDIA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="varchar" Nullable="false" MaxLength="36" />
+    <Property Name="FRONTEND_ID" Type="integer" />
+    <Property Name="NAME" Type="varchar" MaxLength="255" />
+    <Property Name="DESCRIPTION" Type="clob" MaxLength="1048576" />
+    <Property Name="MEDIUMTYPE" Type="varchar" MaxLength="255" />
+    <Property Name="DATA" Type="clob" MaxLength="1048576" />
+    <Property Name="PATH" Type="varchar" MaxLength="255" />
+    <Property Name="PUBLISHED" Type="smallint" />
+    <Property Name="CREATED_AT" Type="timestamp" />
+    <Property Name="UPDATED_AT" Type="timestamp" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'FST3_PRO.CAS4BACKEND.MEDIA_POIS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="MEDIA_POIS">
+    <Key>
+      <PropertyRef Name="POI_ID" />
+      <PropertyRef Name="MEDIUM_ID" />
+    </Key>
+    <Property Name="POI_ID" Type="integer" Nullable="false" />
+    <Property Name="MEDIUM_ID" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORDERITEMS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SYS_UUID" Type="varchar" MaxLength="36" />
+    <Property Name="FRONTEND_ID" Type="integer" />
+    <Property Name="ORDER_ID" Type="integer" />
+    <Property Name="PRODUCT_ID" Type="integer" />
+    <Property Name="PRODUCT_QUANTITY" Type="integer" />
+    <Property Name="PRODUCT_ITEM_PRICE" Type="decimal" />
+    <Property Name="PRODUCT_TAX" Type="decimal" />
+    <Property Name="PRODUCT_ATTRIBUTES" Type="clob" MaxLength="1048576" />
+    <Property Name="CREATED_AT" Type="timestamp" />
+    <Property Name="UPDATED_AT" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="ORDERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="varchar" Nullable="false" MaxLength="36" />
+    <Property Name="FRONTEND_ID" Type="integer" />
+    <Property Name="CUSTOMER_ID" Type="integer" />
+    <Property Name="NUMBER" Type="varchar" MaxLength="255" />
+    <Property Name="TOTAL" Type="decimal" />
+    <Property Name="STATUS" Type="integer" />
+    <Property Name="ORDER_DATE" Type="timestamp" />
+    <Property Name="FIRSTNAME" Type="varchar" MaxLength="255" />
+    <Property Name="LASTNAME" Type="varchar" MaxLength="255" />
+    <Property Name="COMPANY" Type="varchar" MaxLength="255" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="255" />
+    <Property Name="STREET" Type="varchar" MaxLength="255" />
+    <Property Name="ZIP" Type="varchar" MaxLength="255" />
+    <Property Name="CITY" Type="varchar" MaxLength="255" />
+    <Property Name="STATE" Type="varchar" MaxLength="255" />
+    <Property Name="COUNTRY" Type="integer" />
+    <Property Name="PHONE" Type="varchar" MaxLength="255" />
+    <Property Name="HASHCODE" Type="varchar" MaxLength="255" />
+    <Property Name="CREATED_AT" Type="timestamp" />
+    <Property Name="UPDATED_AT" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="PASSES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="varchar" Nullable="false" MaxLength="36" />
+    <Property Name="ORDER_ID" Type="integer" />
+    <Property Name="HASHCODE" Type="varchar" MaxLength="255" />
+    <Property Name="TRANSMITTED" Type="smallint" />
+    <Property Name="CREATED_AT" Type="timestamp" />
+    <Property Name="UPDATED_AT" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="POIS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="varchar" Nullable="false" MaxLength="36" />
+    <Property Name="NAME" Type="varchar" MaxLength="255" />
+    <Property Name="DESCRIPTION" Type="clob" MaxLength="1048576" />
+    <Property Name="LONGITUDE" Type="decimal" />
+    <Property Name="LATITUDE" Type="decimal" />
+    <Property Name="CREATED_AT" Type="timestamp" />
+    <Property Name="UPDATED_AT" Type="timestamp" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'FST3_PRO.CAS4BACKEND.POIS_PRODUCTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="POIS_PRODUCTS">
+    <Key>
+      <PropertyRef Name="PRODUCT_ID" />
+      <PropertyRef Name="POI_ID" />
+    </Key>
+    <Property Name="PRODUCT_ID" Type="integer" Nullable="false" />
+    <Property Name="POI_ID" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCTCATEGORIES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="varchar" Nullable="false" MaxLength="36" />
+    <Property Name="FRONTEND_ID" Type="integer" />
+    <Property Name="NAME" Type="varchar" MaxLength="255" />
+    <Property Name="CREATED_AT" Type="timestamp" />
+    <Property Name="UPDATED_AT" Type="timestamp" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'FST3_PRO.CAS4BACKEND.PRODUCTCATEGORIES_PRODUCTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="PRODUCTCATEGORIES_PRODUCTS">
+    <Key>
+      <PropertyRef Name="PRODUCT_ID" />
+      <PropertyRef Name="PRODUCTCATEGORY_ID" />
+    </Key>
+    <Property Name="PRODUCT_ID" Type="integer" Nullable="false" />
+    <Property Name="PRODUCTCATEGORY_ID" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCTREVIEWS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCT_ID" Type="integer" />
+    <Property Name="TIME" Type="timestamp" />
+    <Property Name="REVIEW" Type="clob" MaxLength="1048576" />
+    <Property Name="MARK" Type="integer" />
+    <Property Name="CREATED_AT" Type="timestamp" />
+    <Property Name="UPDATED_AT" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="PRODUCTS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="varchar" Nullable="false" MaxLength="36" />
+    <Property Name="FRONTEND_ID" Type="integer" />
+    <Property Name="NAME" Type="varchar" MaxLength="255" />
+    <Property Name="EAN" Type="integer" />
+    <Property Name="QUANTITY" Type="integer" />
+    <Property Name="PRICE" Type="decimal" />
+    <Property Name="MIN_PRICE" Type="decimal" />
+    <Property Name="PUBLISHED" Type="smallint" />
+    <Property Name="MEDIUM_ID" Type="integer" />
+    <Property Name="AVERAGE_RATING" Type="decimal" />
+    <Property Name="HITS" Type="integer" />
+    <Property Name="SHORT_DESCRIPTION" Type="clob" MaxLength="1048576" />
+    <Property Name="DESCRIPTION" Type="clob" MaxLength="1048576" />
+    <Property Name="CREATED_AT" Type="timestamp" />
+    <Property Name="UPDATED_AT" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="PRODUCTVARIANTATTRIBUTES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="varchar" Nullable="false" MaxLength="36" />
+    <Property Name="FRONTEND_ID" Type="integer" />
+    <Property Name="NAME" Type="varchar" MaxLength="255" />
+    <Property Name="DESCRIPTION" Type="clob" MaxLength="1048576" />
+    <Property Name="CREATED_AT" Type="timestamp" />
+    <Property Name="UPDATED_AT" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="PRODUCTVARIANTATTRIBUTEVALUES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="varchar" Nullable="false" MaxLength="36" />
+    <Property Name="FRONTEND_ID" Type="integer" />
+    <Property Name="NAME" Type="varchar" MaxLength="255" />
+    <Property Name="PRODUCTVARIANTATTRIBUTE_ID" Type="integer" />
+    <Property Name="CREATED_AT" Type="timestamp" />
+    <Property Name="UPDATED_AT" Type="timestamp" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'FST3_PRO.CAS4BACKEND.PRODUCTVARIANTATTRIBUTEVALUES_PRODUCTVARIANTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="PRODUCTVARIANTATTRIBUTEVALUES_PRODUCTVARIANTS">
+    <Key>
+      <PropertyRef Name="PRODUCTVARIANT_ID" />
+      <PropertyRef Name="PRODUCTVARIANTATTRIBUTEVALUE_ID" />
+    </Key>
+    <Property Name="PRODUCTVARIANT_ID" Type="integer" Nullable="false" />
+    <Property Name="PRODUCTVARIANTATTRIBUTEVALUE_ID" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCTVARIANTS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="varchar" Nullable="false" MaxLength="36" />
+    <Property Name="FRONTEND_ID" Type="integer" />
+    <Property Name="PRODUCT_ID" Type="integer" />
+    <Property Name="PRICE" Type="decimal" />
+    <Property Name="QUANTITY" Type="integer" />
+    <Property Name="CREATED_AT" Type="timestamp" />
+    <Property Name="UPDATED_AT" Type="timestamp" />
+  </EntityType>
+  <EntityType Name="ROLES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="varchar" Nullable="false" MaxLength="36" />
+    <Property Name="NAME" Type="varchar" MaxLength="255" />
+    <Property Name="CREATED_AT" Type="timestamp" />
+    <Property Name="UPDATED_AT" Type="timestamp" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'FST3_PRO.CAS4BACKEND.ROLES_USERS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ROLES_USERS">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+      <PropertyRef Name="ROLE_ID" />
+    </Key>
+    <Property Name="USER_ID" Type="integer" Nullable="false" />
+    <Property Name="ROLE_ID" Type="integer" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="varchar" Nullable="false" MaxLength="36" />
+    <Property Name="FIRSTNAME" Type="varchar" MaxLength="255" />
+    <Property Name="LASTNAME" Type="varchar" MaxLength="255" />
+    <Property Name="CREATED_AT" Type="timestamp" />
+    <Property Name="UPDATED_AT" Type="timestamp" />
+    <Property Name="EMAIL" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="ENCRYPTED_PASSWORD" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="RESET_PASSWORD_TOKEN" Type="varchar" MaxLength="255" />
+    <Property Name="RESET_PASSWORD_SENT_AT" Type="timestamp" />
+    <Property Name="REMEMBER_CREATED_AT" Type="timestamp" />
+    <Property Name="SIGN_IN_COUNT" Type="integer" Nullable="false" />
+    <Property Name="CURRENT_SIGN_IN_AT" Type="timestamp" />
+    <Property Name="LAST_SIGN_IN_AT" Type="timestamp" />
+    <Property Name="CURRENT_SIGN_IN_IP" Type="varchar" MaxLength="255" />
+    <Property Name="LAST_SIGN_IN_IP" Type="varchar" MaxLength="255" />
+  </EntityType>
+</Schema>

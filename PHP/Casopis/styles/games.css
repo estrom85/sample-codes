@@ -1,0 +1,21 @@
+/* 
+    Document   : games.css
+    Created on : 20.9.2012, 16:40:50
+    Author     : mato
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+#herna_label{
+    text-align: left;
+    font-weight: bold;
+    font-size: 35px;
+    font-style: italic;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-family: 'comic sans ms';
+}

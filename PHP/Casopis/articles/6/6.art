@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article>
+               <info>
+                    <id>6</id>
+                    <type>Rozhovor</type>
+                    <img>articles/6/pics/Harry Potter - Partia 01.jpg</img>
+               </info>
+               <person>
+                    <name>Peter</name>
+                    <surname>Potter</surname>
+                    <birth_date>co ja viem</birth_date>
+                    <birth_place>Rockford</birth_place>
+                    <occupation>Čarodejnícky učeň</occupation>
+                    <biography>Ta co neznaš Heriho Poťera?</biography>
+               </person>
+               <questions>
+               <question><id>1</id><quest>Bol si to ty? Priznaj sa.</quest><answer>Keď ináč nedáš ta hej. Urobil som to, ale fakt som to nekcel.</answer></question><question><id>2</id><quest>Ta to najsamľepša otazka.</quest><answer>Ta ne?</answer></question></questions>
+            </article>

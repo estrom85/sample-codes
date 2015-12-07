@@ -1,0 +1,51 @@
+/* 
+    Document   : galery.css
+    Created on : 6.2.2013, 19:24:42
+    Author     : mato
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.galery_item_wrapper{
+    float: left;
+    border-width: 2px;
+    border-style: groove;
+    margin: 5px;
+    padding: 5px;
+    max-width: 250px;
+    max-height: 250px;
+    overflow: auto;
+
+
+    background-color: gainsboro;
+}
+.galery_item{
+    text-align: center;
+    text-decoration: none;
+}
+
+.galery_item img{
+    border-style: ridge;
+    border-width: 1px;
+}
+.galery_item_description{
+    font-weight: bold;
+    font-style: italic;
+    max-width: 150px;
+}
+.edit_button{
+    font-size: 12px;
+    color: blue;
+}
+.edit_button:hover{
+    cursor: pointer;
+    color: darkgoldenrod;
+}
+.desc{
+    text-align: left;
+    margin-bottom: 15px;
+}

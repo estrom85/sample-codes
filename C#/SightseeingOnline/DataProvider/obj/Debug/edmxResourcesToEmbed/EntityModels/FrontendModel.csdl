@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FrontendModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="FrontendEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="FE_PRODUCTS" EntityType="FrontendModel.FE_PRODUCTS" />
+  </EntityContainer>
+  <EntityType Name="FE_PRODUCTS">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Type="Int32" Name="product_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="parent_id" Nullable="false" />
+    <Property Type="String" Name="product_ean" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="product_quantity" Nullable="false" />
+    <Property Type="Boolean" Name="unlimited" Nullable="false" />
+    <Property Type="DateTime" Name="product_date_added" Nullable="false" />
+    <Property Type="DateTime" Name="date_modify" Nullable="false" />
+    <Property Type="Boolean" Name="product_publish" Nullable="false" />
+    <Property Type="SByte" Name="product_tax_id" Nullable="false" />
+    <Property Type="Int32" Name="currency_id" Nullable="false" />
+    <Property Type="String" Name="product_template" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="product_url" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="product_old_price" Nullable="false" />
+    <Property Type="Decimal" Name="product_buy_price" Nullable="false" />
+    <Property Type="Decimal" Name="product_price" Nullable="false" />
+    <Property Type="Decimal" Name="min_price" Nullable="false" />
+    <Property Type="Boolean" Name="different_prices" Nullable="false" />
+    <Property Type="Decimal" Name="product_weight" Nullable="false" />
+    <Property Type="String" Name="image" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="product_manufacturer_id" Nullable="false" />
+    <Property Type="Boolean" Name="product_is_add_price" Nullable="false" />
+    <Property Type="Int32" Name="add_price_unit_id" Nullable="false" />
+    <Property Type="Single" Name="average_rating" Nullable="false" />
+    <Property Type="Int32" Name="reviews_count" Nullable="false" />
+    <Property Type="Int32" Name="delivery_times_id" Nullable="false" />
+    <Property Type="Int32" Name="hits" Nullable="false" />
+    <Property Type="Decimal" Name="weight_volume_units" Nullable="false" />
+    <Property Type="Int32" Name="basic_price_unit_id" Nullable="false" />
+    <Property Type="Int32" Name="label_id" Nullable="false" />
+    <Property Type="Int32" Name="vendor_id" Nullable="false" />
+    <Property Type="Int32" Name="access" Nullable="false" />
+    <Property Type="String" Name="name_de_DE" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="alias_de_DE" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="short_description_de_DE" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="description_de_DE" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="meta_title_de_DE" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="meta_description_de_DE" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="meta_keyword_de_DE" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="name_en_GB" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="alias_en_GB" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="short_description_en_GB" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="description_en_GB" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="meta_title_en_GB" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="meta_description_en_GB" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="meta_keyword_en_GB" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="package_vip" Nullable="false" />
+  </EntityType>
+</Schema>

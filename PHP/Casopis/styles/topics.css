@@ -1,0 +1,104 @@
+/* 
+    Document   : topics.css
+    Created on : 24.8.2012, 20:38:37
+    Author     : mato
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+ul.page_lister{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+ul.page_lister li{
+    display: inline;
+    list-style-type: none;
+    margin:5px;
+    position: relative;
+}
+.nav_item{
+    width:20px;
+    height:20px;
+    display:inline-block;
+    background-image: url("../images/navigation.png");
+    margin-left: 5px;
+    margin-right: 5px;
+    
+
+}
+.nav_item:hover{
+    background-position-y:-21px;
+    cursor: pointer;
+}
+.nav_page{
+    background-color: maroon;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-image: none;
+    background-position-x: -40px;
+    font-weight: bold;
+    color: wheat;
+    font-size: 15px;
+}
+.nav_page:hover{
+    background-color: #C7C78F;
+}
+.first_page{ 
+}
+.prev_page{
+    background-position-x: -20px;
+}
+.next_page{
+    background-position-x: -60px;
+}
+.last_page{
+    background-position-x: -80px;
+}
+
+.nav_wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-top: 20px;
+}
+
+.article_desc_wrapper{
+    margin-top: 15px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.article_name a{
+    color: red;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 22px;
+    text-decoration: none;
+}
+.article_name a:hover{
+    color: goldenrod;
+}
+.article_description{
+    position: relative;
+}
+.article_date{
+    font-size: 10px;
+    float:right;
+    /*
+    
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    */
+}
+.article_type{
+    font-size: 12px;
+    font-style: italic;
+    
+}

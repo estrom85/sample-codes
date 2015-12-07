@@ -1,0 +1,37 @@
+/* 
+    Document   : articles
+    Created on : 2.9.2012, 10:04:32
+    Author     : mato
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.art_desc{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.art_val{
+    font-style: italic;
+}
+.art_desc_name{
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
+}
+.art_usr{
+    padding-left: 25px;
+}
+.art_msg{
+    font-weight: bold;
+    color: green;
+    font-style: italic;
+}
+
+#browse_button{
+    margin-top: 90px;
+}

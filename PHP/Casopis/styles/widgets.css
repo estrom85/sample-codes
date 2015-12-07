@@ -1,0 +1,120 @@
+/* 
+    Document   : widgets.css
+    Created on : 1.9.2012, 9:59:41
+    Author     : mato
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+#current_time{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+#current_time .label{
+    font-weight: bold;
+}
+
+#current_date{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+#current_date .label{
+    font-weight: bold;
+}
+
+#links_widget{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+#links_widget a:hover{
+    color:red;
+}
+
+#links_widget .link{
+    margin-top: 5px;
+}
+#links_widget .label{
+    font-weight: bold;
+}
+
+#meniny_wg{
+    text-align: center;
+    
+}
+#meniny_wg_label{
+    font-weight: bold;
+}
+
+#kalendar_wg{
+    margin-top: 10px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+}
+
+#kalendar_wg_content{
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+}
+
+.kalendar_wg_content_table{
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.kalendar_wg_content_table td{
+    border-style: solid;
+    border-width: 1px;
+}
+
+.kalendar_wg_content_table td.current_month{
+    background-color: lightskyblue;
+}
+
+.kalendar_wg_content_table td.other_month{
+    background-color: gainsboro;
+}
+
+.kalendar_wg_content_table td.holiday{
+    background-color: lightcoral;
+}
+
+.kalendar_wg_button{
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
+    color: red;
+}
+
+.kalendar_wg_button:hover{
+    color: goldenrod;
+    cursor: pointer;
+}
+
+.kalendar_wg_layer{
+    font-weight: bold;
+    color: goldenrod;
+}
+
+#kalendar_wg_today{
+    border-width: 2px;
+    border-color: red;
+    background-color: gold;
+}

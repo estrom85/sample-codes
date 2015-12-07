@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article>
+               <info>
+                  <id>2</id>
+                  <type>Kviz</type>
+                  <img>articles/2/pics/Harry Potter - Partia 01.jpg</img>
+                  <description>Nasledujúci kvíz si overí tvoje vedomosti o hlavných mestá rôznych štátov. V otázke sa objaví názov štátu a tvojou úlohou je správne vybrať jeho hlavné mesto.</description>
+               </info>
+               <quiz>
+                   
+                   <question>
+                       <id>1</id>
+                       <quest>Slovensko&#13;
+&#13;
+nase rodne</quest>
+                       <answer>3</answer>
+                   <option id="1">Košice</option><option id="2">Poprad</option><option id="3">Bratislava</option><option id="4">Banská bystrica</option></question>
+               <question><id>2</id><answer>1</answer><quest>Maďarsko</quest><option id="1">Budapešť</option><option id="2">Bukurešť</option><option id="3">Šárošpataky</option><option id="4">Komárno</option></question><question><id>3</id><answer>3</answer><quest>Veľká Británia</quest><option id="1">Wales</option><option id="2">Bristol</option><option id="3">Londýn</option><option id="4">Madrid</option></question><question><id>4</id><answer>2</answer><quest>Rakúsko</quest><option id="1">Salzburg</option><option id="2">Viedeň</option><option id="3">Bern</option><option id="4">Zurich</option></question><question><id>5</id><answer>1</answer><quest>Austrália</quest><option id="1">Cannbera</option><option id="2">Sidney</option><option id="3">New Amsterdam</option><option id="4">Bradford</option></question><question><id>6</id><answer>3</answer><quest>Spojené štáty americké</quest><option id="1">New York</option><option id="2">Los Angeles</option><option id="3">Washington</option><option id="4">Miami</option></question><question><id>7</id><answer>3</answer><quest>Kanada</quest><option id="1">Montreal</option><option id="2">Chickago</option><option id="3">Ottava</option><option id="4">Wellington</option></question><question><id>8</id><answer>3</answer><quest>Nemecko</quest><option id="1">Bern</option><option id="2">Kolín</option><option id="3">Berlín</option><option id="4">Hamburg</option></question><question><id>9</id><answer>1</answer><quest>Švajčiarsko</quest><option id="1">Zurrich</option><option id="2">Schwechat</option><option id="3">Aljaska</option><option id="4">Finker</option></question><question><id>10</id><answer>3</answer><quest>Fínsko</quest><option id="1">Stockholm</option><option id="2">Oslo</option><option id="3">Helsinky</option><option id="4">Shelsko</option></question><question><id>11</id><answer>2</answer><quest>Česko</quest><option id="1">Budejovice</option><option id="2">Praha</option><option id="3">Brno</option><option id="4">Hybe</option></question><question><id>12</id><answer>4</answer><quest>Polsko</quest><option id="1">Zahreb</option><option id="2">Abys abeba</option><option id="3">Sabinov</option><option id="4">Varšava</option></question></quiz>
+            </article>

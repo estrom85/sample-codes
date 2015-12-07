@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>650</width>
+    <height>520</height>
+   </rect>
+  </property>
+  <property name="mouseTracking">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Model Exporter</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>480</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Koniec</string>
+    </property>
+   </widget>
+   <widget class="OpenGLPanel" name="panelGL" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>511</width>
+      <height>491</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>430</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Import...</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>390</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Export...</string>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="angleX">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>40</y>
+      <width>62</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <double>-360.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>360.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>10.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="angleY">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>90</y>
+      <width>62</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <double>-360.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>360.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>10.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="angleZ">
+    <property name="geometry">
+     <rect>
+      <x>560</x>
+      <y>140</y>
+      <width>62</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <double>-360.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>360.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>10.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>20</y>
+      <width>46</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Uhol X</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>70</y>
+      <width>46</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Uhol Y</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>120</y>
+      <width>46</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Uhol Z</string>
+    </property>
+   </widget>
+  </widget>
+  <action name="actionOtvori">
+   <property name="text">
+    <string>Otvoriť...</string>
+   </property>
+  </action>
+  <action name="actionExportova">
+   <property name="text">
+    <string>Exportovať...</string>
+   </property>
+  </action>
+  <action name="actionKoniec">
+   <property name="text">
+    <string>Koniec</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>OpenGLPanel</class>
+   <extends>QWidget</extends>
+   <header>openglpanel.h</header>
+   <container>1</container>
+   <slots>
+    <slot>changeSize(int)</slot>
+    <slot>changeRadius(double)</slot>
+    <slot>loadCollada(CCollada*,char*)</slot>
+    <slot>loadMDG(char*)</slot>
+    <slot>saveMDG(char*)</slot>
+    <slot>changeAngle(float,float,float)</slot>
+    <slot>changeAngleX(double)</slot>
+    <slot>changeAngleY(double)</slot>
+    <slot>changeAngleZ(double)</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>569</x>
+     <y>498</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>588</x>
+     <y>342</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MainWindow</sender>
+   <signal>importFile(CCollada*,char*)</signal>
+   <receiver>panelGL</receiver>
+   <slot>loadCollada(CCollada*,char*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>632</x>
+     <y>241</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>490</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MainWindow</sender>
+   <signal>importFile(char*)</signal>
+   <receiver>panelGL</receiver>
+   <slot>loadMDG(char*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>604</x>
+     <y>199</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>498</x>
+     <y>201</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MainWindow</sender>
+   <signal>exportFile(char*)</signal>
+   <receiver>panelGL</receiver>
+   <slot>saveMDG(char*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>609</x>
+     <y>292</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>495</x>
+     <y>291</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>angleX</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>panelGL</receiver>
+   <slot>changeAngleX(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>570</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>516</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>angleY</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>panelGL</receiver>
+   <slot>changeAngleY(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>565</x>
+     <y>99</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>499</x>
+     <y>94</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>angleZ</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>panelGL</receiver>
+   <slot>changeAngleZ(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>571</x>
+     <y>155</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>489</x>
+     <y>151</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <signal>importFile(CCollada*,char*)</signal>
+  <signal>importFile(char*)</signal>
+  <signal>exportFile(char*)</signal>
+ </slots>
+</ui>

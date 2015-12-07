@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FrontendModelStoreContainer" CdmEntityContainer="FrontendEntities">
+    <EntitySetMapping Name="FE_PRODUCTS">
+      <EntityTypeMapping TypeName="FrontendModel.FE_PRODUCTS">
+        <MappingFragment StoreEntitySet="m4m2n_jshopping_products">
+          <ScalarProperty Name="package_vip" ColumnName="package_vip" />
+          <ScalarProperty Name="meta_keyword_en_GB" ColumnName="meta_keyword_en-GB" />
+          <ScalarProperty Name="meta_description_en_GB" ColumnName="meta_description_en-GB" />
+          <ScalarProperty Name="meta_title_en_GB" ColumnName="meta_title_en-GB" />
+          <ScalarProperty Name="description_en_GB" ColumnName="description_en-GB" />
+          <ScalarProperty Name="short_description_en_GB" ColumnName="short_description_en-GB" />
+          <ScalarProperty Name="alias_en_GB" ColumnName="alias_en-GB" />
+          <ScalarProperty Name="name_en_GB" ColumnName="name_en-GB" />
+          <ScalarProperty Name="meta_keyword_de_DE" ColumnName="meta_keyword_de-DE" />
+          <ScalarProperty Name="meta_description_de_DE" ColumnName="meta_description_de-DE" />
+          <ScalarProperty Name="meta_title_de_DE" ColumnName="meta_title_de-DE" />
+          <ScalarProperty Name="description_de_DE" ColumnName="description_de-DE" />
+          <ScalarProperty Name="short_description_de_DE" ColumnName="short_description_de-DE" />
+          <ScalarProperty Name="alias_de_DE" ColumnName="alias_de-DE" />
+          <ScalarProperty Name="name_de_DE" ColumnName="name_de-DE" />
+          <ScalarProperty Name="access" ColumnName="access" />
+          <ScalarProperty Name="vendor_id" ColumnName="vendor_id" />
+          <ScalarProperty Name="label_id" ColumnName="label_id" />
+          <ScalarProperty Name="basic_price_unit_id" ColumnName="basic_price_unit_id" />
+          <ScalarProperty Name="weight_volume_units" ColumnName="weight_volume_units" />
+          <ScalarProperty Name="hits" ColumnName="hits" />
+          <ScalarProperty Name="delivery_times_id" ColumnName="delivery_times_id" />
+          <ScalarProperty Name="reviews_count" ColumnName="reviews_count" />
+          <ScalarProperty Name="average_rating" ColumnName="average_rating" />
+          <ScalarProperty Name="add_price_unit_id" ColumnName="add_price_unit_id" />
+          <ScalarProperty Name="product_is_add_price" ColumnName="product_is_add_price" />
+          <ScalarProperty Name="product_manufacturer_id" ColumnName="product_manufacturer_id" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="product_weight" ColumnName="product_weight" />
+          <ScalarProperty Name="different_prices" ColumnName="different_prices" />
+          <ScalarProperty Name="min_price" ColumnName="min_price" />
+          <ScalarProperty Name="product_price" ColumnName="product_price" />
+          <ScalarProperty Name="product_buy_price" ColumnName="product_buy_price" />
+          <ScalarProperty Name="product_old_price" ColumnName="product_old_price" />
+          <ScalarProperty Name="product_url" ColumnName="product_url" />
+          <ScalarProperty Name="product_template" ColumnName="product_template" />
+          <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+          <ScalarProperty Name="product_tax_id" ColumnName="product_tax_id" />
+          <ScalarProperty Name="product_publish" ColumnName="product_publish" />
+          <ScalarProperty Name="date_modify" ColumnName="date_modify" />
+          <ScalarProperty Name="product_date_added" ColumnName="product_date_added" />
+          <ScalarProperty Name="unlimited" ColumnName="unlimited" />
+          <ScalarProperty Name="product_quantity" ColumnName="product_quantity" />
+          <ScalarProperty Name="product_ean" ColumnName="product_ean" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

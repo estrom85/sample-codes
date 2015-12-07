@@ -1,0 +1,76 @@
+/* 
+    Document   : news.css
+    Created on : 23.8.2012, 16:52:29
+    Author     : mato
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.news_item{
+    position: relative;
+    margin: 5px;
+    border: 0px;
+    border-bottom: 1px;
+    border-top: 1px;
+    border-style: solid;
+    border-color: red;
+    padding-bottom: 12px;
+}
+
+.news_topic{
+    font-weight: bold;
+   
+    font-size: 12px;
+    /*
+    position: absolute;
+    top:0px;
+    left: 0px;
+    */
+}
+
+.news_day{
+    font-size: 10px;
+    font-style: italic;
+    position: absolute;
+    top:0px;
+    right: 0px;
+}
+
+.news_type{
+    text-align: right;
+    width:100%;
+    font-size: 12px;
+    color: goldenrod;
+    font-weight: bold;
+    position: absolute;
+    right: 0px;
+    bottom:0px;
+    
+}
+
+.news_name a{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
+}
+.news_name a:hover{
+    color: goldenrod;
+
+}
+
+.news_label{
+    font-size: 35px;
+    font-weight: bolder;
+    font-style: italic;
+    color: crimson;
+    
+    margin: 20px;
+    margin-top: 10px;
+
+}

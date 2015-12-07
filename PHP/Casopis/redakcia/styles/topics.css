@@ -1,0 +1,45 @@
+/* 
+    Document   : topics
+    Created on : 1.9.2012, 11:19:10
+    Author     : mato
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+#themes-display{
+    width:190px;margin-left:50px;
+}
+#topics-display{
+    width:277px;
+}
+table.table-display{
+    float:left;
+    border: 1px solid;
+    margin: 5px;
+}
+table.table-display td,th{
+    border: 1px solid;
+    padding-left:10px;
+    padding-right:10px;
+}
+table.table-display th{
+    border: 1px solid;
+    background-color:lightgrey;
+}
+table.table-display th:hover{
+    cursor:pointer
+}
+#table-wrapper{
+    width:570px;
+    margin:0 auto;
+}
+
+table.table-display th.ordered{
+    color: gainsboro;
+    background-color: darkgray;
+    border-color: black;
+}

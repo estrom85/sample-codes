@@ -1,0 +1,461 @@
+/* 
+    Document   : articles
+    Created on : 25.8.2012, 13:54:17
+    Author     : mato
+    Description:
+        Purpose of the stylesheet follows.
+*/
+ul.page_lister{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+ul.page_lister li{
+    display: inline;
+    list-style-type: none;
+    margin:5px;
+    position: relative;
+}
+.nav_item{
+    width:20px;
+    height:20px;
+    display:inline-block;
+    background-image: url("../images/navigation.png");
+    margin-left: 5px;
+    margin-right: 5px;
+    
+
+}
+.nav_item:hover{
+    background-position-y:-21px;
+    cursor: pointer;
+}
+.nav_page{
+    background-color: maroon;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-image: none;
+    background-position-x: -40px;
+    font-weight: bold;
+    color: wheat;
+    font-size: 15px;
+}
+.nav_page:hover{
+    background-color: #C7C78F;
+}
+.first_page{ 
+}
+.prev_page{
+    background-position-x: -20px;
+}
+.next_page{
+    background-position-x: -60px;
+}
+.last_page{
+    background-position-x: -80px;
+}
+.nav_wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-top: 20px;
+}
+root { 
+    display: block;
+}
+.art_main_topic_navi{
+    
+    font-style: italic;
+    font-size: 12px;
+}
+.art_main_name{
+
+    margin-bottom: 10px;
+    font-size: 35px;
+    font-weight: bolder;
+    font-style: italic;
+    font-family: "comic sans ms";
+}
+
+.art_main_date{
+    
+}
+
+.art_main_users{
+    
+}
+
+.art_main_info{
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+#article_wrapper{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-width: 2px;
+    border-style: ridge;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    background-image: url("../images/paper.jpg");
+    background-size: contain;
+}
+
+#interview_foto{
+    position:relative;
+    width:150px;
+    height:150px;
+    background-color:grey;
+    font-size:16px;
+    text-align:center;      
+    float:right;
+    vertical-align:middle;
+    font-weight:bold;
+    margin:5px;
+    margin-left:15px;
+    border: 2px;
+    border-color: goldenrod;
+    border-style: solid;
+}
+
+.interview_label{
+    font-weight: bold;
+    font-style: italic;
+    padding-right: 10px;
+}
+#interview_data_wrapper{
+    text-align:justify;
+}
+#question_wrapper{
+    margin-top: 15px;
+}
+.interview_question_wrapper{
+    margin-bottom: 10px;
+}
+.interview_question{
+    font-weight: bold;
+    font-style: italic;
+}
+.quiz_quest_set{
+    
+}
+
+#quiz_description{
+    margin-bottom: 15px;
+    border-width: 0px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-style: groove;
+}
+#quiz_image{
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 300px;
+}
+#quiz_image img{
+    border-style: groove;
+    border-width: 3px;
+    width: 300px;
+    
+}
+
+#quiz_start_button{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width:120px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 25px;
+    font-family: 'DesyrelRegular';
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-width: 2px;
+    border-style: groove;
+    background-color: maroon;
+    color: gold;
+    border-color: black;
+    
+}
+
+#quiz_start_button:hover{
+    color: maroon;
+    background-color: gold;
+    cursor: pointer;
+}
+
+#quiz_wrapper{
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-width: 2px;
+    border-style: ridge;
+    text-align: center;
+    margin-bottom: 15px; 
+    position: relative;
+    z-index: 1;
+    
+}
+#quiz_wrapper:before {
+   content:"";
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    background-size: cover;
+   position:absolute;
+   z-index:-1;
+   top:0;
+   bottom:0;
+   left:0;
+   right:0;
+   opacity:0.2;
+}
+.quiz_quest{
+    margin-bottom: 5px;
+    margin-top: 15px;
+    
+}
+
+.quiz_quest_question{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.quiz_quest_options{
+}
+
+#quiz_page_indicator{
+    margin-top: 5px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    color:green;
+    text-align: right;
+    padding-left:10px;
+    padding-right: 10px;
+    padding-top:5px;
+    padding-bottom: 5px;
+}
+
+#quiz_timer{
+    float:left;
+    margin-top: 5px;
+    margin-left: 20px;
+    text-align: center;
+    font-size: 20px;
+    padding-left:10px;
+    padding-right: 10px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    color: red;
+    border-radius: 5em;
+    border-width: 2px;
+    border-color: greenyellow;
+    border-style: solid;
+    background-color: gold;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#quiz_result{
+    margin-left: auto;
+    margin-right: auto;
+}
+.quiz_result_item{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    vertical-align:middle;
+}
+
+.quiz_result_label{
+    text-align: right;
+    font-weight: bold;
+}
+
+.quiz_result_value{
+    font-size: 25px;
+    padding: 10px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: left;
+}
+
+#quiz_result_correct{
+    color:green;
+}
+
+#quiz_result_incorrect{
+    color:red;
+}
+
+#quiz_result_time{
+    font-style: italic;
+    font-size: 17px;
+    font-weight: normal;
+}
+
+#quiz_result_rate{
+    font-size: 17px;
+    font-weight: normal;
+}
+
+#quiz_result_mark{
+    font-size: 30px;
+    color: blue;
+}
+
+#quiz_result_heading{
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.quiz_correct{
+    color:green;
+    font-weight: bold;
+    
+}
+
+.quiz_incorrect{
+    color:red;
+    font-weight: bold;
+    text-decoration: line-through;
+    text-decoration-style:wavy;
+}
+
+#show_correct_answers_button{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post_display{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-width: 0px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-style: groove;
+}
+.post_time{
+    float:right;
+    font-size: 12px;
+    font-style: italic;
+}
+.post_cat{
+   
+    color: goldenrod;
+    font-weight: bolder;
+    font-size: 12px;
+}
+.post_name{
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-style: italic;
+    text-align: center;
+    text-decoration: underline;
+}
+.post_content{
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#cat_select{
+    background-color: ghostwhite;
+    text-align: center;
+    margin: 0px;
+    padding:0px;
+    
+    border-width: 0px;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    border-style:dotted;
+    
+}
+#cat_select li{
+    background-color: ghostwhite;
+    font-weight: bold;
+    display:inline;
+    list-style-type:none;
+    margin-right: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-color: gray;
+
+}
+
+#cat_select li a{
+    font-weight: bold;
+    display:inline;
+    list-style-type:none;
+    text-decoration: none;
+    color: red;
+}
+
+#cat_select li a:hover{
+    color: crimson;
+    background-color: gainsboro;
+    cursor: pointer;
+}
+#cat_select li:hover{
+    color: crimson;
+    background-color: gainsboro;
+    cursor: pointer;
+}
+
+.galery_item_wrapper{
+    text-align: center;
+    float: left;
+    border-width: 2px;
+    border-style: groove;
+    margin-top:5px;
+    margin-right: 5px;
+    max-width: 150px;
+    
+    overflow:  hidden;
+    padding: 5px;
+    background-color: gainsboro;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+.galery_item_wrapper:hover{
+    
+    background-color: lightyellow;
+
+}
+.galery_item{
+    text-align: center;
+    text-decoration: none;
+}
+
+.galery_item img{
+    border-style: ridge;
+    border-width: 1px;
+}
+.galery_item_description{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.desc{
+    text-align: left;
+    margin-bottom: 15px;
+}

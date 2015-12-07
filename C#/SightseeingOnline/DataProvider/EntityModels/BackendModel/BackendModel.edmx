@@ -1,0 +1,1034 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BackendEntityModel.Store" Alias="Self" Provider="IBM.Data.DB2" ProviderManifestToken="DB2/NT, 10.05.0001, 4668063, 0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BackendEntityModelStoreContainer">
+          <EntitySet Name="CUSTOMERS" EntityType="BackendEntityModel.Store.CUSTOMERS" store:Type="Tables" Schema="CAS4BACKEND" />
+          <EntitySet Name="MEDIA" EntityType="BackendEntityModel.Store.MEDIA" store:Type="Tables" Schema="CAS4BACKEND" />
+          <EntitySet Name="MEDIA_POIS" EntityType="BackendEntityModel.Store.MEDIA_POIS" store:Type="Tables" store:Schema="CAS4BACKEND" store:Name="MEDIA_POIS">
+            <DefiningQuery>SELECT 
+      MEDIA_POIS.POI_ID AS POI_ID, 
+      MEDIA_POIS.MEDIUM_ID AS MEDIUM_ID
+      FROM CAS4BACKEND.MEDIA_POIS AS MEDIA_POIS</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MESSAGES" EntityType="BackendEntityModel.Store.MESSAGES" store:Type="Tables" Schema="CAS4BACKEND" />
+          <EntitySet Name="ORDERITEMS" EntityType="BackendEntityModel.Store.ORDERITEMS" store:Type="Tables" Schema="CAS4BACKEND" />
+          <EntitySet Name="ORDERS" EntityType="BackendEntityModel.Store.ORDERS" store:Type="Tables" Schema="CAS4BACKEND" />
+          <EntitySet Name="POIS" EntityType="BackendEntityModel.Store.POIS" store:Type="Tables" Schema="CAS4BACKEND" />
+          <EntitySet Name="POIS_PRODUCTS" EntityType="BackendEntityModel.Store.POIS_PRODUCTS" store:Type="Tables" store:Schema="CAS4BACKEND" store:Name="POIS_PRODUCTS">
+            <DefiningQuery>SELECT 
+      POIS_PRODUCTS.PRODUCT_ID AS PRODUCT_ID, 
+      POIS_PRODUCTS.POI_ID AS POI_ID
+      FROM CAS4BACKEND.POIS_PRODUCTS AS POIS_PRODUCTS</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRODUCTCATEGORIES" EntityType="BackendEntityModel.Store.PRODUCTCATEGORIES" store:Type="Tables" Schema="CAS4BACKEND" />
+          <EntitySet Name="PRODUCTCATEGORIES_PRODUCTS" EntityType="BackendEntityModel.Store.PRODUCTCATEGORIES_PRODUCTS" store:Type="Tables" store:Schema="CAS4BACKEND" store:Name="PRODUCTCATEGORIES_PRODUCTS">
+            <DefiningQuery>SELECT 
+      PRODUCTCATEGORIES_PRODUCTS.PRODUCT_ID AS PRODUCT_ID, 
+      PRODUCTCATEGORIES_PRODUCTS.PRODUCTCATEGORY_ID AS PRODUCTCATEGORY_ID
+      FROM CAS4BACKEND.PRODUCTCATEGORIES_PRODUCTS AS PRODUCTCATEGORIES_PRODUCTS</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRODUCTREVIEWS" EntityType="BackendEntityModel.Store.PRODUCTREVIEWS" store:Type="Tables" Schema="CAS4BACKEND" />
+          <EntitySet Name="PRODUCTS" EntityType="BackendEntityModel.Store.PRODUCTS" store:Type="Tables" Schema="CAS4BACKEND" />
+          <EntitySet Name="PRODUCTVARIANTATTRIBUTES" EntityType="BackendEntityModel.Store.PRODUCTVARIANTATTRIBUTES" store:Type="Tables" Schema="CAS4BACKEND" />
+          <EntitySet Name="PRODUCTVARIANTATTRIBUTEVALUES" EntityType="BackendEntityModel.Store.PRODUCTVARIANTATTRIBUTEVALUES" store:Type="Tables" Schema="CAS4BACKEND" />
+          <EntitySet Name="PRODUCTVARIANTS" EntityType="BackendEntityModel.Store.PRODUCTVARIANTS" store:Type="Tables" Schema="CAS4BACKEND" />
+          <EntitySet Name="USERS" EntityType="BackendEntityModel.Store.USERS" store:Type="Tables" Schema="CAS4BACKEND" />
+        </EntityContainer>
+        <EntityType Name="CUSTOMERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SYSTEM_UUID" Type="varchar" MaxLength="36" />
+          <Property Name="FRONTEND_ID" Type="integer" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="255" />
+          <Property Name="FIRSTNAME" Type="varchar" MaxLength="255" />
+          <Property Name="LASTNAME" Type="varchar" MaxLength="255" />
+          <Property Name="COMPANY" Type="varchar" MaxLength="255" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="255" />
+          <Property Name="STREET" Type="varchar" MaxLength="255" />
+          <Property Name="ZIP" Type="varchar" MaxLength="255" />
+          <Property Name="CITY" Type="varchar" MaxLength="255" />
+          <Property Name="STATE" Type="varchar" MaxLength="255" />
+          <Property Name="COUNTRY" Type="varchar" MaxLength="255" />
+          <Property Name="PHONE" Type="varchar" MaxLength="255" />
+          <Property Name="DELETED_AT" Type="timestamp" />
+          <Property Name="CREATED_AT" Type="timestamp" />
+          <Property Name="UPDATED_AT" Type="timestamp" />
+        </EntityType>
+        <EntityType Name="MEDIA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SYSTEM_UUID" Type="varchar" MaxLength="36" />
+          <Property Name="FRONTEND_ID" Type="integer" />
+          <Property Name="NAME" Type="varchar" MaxLength="255" />
+          <Property Name="DESCRIPTION" Type="clob" MaxLength="1048576" />
+          <Property Name="MEDIUMTYPE" Type="varchar" MaxLength="255" />
+          <Property Name="DATA" Type="clob" MaxLength="1048576" />
+          <Property Name="PATH" Type="varchar" MaxLength="255" />
+          <Property Name="PUBLISHED" Type="smallint" />
+          <Property Name="DELETED_AT" Type="timestamp" />
+          <Property Name="POI_ID" Type="integer" />
+          <Property Name="CREATED_AT" Type="timestamp" />
+          <Property Name="UPDATED_AT" Type="timestamp" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CAS4DEV.CAS4BACKEND.MEDIA_POIS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="MEDIA_POIS">
+          <Key>
+            <PropertyRef Name="POI_ID" />
+            <PropertyRef Name="MEDIUM_ID" />
+          </Key>
+          <Property Name="POI_ID" Type="integer" Nullable="false" />
+          <Property Name="MEDIUM_ID" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MESSAGES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SENDER" Type="varchar" MaxLength="255" />
+          <Property Name="RECIPIENT" Type="varchar" MaxLength="255" />
+          <Property Name="TITLE" Type="varchar" MaxLength="255" />
+          <Property Name="BODY" Type="clob" MaxLength="1048576" />
+          <Property Name="LOG_TIMESTAMP" Type="timestamp" />
+          <Property Name="SYSTEM_UUID" Type="varchar" MaxLength="36" />
+          <Property Name="CREATED_AT" Type="timestamp" />
+          <Property Name="UPDATED_AT" Type="timestamp" />
+        </EntityType>
+        <EntityType Name="ORDERITEMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SYS_UUID" Type="varchar" MaxLength="36" />
+          <Property Name="FRONTEND_ID" Type="integer" />
+          <Property Name="ORDER_ID" Type="integer" />
+          <Property Name="PRODUCT_ID" Type="integer" />
+          <Property Name="PRODUCT_QUANTITY" Type="integer" />
+          <Property Name="PRODUCT_ITEM_PRICE" Type="double" />
+          <Property Name="PRODUCT_TAX" Type="double" />
+          <Property Name="PRODUCT_ATTRIBUTES" Type="clob" MaxLength="1048576" />
+          <Property Name="DELETED_AT" Type="timestamp" />
+          <Property Name="CREATED_AT" Type="timestamp" />
+          <Property Name="UPDATED_AT" Type="timestamp" />
+        </EntityType>
+        <EntityType Name="ORDERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SYSTEM_UUID" Type="varchar" MaxLength="36" />
+          <Property Name="FRONTEND_ID" Type="integer" />
+          <Property Name="CUSTOMER_ID" Type="integer" />
+          <Property Name="NUMBER" Type="varchar" MaxLength="255" />
+          <Property Name="TOTAL" Type="double" />
+          <Property Name="STATUS" Type="integer" />
+          <Property Name="ORDER_DATE" Type="timestamp" />
+          <Property Name="FIRSTNAME" Type="varchar" MaxLength="255" />
+          <Property Name="LASTNAME" Type="varchar" MaxLength="255" />
+          <Property Name="COMPANY" Type="varchar" MaxLength="255" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="255" />
+          <Property Name="STREET" Type="varchar" MaxLength="255" />
+          <Property Name="ZIP" Type="varchar" MaxLength="255" />
+          <Property Name="CITY" Type="varchar" MaxLength="255" />
+          <Property Name="STATE" Type="varchar" MaxLength="255" />
+          <Property Name="COUNTRY" Type="integer" />
+          <Property Name="PHONE" Type="varchar" MaxLength="255" />
+          <Property Name="HASHCODE" Type="varchar" MaxLength="255" />
+          <Property Name="DELETED_AT" Type="timestamp" />
+          <Property Name="CREATED_AT" Type="timestamp" />
+          <Property Name="UPDATED_AT" Type="timestamp" />
+        </EntityType>
+        <EntityType Name="POIS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SYSTEM_UUID" Type="varchar" MaxLength="36" />
+          <Property Name="NAME" Type="varchar" MaxLength="255" />
+          <Property Name="DESCRIPTION" Type="clob" MaxLength="1048576" />
+          <Property Name="LONGITUDE" Type="double" />
+          <Property Name="LATITUDE" Type="double" />
+          <Property Name="PUBLISHED" Type="smallint" />
+          <Property Name="DELETED_AT" Type="timestamp" />
+          <Property Name="CREATED_AT" Type="timestamp" />
+          <Property Name="UPDATED_AT" Type="timestamp" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CAS4DEV.CAS4BACKEND.POIS_PRODUCTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="POIS_PRODUCTS">
+          <Key>
+            <PropertyRef Name="PRODUCT_ID" />
+            <PropertyRef Name="POI_ID" />
+          </Key>
+          <Property Name="PRODUCT_ID" Type="integer" Nullable="false" />
+          <Property Name="POI_ID" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRODUCTCATEGORIES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SYSTEM_UUID" Type="varchar" MaxLength="36" />
+          <Property Name="FRONTEND_ID" Type="integer" />
+          <Property Name="NAME" Type="varchar" MaxLength="255" />
+          <Property Name="PUBLISHED" Type="smallint" />
+          <Property Name="DELETED_AT" Type="timestamp" />
+          <Property Name="CREATED_AT" Type="timestamp" />
+          <Property Name="UPDATED_AT" Type="timestamp" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'CAS4DEV.CAS4BACKEND.PRODUCTCATEGORIES_PRODUCTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="PRODUCTCATEGORIES_PRODUCTS">
+          <Key>
+            <PropertyRef Name="PRODUCT_ID" />
+            <PropertyRef Name="PRODUCTCATEGORY_ID" />
+          </Key>
+          <Property Name="PRODUCT_ID" Type="integer" Nullable="false" />
+          <Property Name="PRODUCTCATEGORY_ID" Type="integer" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRODUCTREVIEWS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PRODUCT_ID" Type="integer" />
+          <Property Name="TIME" Type="timestamp" />
+          <Property Name="REVIEW" Type="clob" MaxLength="1048576" />
+          <Property Name="MARK" Type="integer" />
+          <Property Name="DELETED_AT" Type="timestamp" />
+          <Property Name="CREATED_AT" Type="timestamp" />
+          <Property Name="UPDATED_AT" Type="timestamp" />
+        </EntityType>
+        <EntityType Name="PRODUCTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SYSTEM_UUID" Type="varchar" MaxLength="36" />
+          <Property Name="FRONTEND_ID" Type="integer" />
+          <Property Name="NAME" Type="varchar" MaxLength="255" />
+          <Property Name="IDENTIFIER" Type="varchar" MaxLength="255" />
+          <Property Name="QUANTITY" Type="integer" />
+          <Property Name="PRICE" Type="double" />
+          <Property Name="MIN_PRICE" Type="double" />
+          <Property Name="MEDIUM_ID" Type="integer" />
+          <Property Name="AVERAGE_RATING" Type="double" />
+          <Property Name="HITS" Type="integer" />
+          <Property Name="SHORT_DESCRIPTION" Type="clob" MaxLength="1048576" />
+          <Property Name="DESCRIPTION" Type="clob" MaxLength="1048576" />
+          <Property Name="PUBLISHED" Type="smallint" />
+          <Property Name="DELETED_AT" Type="timestamp" />
+          <Property Name="CREATED_AT" Type="timestamp" />
+          <Property Name="UPDATED_AT" Type="timestamp" />
+        </EntityType>
+        <EntityType Name="PRODUCTVARIANTATTRIBUTES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SYSTEM_UUID" Type="varchar" MaxLength="36" />
+          <Property Name="FRONTEND_ID" Type="integer" />
+          <Property Name="NAME" Type="varchar" MaxLength="255" />
+          <Property Name="DESCRIPTION" Type="clob" MaxLength="1048576" />
+          <Property Name="PUBLISHED" Type="smallint" />
+          <Property Name="DELETED_AT" Type="timestamp" />
+          <Property Name="CREATED_AT" Type="timestamp" />
+          <Property Name="UPDATED_AT" Type="timestamp" />
+        </EntityType>
+        <EntityType Name="PRODUCTVARIANTATTRIBUTEVALUES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SYSTEM_UUID" Type="varchar" MaxLength="36" />
+          <Property Name="FRONTEND_ID" Type="integer" />
+          <Property Name="NAME" Type="varchar" MaxLength="255" />
+          <Property Name="PRODUCTVARIANTATTRIBUTE_ID" Type="integer" />
+          <Property Name="PUBLISHED" Type="smallint" />
+          <Property Name="DELETED_AT" Type="timestamp" />
+          <Property Name="CREATED_AT" Type="timestamp" />
+          <Property Name="UPDATED_AT" Type="timestamp" />
+        </EntityType>
+        <EntityType Name="PRODUCTVARIANTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SYSTEM_UUID" Type="varchar" MaxLength="36" />
+          <Property Name="FRONTEND_ID" Type="integer" />
+          <Property Name="PRODUCT_ID" Type="integer" />
+          <Property Name="PRICE" Type="double" />
+          <Property Name="QUANTITY" Type="integer" />
+          <Property Name="PACKAGE_ID" Type="integer" />
+          <Property Name="DATE_ID" Type="integer" />
+          <Property Name="PUBLISHED" Type="smallint" />
+          <Property Name="DELETED_AT" Type="timestamp" />
+          <Property Name="CREATED_AT" Type="timestamp" />
+          <Property Name="UPDATED_AT" Type="timestamp" />
+        </EntityType>
+        <EntityType Name="USERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="integer" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SYSTEM_UUID" Type="varchar" MaxLength="36" />
+          <Property Name="FIRSTNAME" Type="varchar" MaxLength="255" />
+          <Property Name="LASTNAME" Type="varchar" MaxLength="255" />
+          <Property Name="DELETED_AT" Type="timestamp" />
+          <Property Name="CREATED_AT" Type="timestamp" />
+          <Property Name="UPDATED_AT" Type="timestamp" />
+          <Property Name="EMAIL" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="ENCRYPTED_PASSWORD" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="RESET_PASSWORD_TOKEN" Type="varchar" MaxLength="255" />
+          <Property Name="RESET_PASSWORD_SENT_AT" Type="timestamp" />
+          <Property Name="REMEMBER_CREATED_AT" Type="timestamp" />
+          <Property Name="SIGN_IN_COUNT" Type="integer" Nullable="false" />
+          <Property Name="CURRENT_SIGN_IN_AT" Type="timestamp" />
+          <Property Name="LAST_SIGN_IN_AT" Type="timestamp" />
+          <Property Name="CURRENT_SIGN_IN_IP" Type="varchar" MaxLength="255" />
+          <Property Name="LAST_SIGN_IN_IP" Type="varchar" MaxLength="255" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BackendEntityModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BackendEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="POIS" EntityType="BackendEntityModel.POIS" />
+          <EntitySet Name="PRODUCTCATEGORIES" EntityType="BackendEntityModel.PRODUCTCATEGORIES" />
+          <EntitySet Name="PRODUCTREVIEWS" EntityType="BackendEntityModel.PRODUCTREVIEWS" />
+          <EntitySet Name="PRODUCTS" EntityType="BackendEntityModel.PRODUCTS" />
+          <EntitySet Name="PRODUCTVARIANTATTRIBUTES" EntityType="BackendEntityModel.PRODUCTVARIANTATTRIBUTES" />
+          <EntitySet Name="PRODUCTVARIANTATTRIBUTEVALUES" EntityType="BackendEntityModel.PRODUCTVARIANTATTRIBUTEVALUES" />
+          <EntitySet Name="PRODUCTVARIANTS" EntityType="BackendEntityModel.PRODUCTVARIANTS" />
+          <AssociationSet Name="PRODUCTSPRODUCTCATEGORIES" Association="BackendEntityModel.PRODUCTSPRODUCTCATEGORIES">
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+            <End Role="PRODUCTCATEGORIES" EntitySet="PRODUCTCATEGORIES" />
+          </AssociationSet>
+          <AssociationSet Name="PRODUCTSPRODUCTVARIANTS" Association="BackendEntityModel.PRODUCTSPRODUCTVARIANTS">
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+            <End Role="PRODUCTVARIANTS" EntitySet="PRODUCTVARIANTS" />
+          </AssociationSet>
+          <AssociationSet Name="PRODUCTVARIANTATTRIBUTEVALUESPRODUCTVARIANTATTRIBUTES" Association="BackendEntityModel.PRODUCTVARIANTATTRIBUTEVALUESPRODUCTVARIANTATTRIBUTES">
+            <End Role="PRODUCTVARIANTATTRIBUTEVALUES" EntitySet="PRODUCTVARIANTATTRIBUTEVALUES" />
+            <End Role="PRODUCTVARIANTATTRIBUTES" EntitySet="PRODUCTVARIANTATTRIBUTES" />
+          </AssociationSet>
+          <AssociationSet Name="PRODUCTSPRODUCTREVIEWS" Association="BackendEntityModel.PRODUCTSPRODUCTREVIEWS">
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+            <End Role="PRODUCTREVIEWS" EntitySet="PRODUCTREVIEWS" />
+          </AssociationSet>
+          <AssociationSet Name="PRODUCTSPOIS" Association="BackendEntityModel.PRODUCTSPOIS">
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+            <End Role="POIS" EntitySet="POIS" />
+          </AssociationSet>
+          <AssociationSet Name="PRODUCTVARIANTSPRODUCTVARIANTATTRIBUTEVALUES" Association="BackendEntityModel.PRODUCTVARIANTSPRODUCTVARIANTATTRIBUTEVALUES">
+            <End Role="PRODUCTVARIANTS" EntitySet="PRODUCTVARIANTS" />
+            <End Role="PRODUCTVARIANTATTRIBUTEVALUES" EntitySet="PRODUCTVARIANTATTRIBUTEVALUES" />
+          </AssociationSet>
+          <AssociationSet Name="PRODUCTVARIANTSPRODUCTVARIANTATTRIBUTEVALUES1" Association="BackendEntityModel.PRODUCTVARIANTSPRODUCTVARIANTATTRIBUTEVALUES1">
+            <End Role="PRODUCTVARIANTS" EntitySet="PRODUCTVARIANTS" />
+            <End Role="PRODUCTVARIANTATTRIBUTEVALUES" EntitySet="PRODUCTVARIANTATTRIBUTEVALUES" />
+          </AssociationSet>
+          <EntitySet Name="USERS" EntityType="BackendEntityModel.USERS" />
+          <EntitySet Name="MEDIA" EntityType="BackendEntityModel.MEDIA" />
+          <EntitySet Name="MESSAGES" EntityType="BackendEntityModel.MESSAGES" />
+          <AssociationSet Name="PRODUCTSMEDIA" Association="BackendEntityModel.PRODUCTSMEDIA">
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+            <End Role="MEDIA" EntitySet="MEDIA" />
+          </AssociationSet>
+          <AssociationSet Name="POISMEDIA" Association="BackendEntityModel.POISMEDIA">
+            <End Role="POIS" EntitySet="POIS" />
+            <End Role="MEDIA" EntitySet="MEDIA" />
+          </AssociationSet>
+          <EntitySet Name="CUSTOMERS" EntityType="BackendEntityModel.CUSTOMERS" />
+          <EntitySet Name="ORDERITEMS" EntityType="BackendEntityModel.ORDERITEMS" />
+          <EntitySet Name="ORDERS" EntityType="BackendEntityModel.ORDERS" />
+          <AssociationSet Name="ORDERSCUSTOMERS" Association="BackendEntityModel.ORDERSCUSTOMERS">
+            <End Role="ORDERS" EntitySet="ORDERS" />
+            <End Role="CUSTOMERS" EntitySet="CUSTOMERS" />
+          </AssociationSet>
+          <AssociationSet Name="ORDERITEMSORDERS" Association="BackendEntityModel.ORDERITEMSORDERS">
+            <End Role="ORDERITEMS" EntitySet="ORDERITEMS" />
+            <End Role="ORDERS" EntitySet="ORDERS" />
+          </AssociationSet>
+          <AssociationSet Name="PRODUCTSORDERITEMS" Association="BackendEntityModel.PRODUCTSORDERITEMS">
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+            <End Role="ORDERITEMS" EntitySet="ORDERITEMS" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="POIS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SYSTEM_UUID" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DESCRIPTION" MaxLength="1048576" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="LONGITUDE" />
+          <Property Type="Double" Name="LATITUDE" />
+          <Property Type="DateTime" Name="CREATED_AT" />
+          <Property Type="DateTime" Name="UPDATED_AT" />
+          <NavigationProperty Name="PRODUCTS" Relationship="BackendEntityModel.PRODUCTSPOIS" FromRole="POIS" ToRole="PRODUCTS" />
+          <Property Type="Int16" Name="PUBLISHED" />
+          <Property Type="DateTime" Name="DELETED_AT" />
+          <NavigationProperty Name="MEDIA" Relationship="BackendEntityModel.POISMEDIA" FromRole="POIS" ToRole="MEDIA" />
+        </EntityType>
+        <EntityType Name="PRODUCTCATEGORIES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SYSTEM_UUID" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="FRONTEND_ID" />
+          <Property Type="String" Name="NAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CREATED_AT" />
+          <Property Type="DateTime" Name="UPDATED_AT" />
+          <NavigationProperty Name="PRODUCTS" Relationship="BackendEntityModel.PRODUCTSPRODUCTCATEGORIES" FromRole="PRODUCTCATEGORIES" ToRole="PRODUCTS" />
+          <Property Type="Int16" Name="PUBLISHED" />
+          <Property Type="DateTime" Name="DELETED_AT" />
+        </EntityType>
+        <EntityType Name="PRODUCTREVIEWS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PRODUCT_ID" />
+          <Property Type="DateTime" Name="TIME" />
+          <Property Type="String" Name="REVIEW" MaxLength="1048576" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="MARK" />
+          <Property Type="DateTime" Name="CREATED_AT" />
+          <Property Type="DateTime" Name="UPDATED_AT" />
+          <NavigationProperty Name="PRODUCTS" Relationship="BackendEntityModel.PRODUCTSPRODUCTREVIEWS" FromRole="PRODUCTREVIEWS" ToRole="PRODUCTS" />
+          <Property Type="DateTime" Name="DELETED_AT" />
+        </EntityType>
+        <EntityType Name="PRODUCTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SYSTEM_UUID" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="FRONTEND_ID" />
+          <Property Type="String" Name="NAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="QUANTITY" />
+          <Property Type="Double" Name="PRICE" />
+          <Property Type="Double" Name="MIN_PRICE" />
+          <Property Type="Int16" Name="PUBLISHED" />
+          <Property Type="Int32" Name="MEDIUM_ID" />
+          <Property Type="Double" Name="AVERAGE_RATING" />
+          <Property Type="Int32" Name="HITS" />
+          <Property Type="String" Name="SHORT_DESCRIPTION" MaxLength="1048576" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DESCRIPTION" MaxLength="1048576" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CREATED_AT" />
+          <Property Type="DateTime" Name="UPDATED_AT" />
+          <NavigationProperty Name="PRODUCTCATEGORIES" Relationship="BackendEntityModel.PRODUCTSPRODUCTCATEGORIES" FromRole="PRODUCTS" ToRole="PRODUCTCATEGORIES" />
+          <NavigationProperty Name="PRODUCTVARIANTS" Relationship="BackendEntityModel.PRODUCTSPRODUCTVARIANTS" FromRole="PRODUCTS" ToRole="PRODUCTVARIANTS" />
+          <NavigationProperty Name="PRODUCTREVIEWS" Relationship="BackendEntityModel.PRODUCTSPRODUCTREVIEWS" FromRole="PRODUCTS" ToRole="PRODUCTREVIEWS" />
+          <NavigationProperty Name="POIS" Relationship="BackendEntityModel.PRODUCTSPOIS" FromRole="PRODUCTS" ToRole="POIS" />
+          <Property Type="DateTime" Name="DELETED_AT" />
+          <Property Type="String" Name="IDENTIFIER" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MEDIA" Relationship="BackendEntityModel.PRODUCTSMEDIA" FromRole="PRODUCTS" ToRole="MEDIA" />
+          <NavigationProperty Name="ORDERITEMS" Relationship="BackendEntityModel.PRODUCTSORDERITEMS" FromRole="PRODUCTS" ToRole="ORDERITEMS" />
+        </EntityType>
+        <EntityType Name="PRODUCTVARIANTATTRIBUTES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SYSTEM_UUID" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="FRONTEND_ID" />
+          <Property Type="String" Name="NAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DESCRIPTION" MaxLength="1048576" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CREATED_AT" />
+          <Property Type="DateTime" Name="UPDATED_AT" />
+          <NavigationProperty Name="PRODUCTVARIANTATTRIBUTEVALUES" Relationship="BackendEntityModel.PRODUCTVARIANTATTRIBUTEVALUESPRODUCTVARIANTATTRIBUTES" FromRole="PRODUCTVARIANTATTRIBUTES" ToRole="PRODUCTVARIANTATTRIBUTEVALUES" />
+          <Property Type="Int16" Name="PUBLISHED" />
+          <Property Type="DateTime" Name="DELETED_AT" />
+        </EntityType>
+        <EntityType Name="PRODUCTVARIANTATTRIBUTEVALUES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SYSTEM_UUID" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="FRONTEND_ID" />
+          <Property Type="String" Name="NAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PRODUCTVARIANTATTRIBUTE_ID" />
+          <Property Type="DateTime" Name="CREATED_AT" />
+          <Property Type="DateTime" Name="UPDATED_AT" />
+          <NavigationProperty Name="PRODUCTVARIANTATTRIBUTES" Relationship="BackendEntityModel.PRODUCTVARIANTATTRIBUTEVALUESPRODUCTVARIANTATTRIBUTES" FromRole="PRODUCTVARIANTATTRIBUTEVALUES" ToRole="PRODUCTVARIANTATTRIBUTES" />
+          <Property Type="Int16" Name="PUBLISHED" />
+          <Property Type="DateTime" Name="DELETED_AT" />
+          <NavigationProperty Name="PRODUCTVARIANTS" Relationship="BackendEntityModel.PRODUCTVARIANTSPRODUCTVARIANTATTRIBUTEVALUES" FromRole="PRODUCTVARIANTATTRIBUTEVALUES" ToRole="PRODUCTVARIANTS" />
+          <NavigationProperty Name="PRODUCTVARIANTS1" Relationship="BackendEntityModel.PRODUCTVARIANTSPRODUCTVARIANTATTRIBUTEVALUES1" FromRole="PRODUCTVARIANTATTRIBUTEVALUES" ToRole="PRODUCTVARIANTS" />
+        </EntityType>
+        <EntityType Name="PRODUCTVARIANTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SYSTEM_UUID" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="FRONTEND_ID" />
+          <Property Type="Int32" Name="PRODUCT_ID" Nullable="false" ConcurrencyMode="None" a:SetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+          <Property Type="Double" Name="PRICE" />
+          <Property Type="Int32" Name="QUANTITY" />
+          <Property Type="DateTime" Name="CREATED_AT" />
+          <Property Type="DateTime" Name="UPDATED_AT" />
+          <NavigationProperty Name="PRODUCTS" Relationship="BackendEntityModel.PRODUCTSPRODUCTVARIANTS" FromRole="PRODUCTVARIANTS" ToRole="PRODUCTS" />
+          <Property Type="Int16" Name="PUBLISHED" />
+          <Property Type="DateTime" Name="DELETED_AT" />
+          <Property Type="Int32" Name="PACKAGE_ID" />
+          <Property Type="Int32" Name="DATE_ID" />
+          <NavigationProperty Name="PACKAGE" Relationship="BackendEntityModel.PRODUCTVARIANTSPRODUCTVARIANTATTRIBUTEVALUES" FromRole="PRODUCTVARIANTS" ToRole="PRODUCTVARIANTATTRIBUTEVALUES" />
+          <NavigationProperty Name="DATE" Relationship="BackendEntityModel.PRODUCTVARIANTSPRODUCTVARIANTATTRIBUTEVALUES1" FromRole="PRODUCTVARIANTS" ToRole="PRODUCTVARIANTATTRIBUTEVALUES" />
+        </EntityType>
+        <Association Name="PRODUCTSPRODUCTCATEGORIES">
+          <End Type="BackendEntityModel.PRODUCTS" Role="PRODUCTS" Multiplicity="*" />
+          <End Type="BackendEntityModel.PRODUCTCATEGORIES" Role="PRODUCTCATEGORIES" Multiplicity="*" />
+        </Association>
+        <Association Name="PRODUCTSPRODUCTVARIANTS">
+          <End Type="BackendEntityModel.PRODUCTS" Role="PRODUCTS" Multiplicity="1" />
+          <End Type="BackendEntityModel.PRODUCTVARIANTS" Role="PRODUCTVARIANTS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUCTVARIANTS">
+              <PropertyRef Name="PRODUCT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRODUCTVARIANTATTRIBUTEVALUESPRODUCTVARIANTATTRIBUTES">
+          <End Type="BackendEntityModel.PRODUCTVARIANTATTRIBUTEVALUES" Role="PRODUCTVARIANTATTRIBUTEVALUES" Multiplicity="*" />
+          <End Type="BackendEntityModel.PRODUCTVARIANTATTRIBUTES" Role="PRODUCTVARIANTATTRIBUTES" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTVARIANTATTRIBUTES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUCTVARIANTATTRIBUTEVALUES">
+              <PropertyRef Name="PRODUCTVARIANTATTRIBUTE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRODUCTSPRODUCTREVIEWS">
+          <End Type="BackendEntityModel.PRODUCTS" Role="PRODUCTS" Multiplicity="0..1" />
+          <End Type="BackendEntityModel.PRODUCTREVIEWS" Role="PRODUCTREVIEWS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUCTREVIEWS">
+              <PropertyRef Name="PRODUCT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRODUCTSPOIS">
+          <End Type="BackendEntityModel.PRODUCTS" Role="PRODUCTS" Multiplicity="*" />
+          <End Type="BackendEntityModel.POIS" Role="POIS" Multiplicity="*" />
+        </Association>
+        <Association Name="PRODUCTVARIANTSPRODUCTVARIANTATTRIBUTEVALUES">
+          <End Type="BackendEntityModel.PRODUCTVARIANTS" Role="PRODUCTVARIANTS" Multiplicity="*" />
+          <End Type="BackendEntityModel.PRODUCTVARIANTATTRIBUTEVALUES" Role="PRODUCTVARIANTATTRIBUTEVALUES" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTVARIANTATTRIBUTEVALUES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUCTVARIANTS">
+              <PropertyRef Name="PACKAGE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRODUCTVARIANTSPRODUCTVARIANTATTRIBUTEVALUES1">
+          <End Type="BackendEntityModel.PRODUCTVARIANTS" Role="PRODUCTVARIANTS" Multiplicity="*" />
+          <End Type="BackendEntityModel.PRODUCTVARIANTATTRIBUTEVALUES" Role="PRODUCTVARIANTATTRIBUTEVALUES" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTVARIANTATTRIBUTEVALUES">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUCTVARIANTS">
+              <PropertyRef Name="DATE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="USERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SYSTEM_UUID" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FIRSTNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LASTNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DELETED_AT" />
+          <Property Type="DateTime" Name="CREATED_AT" />
+          <Property Type="DateTime" Name="UPDATED_AT" />
+          <Property Type="String" Name="EMAIL" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ENCRYPTED_PASSWORD" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RESET_PASSWORD_TOKEN" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="RESET_PASSWORD_SENT_AT" />
+          <Property Type="DateTime" Name="REMEMBER_CREATED_AT" />
+          <Property Type="Int32" Name="SIGN_IN_COUNT" Nullable="false" />
+          <Property Type="DateTime" Name="CURRENT_SIGN_IN_AT" />
+          <Property Type="DateTime" Name="LAST_SIGN_IN_AT" />
+          <Property Type="String" Name="CURRENT_SIGN_IN_IP" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LAST_SIGN_IN_IP" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MEDIA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SYSTEM_UUID" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="FRONTEND_ID" />
+          <Property Type="String" Name="NAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DESCRIPTION" MaxLength="1048576" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MEDIUMTYPE" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DATA" MaxLength="1048576" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PATH" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="PUBLISHED" />
+          <Property Type="DateTime" Name="DELETED_AT" />
+          <Property Type="DateTime" Name="CREATED_AT" />
+          <Property Type="DateTime" Name="UPDATED_AT" />
+          <NavigationProperty Name="PRODUCTS" Relationship="BackendEntityModel.PRODUCTSMEDIA" FromRole="MEDIA" ToRole="PRODUCTS" />
+          <NavigationProperty Name="POIS" Relationship="BackendEntityModel.POISMEDIA" FromRole="MEDIA" ToRole="POIS" />
+          <Property Type="Int32" Name="POI_ID" />
+        </EntityType>
+        <EntityType Name="MESSAGES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SENDER" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="RECIPIENT" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TITLE" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="BODY" MaxLength="1048576" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="LOG_TIMESTAMP" />
+          <Property Type="String" Name="SYSTEM_UUID" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CREATED_AT" />
+          <Property Type="DateTime" Name="UPDATED_AT" />
+        </EntityType>
+        <Association Name="PRODUCTSMEDIA">
+          <End Type="BackendEntityModel.PRODUCTS" Role="PRODUCTS" Multiplicity="*" />
+          <End Type="BackendEntityModel.MEDIA" Role="MEDIA" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MEDIA">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PRODUCTS">
+              <PropertyRef Name="MEDIUM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="POISMEDIA">
+          <End Type="BackendEntityModel.POIS" Role="POIS" Multiplicity="0..1" />
+          <End Type="BackendEntityModel.MEDIA" Role="MEDIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POIS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MEDIA">
+              <PropertyRef Name="POI_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CUSTOMERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SYSTEM_UUID" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="FRONTEND_ID" />
+          <Property Type="String" Name="USERNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FIRSTNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LASTNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COMPANY" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EMAIL" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="STREET" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ZIP" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CITY" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="STATE" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COUNTRY" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PHONE" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DELETED_AT" />
+          <Property Type="DateTime" Name="CREATED_AT" />
+          <Property Type="DateTime" Name="UPDATED_AT" />
+          <NavigationProperty Name="ORDERS" Relationship="BackendEntityModel.ORDERSCUSTOMERS" FromRole="CUSTOMERS" ToRole="ORDERS" />
+        </EntityType>
+        <EntityType Name="ORDERITEMS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SYS_UUID" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="FRONTEND_ID" />
+          <Property Type="Int32" Name="ORDER_ID" />
+          <Property Type="Int32" Name="PRODUCT_ID" />
+          <Property Type="Int32" Name="PRODUCT_QUANTITY" />
+          <Property Type="Double" Name="PRODUCT_ITEM_PRICE" />
+          <Property Type="Double" Name="PRODUCT_TAX" />
+          <Property Type="String" Name="PRODUCT_ATTRIBUTES" MaxLength="1048576" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DELETED_AT" />
+          <Property Type="DateTime" Name="CREATED_AT" />
+          <Property Type="DateTime" Name="UPDATED_AT" />
+          <NavigationProperty Name="ORDERS" Relationship="BackendEntityModel.ORDERITEMSORDERS" FromRole="ORDERITEMS" ToRole="ORDERS" />
+          <NavigationProperty Name="PRODUCTS" Relationship="BackendEntityModel.PRODUCTSORDERITEMS" FromRole="ORDERITEMS" ToRole="PRODUCTS" />
+        </EntityType>
+        <EntityType Name="ORDERS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SYSTEM_UUID" MaxLength="36" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="FRONTEND_ID" />
+          <Property Type="Int32" Name="CUSTOMER_ID" />
+          <Property Type="String" Name="NUMBER" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="TOTAL" />
+          <Property Type="Int32" Name="STATUS" />
+          <Property Type="DateTime" Name="ORDER_DATE" />
+          <Property Type="String" Name="FIRSTNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LASTNAME" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="COMPANY" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EMAIL" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="STREET" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ZIP" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CITY" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="STATE" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="COUNTRY" />
+          <Property Type="String" Name="PHONE" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="HASHCODE" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="DELETED_AT" />
+          <Property Type="DateTime" Name="CREATED_AT" />
+          <Property Type="DateTime" Name="UPDATED_AT" />
+          <NavigationProperty Name="CUSTOMERS" Relationship="BackendEntityModel.ORDERSCUSTOMERS" FromRole="ORDERS" ToRole="CUSTOMERS" />
+          <NavigationProperty Name="ORDERITEMS" Relationship="BackendEntityModel.ORDERITEMSORDERS" FromRole="ORDERS" ToRole="ORDERITEMS" />
+        </EntityType>
+        <Association Name="ORDERSCUSTOMERS">
+          <End Type="BackendEntityModel.ORDERS" Role="ORDERS" Multiplicity="*" />
+          <End Type="BackendEntityModel.CUSTOMERS" Role="CUSTOMERS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="CUSTOMERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ORDERS">
+              <PropertyRef Name="CUSTOMER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ORDERITEMSORDERS">
+          <End Type="BackendEntityModel.ORDERITEMS" Role="ORDERITEMS" Multiplicity="*" />
+          <End Type="BackendEntityModel.ORDERS" Role="ORDERS" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ORDERS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ORDERITEMS">
+              <PropertyRef Name="ORDER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRODUCTSORDERITEMS">
+          <End Type="BackendEntityModel.PRODUCTS" Role="PRODUCTS" Multiplicity="0..1" />
+          <End Type="BackendEntityModel.ORDERITEMS" Role="ORDERITEMS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTS">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ORDERITEMS">
+              <PropertyRef Name="PRODUCT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BackendEntityModelStoreContainer" CdmEntityContainer="BackendEntities">
+          <EntitySetMapping Name="POIS">
+            <EntityTypeMapping TypeName="BackendEntityModel.POIS">
+              <MappingFragment StoreEntitySet="POIS">
+                <ScalarProperty Name="DELETED_AT" ColumnName="DELETED_AT" />
+                <ScalarProperty Name="PUBLISHED" ColumnName="PUBLISHED" />
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+                <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTCATEGORIES">
+            <EntityTypeMapping TypeName="BackendEntityModel.PRODUCTCATEGORIES">
+              <MappingFragment StoreEntitySet="PRODUCTCATEGORIES">
+                <ScalarProperty Name="DELETED_AT" ColumnName="DELETED_AT" />
+                <ScalarProperty Name="PUBLISHED" ColumnName="PUBLISHED" />
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+                <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTREVIEWS">
+            <EntityTypeMapping TypeName="BackendEntityModel.PRODUCTREVIEWS">
+              <MappingFragment StoreEntitySet="PRODUCTREVIEWS">
+                <ScalarProperty Name="DELETED_AT" ColumnName="DELETED_AT" />
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="MARK" ColumnName="MARK" />
+                <ScalarProperty Name="REVIEW" ColumnName="REVIEW" />
+                <ScalarProperty Name="TIME" ColumnName="TIME" />
+                <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTS">
+            <EntityTypeMapping TypeName="BackendEntityModel.PRODUCTS">
+              <MappingFragment StoreEntitySet="PRODUCTS">
+                <ScalarProperty Name="IDENTIFIER" ColumnName="IDENTIFIER" />
+                <ScalarProperty Name="DELETED_AT" ColumnName="DELETED_AT" />
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="SHORT_DESCRIPTION" ColumnName="SHORT_DESCRIPTION" />
+                <ScalarProperty Name="HITS" ColumnName="HITS" />
+                <ScalarProperty Name="AVERAGE_RATING" ColumnName="AVERAGE_RATING" />
+                <ScalarProperty Name="MEDIUM_ID" ColumnName="MEDIUM_ID" />
+                <ScalarProperty Name="PUBLISHED" ColumnName="PUBLISHED" />
+                <ScalarProperty Name="MIN_PRICE" ColumnName="MIN_PRICE" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+                <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTVARIANTATTRIBUTES">
+            <EntityTypeMapping TypeName="BackendEntityModel.PRODUCTVARIANTATTRIBUTES">
+              <MappingFragment StoreEntitySet="PRODUCTVARIANTATTRIBUTES">
+                <ScalarProperty Name="DELETED_AT" ColumnName="DELETED_AT" />
+                <ScalarProperty Name="PUBLISHED" ColumnName="PUBLISHED" />
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+                <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTVARIANTATTRIBUTEVALUES">
+            <EntityTypeMapping TypeName="BackendEntityModel.PRODUCTVARIANTATTRIBUTEVALUES">
+              <MappingFragment StoreEntitySet="PRODUCTVARIANTATTRIBUTEVALUES">
+                <ScalarProperty Name="DELETED_AT" ColumnName="DELETED_AT" />
+                <ScalarProperty Name="PUBLISHED" ColumnName="PUBLISHED" />
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="PRODUCTVARIANTATTRIBUTE_ID" ColumnName="PRODUCTVARIANTATTRIBUTE_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+                <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTVARIANTS">
+            <EntityTypeMapping TypeName="BackendEntityModel.PRODUCTVARIANTS">
+              <MappingFragment StoreEntitySet="PRODUCTVARIANTS">
+                <ScalarProperty Name="DATE_ID" ColumnName="DATE_ID" />
+                <ScalarProperty Name="PACKAGE_ID" ColumnName="PACKAGE_ID" />
+                <ScalarProperty Name="DELETED_AT" ColumnName="DELETED_AT" />
+                <ScalarProperty Name="PUBLISHED" ColumnName="PUBLISHED" />
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+                <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+                <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="PRODUCTSPRODUCTCATEGORIES" TypeName="BackendEntityModel.PRODUCTSPRODUCTCATEGORIES" StoreEntitySet="PRODUCTCATEGORIES_PRODUCTS" >
+            <EndProperty Name="PRODUCTCATEGORIES">
+              <ScalarProperty Name="ID" ColumnName="PRODUCTCATEGORY_ID" />
+            </EndProperty>
+            <EndProperty Name="PRODUCTS">
+              <ScalarProperty Name="ID" ColumnName="PRODUCT_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="PRODUCTSPOIS" TypeName="BackendEntityModel.PRODUCTSPOIS" StoreEntitySet="POIS_PRODUCTS" >
+            <EndProperty Name="POIS">
+              <ScalarProperty Name="ID" ColumnName="POI_ID" />
+            </EndProperty>
+            <EndProperty Name="PRODUCTS">
+              <ScalarProperty Name="ID" ColumnName="PRODUCT_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="USERS">
+            <EntityTypeMapping TypeName="BackendEntityModel.USERS">
+              <MappingFragment StoreEntitySet="USERS">
+                <ScalarProperty Name="LAST_SIGN_IN_IP" ColumnName="LAST_SIGN_IN_IP" />
+                <ScalarProperty Name="CURRENT_SIGN_IN_IP" ColumnName="CURRENT_SIGN_IN_IP" />
+                <ScalarProperty Name="LAST_SIGN_IN_AT" ColumnName="LAST_SIGN_IN_AT" />
+                <ScalarProperty Name="CURRENT_SIGN_IN_AT" ColumnName="CURRENT_SIGN_IN_AT" />
+                <ScalarProperty Name="SIGN_IN_COUNT" ColumnName="SIGN_IN_COUNT" />
+                <ScalarProperty Name="REMEMBER_CREATED_AT" ColumnName="REMEMBER_CREATED_AT" />
+                <ScalarProperty Name="RESET_PASSWORD_SENT_AT" ColumnName="RESET_PASSWORD_SENT_AT" />
+                <ScalarProperty Name="RESET_PASSWORD_TOKEN" ColumnName="RESET_PASSWORD_TOKEN" />
+                <ScalarProperty Name="ENCRYPTED_PASSWORD" ColumnName="ENCRYPTED_PASSWORD" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="DELETED_AT" ColumnName="DELETED_AT" />
+                <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+                <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+                <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MEDIA">
+            <EntityTypeMapping TypeName="BackendEntityModel.MEDIA">
+              <MappingFragment StoreEntitySet="MEDIA">
+                <ScalarProperty Name="POI_ID" ColumnName="POI_ID" />
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="DELETED_AT" ColumnName="DELETED_AT" />
+                <ScalarProperty Name="PUBLISHED" ColumnName="PUBLISHED" />
+                <ScalarProperty Name="PATH" ColumnName="PATH" />
+                <ScalarProperty Name="DATA" ColumnName="DATA" />
+                <ScalarProperty Name="MEDIUMTYPE" ColumnName="MEDIUMTYPE" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+                <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MESSAGES">
+            <EntityTypeMapping TypeName="BackendEntityModel.MESSAGES">
+              <MappingFragment StoreEntitySet="MESSAGES">
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+                <ScalarProperty Name="LOG_TIMESTAMP" ColumnName="LOG_TIMESTAMP" />
+                <ScalarProperty Name="BODY" ColumnName="BODY" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="RECIPIENT" ColumnName="RECIPIENT" />
+                <ScalarProperty Name="SENDER" ColumnName="SENDER" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUSTOMERS">
+            <EntityTypeMapping TypeName="BackendEntityModel.CUSTOMERS">
+              <MappingFragment StoreEntitySet="CUSTOMERS">
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="DELETED_AT" ColumnName="DELETED_AT" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="STREET" ColumnName="STREET" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="COMPANY" ColumnName="COMPANY" />
+                <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+                <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+                <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDERITEMS">
+            <EntityTypeMapping TypeName="BackendEntityModel.ORDERITEMS">
+              <MappingFragment StoreEntitySet="ORDERITEMS">
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="DELETED_AT" ColumnName="DELETED_AT" />
+                <ScalarProperty Name="PRODUCT_ATTRIBUTES" ColumnName="PRODUCT_ATTRIBUTES" />
+                <ScalarProperty Name="PRODUCT_TAX" ColumnName="PRODUCT_TAX" />
+                <ScalarProperty Name="PRODUCT_ITEM_PRICE" ColumnName="PRODUCT_ITEM_PRICE" />
+                <ScalarProperty Name="PRODUCT_QUANTITY" ColumnName="PRODUCT_QUANTITY" />
+                <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+                <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+                <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+                <ScalarProperty Name="SYS_UUID" ColumnName="SYS_UUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDERS">
+            <EntityTypeMapping TypeName="BackendEntityModel.ORDERS">
+              <MappingFragment StoreEntitySet="ORDERS">
+                <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+                <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+                <ScalarProperty Name="DELETED_AT" ColumnName="DELETED_AT" />
+                <ScalarProperty Name="HASHCODE" ColumnName="HASHCODE" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="CITY" ColumnName="CITY" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="STREET" ColumnName="STREET" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="COMPANY" ColumnName="COMPANY" />
+                <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+                <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+                <ScalarProperty Name="ORDER_DATE" ColumnName="ORDER_DATE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+                <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
+                <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+                <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+                <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

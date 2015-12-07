@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21ABD683-D212-4C9C-89CD-0615FA37BCCC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataProvider</RootNamespace>
+    <AssemblyName>DataProvider</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BCrypt.Net">
+      <HintPath>..\BCrypt\BCrypt.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\HTMLAgilityPack\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataModel\BackendModel\BECategory.cs" />
+    <Compile Include="DataModel\BackendModel\BEMedia.cs" />
+    <Compile Include="DataModel\BackendModel\BEMessage.cs" />
+    <Compile Include="DataModel\BackendModel\BEPOI.cs" />
+    <Compile Include="DataModel\BackendModel\BEProduct.cs" />
+    <Compile Include="DataModel\BackendModel\BEReview.cs" />
+    <Compile Include="DataModel\BackendModel\BEUser.cs" />
+    <Compile Include="DataModel\BackendModel\BEVariant.cs" />
+    <Compile Include="DataModel\BackendModel\BEVariantAttribute.cs" />
+    <Compile Include="DataModel\BackendModel\BEVariantValue.cs" />
+    <Compile Include="DataModel\FrontendModel\FECustomer.cs" />
+    <Compile Include="DataModel\FrontendModel\FEOrder.cs" />
+    <Compile Include="DataModel\FrontendModel\FEOrderItem.cs" />
+    <Compile Include="DataModel\FrontendModel\FEProduct.cs" />
+    <Compile Include="DataModel\FrontendModel\FEReview.cs" />
+    <Compile Include="DataModel\FrontendModel\FEVariant.cs" />
+    <Compile Include="EntityModels\BackendModel\BackendModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BackendModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\BackendModel\BackendModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BackendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\BackendModel\BackendModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BackendModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\BackendModel\CUSTOMERS.cs">
+      <DependentUpon>BackendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\BackendModel\MEDIA.cs">
+      <DependentUpon>BackendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\BackendModel\MESSAGES.cs">
+      <DependentUpon>BackendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\BackendModel\ORDERITEMS.cs">
+      <DependentUpon>BackendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\BackendModel\ORDERS.cs">
+      <DependentUpon>BackendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\BackendModel\POIS.cs">
+      <DependentUpon>BackendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\BackendModel\PRODUCTCATEGORIES.cs">
+      <DependentUpon>BackendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\BackendModel\PRODUCTREVIEWS.cs">
+      <DependentUpon>BackendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\BackendModel\PRODUCTS.cs">
+      <DependentUpon>BackendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\BackendModel\PRODUCTVARIANTATTRIBUTES.cs">
+      <DependentUpon>BackendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\BackendModel\PRODUCTVARIANTATTRIBUTEVALUES.cs">
+      <DependentUpon>BackendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\BackendModel\PRODUCTVARIANTS.cs">
+      <DependentUpon>BackendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\BackendModel\USERS.cs">
+      <DependentUpon>BackendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\ATTR.cs">
+      <DependentUpon>FrontendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\ATTR_VALUES.cs">
+      <DependentUpon>FrontendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\CATEGORIES.cs">
+      <DependentUpon>FrontendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\COUNTRIES.cs">
+      <DependentUpon>FrontendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\CUSTOMERS.cs">
+      <DependentUpon>FrontendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\CUSTOMER_DETAILS.cs">
+      <DependentUpon>FrontendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\FrontendModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FrontendModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\FrontendModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FrontendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\FrontendModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FrontendModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\IMAGES.cs">
+      <DependentUpon>FrontendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\MENU.cs">
+      <DependentUpon>FrontendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\ORDERS.cs">
+      <DependentUpon>FrontendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\ORDER_ITEMS.cs">
+      <DependentUpon>FrontendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\PRODUCTS.cs">
+      <DependentUpon>FrontendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\PRODUCT_ATTRIBUTES.cs">
+      <DependentUpon>FrontendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\PRODUCT_TO_CATEGORY.cs">
+      <DependentUpon>FrontendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\REVIEWS.cs">
+      <DependentUpon>FrontendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\FrontendModel\STATUSES.cs">
+      <DependentUpon>FrontendModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enumerations\Entity.cs" />
+    <Compile Include="Enumerations\Role.cs" />
+    <Compile Include="Interfaces\ICategory.cs" />
+    <Compile Include="Interfaces\ICustomer.cs" />
+    <Compile Include="Interfaces\IMedia.cs" />
+    <Compile Include="Interfaces\IMedium.cs" />
+    <Compile Include="Interfaces\IMessage.cs" />
+    <Compile Include="Interfaces\IOrder.cs" />
+    <Compile Include="Interfaces\IOrderItem.cs" />
+    <Compile Include="Interfaces\IPOI.cs" />
+    <Compile Include="Interfaces\IProduct.cs" />
+    <Compile Include="Interfaces\IReview.cs" />
+    <Compile Include="Interfaces\IUser.cs" />
+    <Compile Include="Interfaces\IVariant.cs" />
+    <Compile Include="Interfaces\IVariantAttribute.cs" />
+    <Compile Include="Interfaces\IVariantValue.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\BackendDataProvider.cs" />
+    <Compile Include="Providers\ImageProvider.cs" />
+    <Compile Include="Providers\FrontendDataProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImageHandler\Images.csproj">
+      <Project>{fbbebeb3-4968-4607-9125-619c76491609}</Project>
+      <Name>Images</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="EntityModels\BackendModel\BackendModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BackendModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EntityModels\BackendModel\BackendModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BackendModel.edmx</DependentUpon>
+      <LastGenOutput>BackendModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EntityModels\BackendModel\BackendModel.edmx.diagram">
+      <DependentUpon>BackendModel.edmx</DependentUpon>
+    </None>
+    <None Include="EntityModels\BackendModel\BackendModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BackendModel.edmx</DependentUpon>
+      <LastGenOutput>BackendModel.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="EntityModels\FrontendModel\FrontendModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FrontendModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EntityModels\FrontendModel\FrontendModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FrontendModel.edmx</DependentUpon>
+      <LastGenOutput>FrontendModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EntityModels\FrontendModel\FrontendModel.edmx.diagram">
+      <DependentUpon>FrontendModel.edmx</DependentUpon>
+    </None>
+    <None Include="EntityModels\FrontendModel\FrontendModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FrontendModel.edmx</DependentUpon>
+      <LastGenOutput>FrontendModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

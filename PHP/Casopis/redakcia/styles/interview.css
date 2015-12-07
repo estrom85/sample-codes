@@ -1,0 +1,36 @@
+/* 
+    Document   : interview
+    Created on : 16.8.2012, 17:46:23
+    Author     : mato
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.edit_button{
+    font-size: 12px;
+    text-decoration: underline;
+    color: blue;
+}
+.edit_button:hover{
+    cursor: pointer;
+    color: red;
+}
+.info_label{
+    font-style: italic;
+    font-weight: bold;
+    padding-right:5px; 
+    
+}
+#interview_questions{
+    text-align: left;
+}
+.question{
+    font-weight: bold;
+}
+.answer{
+    font-style: italic;
+}

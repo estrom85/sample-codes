@@ -1,0 +1,57 @@
+/* 
+    Document   : quiz
+    Created on : 17.8.2012, 11:46:51
+    Author     : mato
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.quiz_info_label{
+    font-style: italic;
+    font-weight: bold;
+    padding-right:5px; 
+    
+}
+
+.quest_display{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.right_answer{
+    color: green;
+    font-weight: bold;
+}
+
+.quest_question_desc{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.quest_answers{
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.edit_button{
+    font-size: 12px;
+    color: blue;
+}
+.edit_button:hover{
+    color: red;
+    cursor: pointer;
+}
+
+#quiz_send_form{
+    font-size: 15px;
+}
+
+.quiz_answer{
+    display:none;
+}

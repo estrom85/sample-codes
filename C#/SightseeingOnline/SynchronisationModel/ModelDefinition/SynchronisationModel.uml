@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ComponentDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="22ac6c7a-8375-4d2f-830e-945b69040504"
+  name="SynchronisationModel" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <component
+        Id="c5fdc330-c9ac-4d06-94c2-4e575d61b6a1"
+        name="WebService"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="c1331e4f-f5f9-4d19-887f-cc15b3220645"
+        name="SyncService"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="521ef49e-8582-4339-9e6e-3c92a69ff37d"
+            isDerived="false"
+            sourceEndRoleName="SyncService"
+            targetEndRoleName="SyncWebService"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="51c34d9a-ceaf-45d7-bc97-48c45e593215"
+              LastKnownName="SyncWebService"
+              LastKnownLocation="SynchronisationModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="84dcad3c-ba32-44c8-a43f-a49867246074"
+                  name="SyncService"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="89738770-dd18-40e1-a620-c75ae8b3d406"
+                  name="SyncWebService"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="39b04828-ac04-4e82-a00f-bdf145760b21"
+            isDerived="false"
+            sourceEndRoleName="SyncService"
+            targetEndRoleName="SyncApplication"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="73029c0f-51a4-4867-a708-cd1641c46d9a"
+              LastKnownName="SyncApplication"
+              LastKnownLocation="SynchronisationModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="909e2534-e49b-48bf-a052-a9623208d0c1"
+                  name="SyncService"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="12597aac-0805-422e-958a-2f51c093a789"
+                  name="SyncApplication"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="05326d19-1298-4787-934d-a1379064aec8"
+            name="Start"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="de8b2da9-cd42-4457-8a70-d7f74ef3fbd2"
+            name="Stop"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="0ae8646e-e492-4ba0-b43a-f546bbd895db"
+            name="Synchronize"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="51c34d9a-ceaf-45d7-bc97-48c45e593215"
+        name="SyncWebService"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="73029c0f-51a4-4867-a708-cd1641c46d9a"
+        name="SyncApplication"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="9876b5b9-52a3-46c4-8db3-7a7ed845f5a8"
+            isDerived="false"
+            sourceEndRoleName="SyncApplication"
+            targetEndRoleName="FrontendDataProvider"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="19820b69-73aa-489f-8887-4296fdedc59b"
+              LastKnownName="FrontendDataProvider"
+              LastKnownLocation="SynchronisationModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="45a59ff8-0c33-4eac-b952-0f0db36ec6ec"
+                  name="SyncApplication"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ddff9f13-ad18-4f1e-b484-e920576770d8"
+                  name="FrontendDataProvider"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="35fc5aa1-fb16-468d-9766-700b4a21dfa9"
+            isDerived="false"
+            sourceEndRoleName="SyncApplication"
+            targetEndRoleName="BackendDataProvider"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="e9a347d6-9f25-4757-8d9f-4d1d688c8a1a"
+              LastKnownName="BackendDataProvider"
+              LastKnownLocation="SynchronisationModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fd395d51-c03e-4ec6-993e-41b37bcd866c"
+                  name="SyncApplication"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Composite"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0d0ced35-098d-4f9f-9ecb-4776534031c2"
+                  name="BackendDataProvider"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="true" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="19820b69-73aa-489f-8887-4296fdedc59b"
+        name="FrontendDataProvider"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e9a347d6-9f25-4757-8d9f-4d1d688c8a1a"
+        name="BackendDataProvider"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="3ecf21d9-c499-4e63-86a8-6a961b0540d9"
+            isDerived="false"
+            sourceEndRoleName="BackendDataProvider"
+            targetEndRoleName="SyncWebService"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="51c34d9a-ceaf-45d7-bc97-48c45e593215"
+              LastKnownName="SyncWebService"
+              LastKnownLocation="SynchronisationModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d882fe14-b162-4553-b812-83146c431c9b"
+                  name="BackendDataProvider"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3ea58e21-4fba-4a4e-b23c-e1296b99bd2e"
+                  name="SyncWebService"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5796c2c2-9739-4b35-9b66-f780fce3db6f"
+        name="Order"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

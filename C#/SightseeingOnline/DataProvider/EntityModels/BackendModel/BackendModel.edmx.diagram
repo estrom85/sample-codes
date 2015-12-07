@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e9f79124456849c4847da506c007b27e" Name="Diagram1" ZoomLevel="65">
+        <EntityTypeShape EntityType="BackendEntityModel.POIS" Width="1.5" PointX="2.75" PointY="4.25" />
+        <EntityTypeShape EntityType="BackendEntityModel.PRODUCTCATEGORIES" Width="1.5" PointX="0.625" PointY="0.5" />
+        <EntityTypeShape EntityType="BackendEntityModel.PRODUCTREVIEWS" Width="1.5" PointX="2.75" PointY="0.875" />
+        <EntityTypeShape EntityType="BackendEntityModel.PRODUCTS" Width="1.5" PointX="4.75" PointY="0.5" />
+        <EntityTypeShape EntityType="BackendEntityModel.PRODUCTVARIANTATTRIBUTES" Width="1.5" PointX="2.75" PointY="8" />
+        <EntityTypeShape EntityType="BackendEntityModel.PRODUCTVARIANTATTRIBUTEVALUES" Width="1.5" PointX="0.625" PointY="8" />
+        <EntityTypeShape EntityType="BackendEntityModel.PRODUCTVARIANTS" Width="1.5" PointX="0.625" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="BackendEntityModel.PRODUCTSPRODUCTCATEGORIES" />
+        <AssociationConnector Association="BackendEntityModel.PRODUCTSPRODUCTVARIANTS" />
+        <AssociationConnector Association="BackendEntityModel.PRODUCTVARIANTATTRIBUTEVALUESPRODUCTVARIANTATTRIBUTES" />
+        <AssociationConnector Association="BackendEntityModel.PRODUCTSPRODUCTREVIEWS" />
+        <AssociationConnector Association="BackendEntityModel.PRODUCTSPOIS" />
+        <AssociationConnector Association="BackendEntityModel.PRODUCTVARIANTSPRODUCTVARIANTATTRIBUTEVALUES" />
+        <AssociationConnector Association="BackendEntityModel.PRODUCTVARIANTSPRODUCTVARIANTATTRIBUTEVALUES1" />
+        <EntityTypeShape EntityType="BackendEntityModel.USERS" Width="1.5" PointX="10.75" PointY="0.5" />
+        <EntityTypeShape EntityType="BackendEntityModel.MEDIA" Width="1.5" PointX="4.75" PointY="6.125" />
+        <EntityTypeShape EntityType="BackendEntityModel.MESSAGES" Width="1.5" PointX="9" PointY="0.5" />
+        <AssociationConnector Association="BackendEntityModel.PRODUCTSMEDIA" />
+        <AssociationConnector Association="BackendEntityModel.POISMEDIA" />
+        <EntityTypeShape EntityType="BackendEntityModel.CUSTOMERS" Width="1.5" PointX="8.75" PointY="4.625" />
+        <EntityTypeShape EntityType="BackendEntityModel.ORDERITEMS" Width="1.5" PointX="6.75" PointY="0.5" />
+        <EntityTypeShape EntityType="BackendEntityModel.ORDERS" Width="1.5" PointX="6.75" PointY="4.625" />
+        <AssociationConnector Association="BackendEntityModel.ORDERSCUSTOMERS" />
+        <AssociationConnector Association="BackendEntityModel.ORDERITEMSORDERS" />
+        <AssociationConnector Association="BackendEntityModel.PRODUCTSORDERITEMS" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

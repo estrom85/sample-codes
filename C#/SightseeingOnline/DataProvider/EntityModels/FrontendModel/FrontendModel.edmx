@@ -1,0 +1,1612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FrontendModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="FrontendModelStoreContainer">
+          <EntitySet Name="m4m2n_jshopping_attr" EntityType="FrontendModel.Store.m4m2n_jshopping_attr" store:Type="Tables" Schema="fst3_prod" />
+          <EntitySet Name="m4m2n_jshopping_attr_values" EntityType="FrontendModel.Store.m4m2n_jshopping_attr_values" store:Type="Tables" Schema="fst3_prod" />
+          <EntitySet Name="m4m2n_jshopping_categories" EntityType="FrontendModel.Store.m4m2n_jshopping_categories" store:Type="Tables" Schema="fst3_prod" />
+          <EntitySet Name="m4m2n_jshopping_countries" EntityType="FrontendModel.Store.m4m2n_jshopping_countries" store:Type="Tables" Schema="fst3_prod" />
+          <EntitySet Name="m4m2n_jshopping_order_item" EntityType="FrontendModel.Store.m4m2n_jshopping_order_item" store:Type="Tables" Schema="fst3_prod" />
+          <EntitySet Name="m4m2n_jshopping_order_status" EntityType="FrontendModel.Store.m4m2n_jshopping_order_status" store:Type="Tables" Schema="fst3_prod" />
+          <EntitySet Name="m4m2n_jshopping_orders" EntityType="FrontendModel.Store.m4m2n_jshopping_orders" store:Type="Tables" Schema="fst3_prod" />
+          <EntitySet Name="m4m2n_jshopping_products" EntityType="FrontendModel.Store.m4m2n_jshopping_products" store:Type="Tables" Schema="fst3_prod" />
+          <EntitySet Name="m4m2n_jshopping_products_attr" EntityType="FrontendModel.Store.m4m2n_jshopping_products_attr" store:Type="Tables" Schema="fst3_prod" />
+          <EntitySet Name="m4m2n_jshopping_products_images" EntityType="FrontendModel.Store.m4m2n_jshopping_products_images" store:Type="Tables" Schema="fst3_prod" />
+          <EntitySet Name="m4m2n_jshopping_products_reviews" EntityType="FrontendModel.Store.m4m2n_jshopping_products_reviews" store:Type="Tables" Schema="fst3_prod" />
+          <EntitySet Name="m4m2n_jshopping_products_to_categories" EntityType="FrontendModel.Store.m4m2n_jshopping_products_to_categories" store:Type="Tables" Schema="fst3_prod" />
+          <EntitySet Name="m4m2n_jshopping_users" EntityType="FrontendModel.Store.m4m2n_jshopping_users" store:Type="Tables" store:Schema="fst3_prod" store:Name="m4m2n_jshopping_users">
+            <DefiningQuery>SELECT
+      `m4m2n_jshopping_users`.`user_id`, 
+      `m4m2n_jshopping_users`.`usergroup_id`, 
+      `m4m2n_jshopping_users`.`payment_id`, 
+      `m4m2n_jshopping_users`.`shipping_id`, 
+      `m4m2n_jshopping_users`.`u_name`, 
+      `m4m2n_jshopping_users`.`title`, 
+      `m4m2n_jshopping_users`.`f_name`, 
+      `m4m2n_jshopping_users`.`l_name`, 
+      `m4m2n_jshopping_users`.`firma_name`, 
+      `m4m2n_jshopping_users`.`client_type`, 
+      `m4m2n_jshopping_users`.`firma_code`, 
+      `m4m2n_jshopping_users`.`tax_number`, 
+      `m4m2n_jshopping_users`.`email`, 
+      `m4m2n_jshopping_users`.`street`, 
+      `m4m2n_jshopping_users`.`home`, 
+      `m4m2n_jshopping_users`.`apartment`, 
+      `m4m2n_jshopping_users`.`zip`, 
+      `m4m2n_jshopping_users`.`city`, 
+      `m4m2n_jshopping_users`.`state`, 
+      `m4m2n_jshopping_users`.`country`, 
+      `m4m2n_jshopping_users`.`phone`, 
+      `m4m2n_jshopping_users`.`mobil_phone`, 
+      `m4m2n_jshopping_users`.`fax`, 
+      `m4m2n_jshopping_users`.`ext_field_1`, 
+      `m4m2n_jshopping_users`.`ext_field_2`, 
+      `m4m2n_jshopping_users`.`ext_field_3`, 
+      `m4m2n_jshopping_users`.`delivery_adress`, 
+      `m4m2n_jshopping_users`.`d_title`, 
+      `m4m2n_jshopping_users`.`d_f_name`, 
+      `m4m2n_jshopping_users`.`d_l_name`, 
+      `m4m2n_jshopping_users`.`d_firma_name`, 
+      `m4m2n_jshopping_users`.`d_email`, 
+      `m4m2n_jshopping_users`.`d_street`, 
+      `m4m2n_jshopping_users`.`d_home`, 
+      `m4m2n_jshopping_users`.`d_apartment`, 
+      `m4m2n_jshopping_users`.`d_zip`, 
+      `m4m2n_jshopping_users`.`d_city`, 
+      `m4m2n_jshopping_users`.`d_state`, 
+      `m4m2n_jshopping_users`.`d_country`, 
+      `m4m2n_jshopping_users`.`d_phone`, 
+      `m4m2n_jshopping_users`.`d_mobil_phone`, 
+      `m4m2n_jshopping_users`.`d_fax`, 
+      `m4m2n_jshopping_users`.`d_ext_field_1`, 
+      `m4m2n_jshopping_users`.`d_ext_field_2`, 
+      `m4m2n_jshopping_users`.`d_ext_field_3`
+      FROM `m4m2n_jshopping_users` AS `m4m2n_jshopping_users`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="m4m2n_menu" EntityType="FrontendModel.Store.m4m2n_menu" store:Type="Tables" Schema="fst3_prod" />
+          <EntitySet Name="m4m2n_users" EntityType="FrontendModel.Store.m4m2n_users" store:Type="Tables" Schema="fst3_prod" />
+        </EntityContainer>
+        <EntityType Name="m4m2n_jshopping_attr">
+          <Key>
+            <PropertyRef Name="attr_id" />
+          </Key>
+          <Property Name="attr_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="attr_ordering" Type="int" Nullable="false" />
+          <Property Name="attr_type" Type="bool" Nullable="false" />
+          <Property Name="independent" Type="bool" Nullable="false" />
+          <Property Name="allcats" Type="bool" Nullable="false" />
+          <Property Name="cats" Type="text" Nullable="false" />
+          <Property Name="name_de-DE" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="description_de-DE" Type="text" Nullable="false" />
+          <Property Name="name_en-GB" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="description_en-GB" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="m4m2n_jshopping_attr_values">
+          <Key>
+            <PropertyRef Name="value_id" />
+          </Key>
+          <Property Name="value_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="attr_id" Type="int" Nullable="false" />
+          <Property Name="value_ordering" Type="int" Nullable="false" />
+          <Property Name="image" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="name_de-DE" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="name_en-GB" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="m4m2n_jshopping_categories">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="category_image" Type="varchar" MaxLength="255" />
+          <Property Name="category_parent_id" Type="int" Nullable="false" />
+          <Property Name="category_publish" Type="bool" Nullable="false" />
+          <Property Name="category_ordertype" Type="bool" Nullable="false" />
+          <Property Name="category_template" Type="varchar" MaxLength="64" />
+          <Property Name="ordering" Type="int" Nullable="false" />
+          <Property Name="category_add_date" Type="datetime" />
+          <Property Name="products_page" Type="int" Nullable="false" />
+          <Property Name="products_row" Type="int" Nullable="false" />
+          <Property Name="access" Type="int" Nullable="false" />
+          <Property Name="name_de-DE" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="alias_de-DE" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="short_description_de-DE" Type="text" Nullable="false" />
+          <Property Name="description_de-DE" Type="text" Nullable="false" />
+          <Property Name="meta_title_de-DE" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="meta_description_de-DE" Type="text" Nullable="false" />
+          <Property Name="meta_keyword_de-DE" Type="text" Nullable="false" />
+          <Property Name="name_en-GB" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="alias_en-GB" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="short_description_en-GB" Type="text" Nullable="false" />
+          <Property Name="description_en-GB" Type="text" Nullable="false" />
+          <Property Name="meta_title_en-GB" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="meta_description_en-GB" Type="text" Nullable="false" />
+          <Property Name="meta_keyword_en-GB" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="m4m2n_jshopping_countries">
+          <Key>
+            <PropertyRef Name="country_id" />
+          </Key>
+          <Property Name="country_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="country_publish" Type="tinyint" Nullable="false" />
+          <Property Name="ordering" Type="smallint" Nullable="false" />
+          <Property Name="country_code" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="country_code_2" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="name_en-GB" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="name_de-DE" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="m4m2n_jshopping_order_item">
+          <Key>
+            <PropertyRef Name="order_item_id" />
+          </Key>
+          <Property Name="order_item_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="order_id" Type="int" Nullable="false" />
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="product_ean" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="product_name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="product_quantity" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="product_item_price" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="product_tax" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="product_attributes" Type="text" Nullable="false" />
+          <Property Name="product_freeattributes" Type="text" Nullable="false" />
+          <Property Name="attributes" Type="text" Nullable="false" />
+          <Property Name="freeattributes" Type="text" Nullable="false" />
+          <Property Name="extra_fields" Type="text" Nullable="false" />
+          <Property Name="files" Type="text" Nullable="false" />
+          <Property Name="weight" Type="float" Nullable="false" />
+          <Property Name="thumb_image" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="manufacturer" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="delivery_times_id" Type="int" Nullable="false" />
+          <Property Name="vendor_id" Type="int" Nullable="false" />
+          <Property Name="params" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="m4m2n_jshopping_order_status">
+          <Key>
+            <PropertyRef Name="status_id" />
+          </Key>
+          <Property Name="status_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="status_code" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="name_en-GB" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="name_de-DE" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="m4m2n_jshopping_orders">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="order_number" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="order_total" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="order_subtotal" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="order_tax" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="order_tax_ext" Type="text" Nullable="false" />
+          <Property Name="order_shipping" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="order_payment" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="order_discount" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="shipping_tax" Type="decimal" Nullable="false" Precision="8" Scale="2" />
+          <Property Name="payment_tax" Type="decimal" Nullable="false" Precision="8" Scale="2" />
+          <Property Name="currency_code" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="currency_code_iso" Type="varchar" Nullable="false" MaxLength="3" />
+          <Property Name="currency_exchange" Type="decimal" Nullable="false" Precision="14" Scale="6" />
+          <Property Name="order_status" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="order_created" Type="bool" Nullable="false" />
+          <Property Name="order_date" Type="datetime" Nullable="false" />
+          <Property Name="order_m_date" Type="datetime" Nullable="false" />
+          <Property Name="shipping_method_id" Type="int" Nullable="false" />
+          <Property Name="delivery_times_id" Type="int" Nullable="false" />
+          <Property Name="payment_method_id" Type="int" Nullable="false" />
+          <Property Name="payment_params" Type="text" Nullable="false" />
+          <Property Name="payment_params_data" Type="text" Nullable="false" />
+          <Property Name="delivery_time" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="coupon_id" Type="int" Nullable="false" />
+          <Property Name="ip_address" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="order_add_info" Type="text" Nullable="false" />
+          <Property Name="title" Type="bool" Nullable="false" />
+          <Property Name="f_name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="l_name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="firma_name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="client_type" Type="bool" Nullable="false" />
+          <Property Name="client_type_name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="firma_code" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="tax_number" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="email" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="street" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="home" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="apartment" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="zip" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="city" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="state" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="country" Type="int" Nullable="false" />
+          <Property Name="phone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="mobil_phone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="fax" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="ext_field_1" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="ext_field_2" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="ext_field_3" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="d_title" Type="bool" Nullable="false" />
+          <Property Name="d_f_name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="d_l_name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="d_firma_name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="d_email" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="d_street" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="d_home" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="d_apartment" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="d_zip" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="d_city" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="d_state" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="d_country" Type="int" Nullable="false" />
+          <Property Name="d_phone" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="d_mobil_phone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="d_fax" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="d_ext_field_1" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="d_ext_field_2" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="d_ext_field_3" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="pdf_file" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="order_hash" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="file_hash" Type="varchar" Nullable="false" MaxLength="64" />
+          <Property Name="file_stat_downloads" Type="text" Nullable="false" />
+          <Property Name="order_custom_info" Type="text" Nullable="false" />
+          <Property Name="display_price" Type="bool" Nullable="false" />
+          <Property Name="vendor_type" Type="bool" Nullable="false" />
+          <Property Name="vendor_id" Type="int" Nullable="false" />
+          <Property Name="lang" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="transaction" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="m4m2n_jshopping_products">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="parent_id" Type="int" Nullable="false" />
+          <Property Name="product_ean" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="product_quantity" Type="int" Nullable="false" />
+          <Property Name="unlimited" Type="bool" Nullable="false" />
+          <Property Name="product_date_added" Type="datetime" Nullable="false" />
+          <Property Name="date_modify" Type="datetime" Nullable="false" />
+          <Property Name="product_publish" Type="bool" Nullable="false" />
+          <Property Name="product_tax_id" Type="tinyint" Nullable="false" />
+          <Property Name="currency_id" Type="int" Nullable="false" />
+          <Property Name="product_template" Type="varchar" Nullable="false" MaxLength="64" />
+          <Property Name="product_url" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="product_old_price" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="product_buy_price" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="product_price" Type="decimal" Nullable="false" Precision="18" Scale="6" />
+          <Property Name="min_price" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="different_prices" Type="bool" Nullable="false" />
+          <Property Name="product_weight" Type="decimal" Nullable="false" Precision="14" Scale="4" />
+          <Property Name="image" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="product_manufacturer_id" Type="int" Nullable="false" />
+          <Property Name="product_is_add_price" Type="bool" Nullable="false" />
+          <Property Name="add_price_unit_id" Type="int" Nullable="false" />
+          <Property Name="average_rating" Type="float" Nullable="false" />
+          <Property Name="reviews_count" Type="int" Nullable="false" />
+          <Property Name="delivery_times_id" Type="int" Nullable="false" />
+          <Property Name="hits" Type="int" Nullable="false" />
+          <Property Name="weight_volume_units" Type="decimal" Nullable="false" Precision="14" Scale="4" />
+          <Property Name="basic_price_unit_id" Type="int" Nullable="false" />
+          <Property Name="label_id" Type="int" Nullable="false" />
+          <Property Name="vendor_id" Type="int" Nullable="false" />
+          <Property Name="access" Type="int" Nullable="false" />
+          <Property Name="name_de-DE" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="alias_de-DE" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="short_description_de-DE" Type="text" Nullable="false" />
+          <Property Name="description_de-DE" Type="text" Nullable="false" />
+          <Property Name="meta_title_de-DE" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="meta_description_de-DE" Type="text" Nullable="false" />
+          <Property Name="meta_keyword_de-DE" Type="text" Nullable="false" />
+          <Property Name="name_en-GB" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="alias_en-GB" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="short_description_en-GB" Type="text" Nullable="false" />
+          <Property Name="description_en-GB" Type="text" Nullable="false" />
+          <Property Name="meta_title_en-GB" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="meta_description_en-GB" Type="text" Nullable="false" />
+          <Property Name="meta_keyword_en-GB" Type="text" Nullable="false" />
+          <Property Name="package_vip" Type="bool" Nullable="false" />
+        </EntityType>
+        <EntityType Name="m4m2n_jshopping_products_attr">
+          <Key>
+            <PropertyRef Name="product_attr_id" />
+          </Key>
+          <Property Name="product_attr_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="buy_price" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="price" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="old_price" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="count" Type="int" Nullable="false" />
+          <Property Name="ean" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="weight" Type="decimal" Nullable="false" Precision="12" Scale="4" />
+          <Property Name="weight_volume_units" Type="decimal" Nullable="false" Precision="14" Scale="4" />
+          <Property Name="ext_attribute_product_id" Type="int" Nullable="false" />
+          <Property Name="attr_4" Type="int" Nullable="false" />
+          <Property Name="attr_5" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="m4m2n_jshopping_products_images">
+          <Key>
+            <PropertyRef Name="image_id" />
+          </Key>
+          <Property Name="image_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="image_name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="ordering" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="m4m2n_jshopping_products_reviews">
+          <Key>
+            <PropertyRef Name="review_id" />
+          </Key>
+          <Property Name="review_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="user_name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="user_email" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="time" Type="date" Nullable="false" />
+          <Property Name="review" Type="text" Nullable="false" />
+          <Property Name="mark" Type="int" Nullable="false" />
+          <Property Name="publish" Type="bool" Nullable="false" />
+          <Property Name="ip" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="m4m2n_jshopping_products_to_categories">
+          <Key>
+            <PropertyRef Name="product_id" />
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="product_id" Type="int" Nullable="false" />
+          <Property Name="category_id" Type="int" Nullable="false" />
+          <Property Name="product_ordering" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.fst3_prod.m4m2n_jshopping_users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="m4m2n_jshopping_users">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="usergroup_id" />
+            <PropertyRef Name="payment_id" />
+            <PropertyRef Name="shipping_id" />
+            <PropertyRef Name="u_name" />
+            <PropertyRef Name="title" />
+            <PropertyRef Name="f_name" />
+            <PropertyRef Name="l_name" />
+            <PropertyRef Name="firma_name" />
+            <PropertyRef Name="client_type" />
+            <PropertyRef Name="firma_code" />
+            <PropertyRef Name="tax_number" />
+            <PropertyRef Name="email" />
+            <PropertyRef Name="street" />
+            <PropertyRef Name="home" />
+            <PropertyRef Name="apartment" />
+            <PropertyRef Name="zip" />
+            <PropertyRef Name="city" />
+            <PropertyRef Name="state" />
+            <PropertyRef Name="phone" />
+            <PropertyRef Name="mobil_phone" />
+            <PropertyRef Name="fax" />
+            <PropertyRef Name="ext_field_1" />
+            <PropertyRef Name="ext_field_2" />
+            <PropertyRef Name="ext_field_3" />
+            <PropertyRef Name="delivery_adress" />
+            <PropertyRef Name="d_title" />
+            <PropertyRef Name="d_f_name" />
+            <PropertyRef Name="d_l_name" />
+            <PropertyRef Name="d_firma_name" />
+            <PropertyRef Name="d_email" />
+            <PropertyRef Name="d_street" />
+            <PropertyRef Name="d_home" />
+            <PropertyRef Name="d_apartment" />
+            <PropertyRef Name="d_zip" />
+            <PropertyRef Name="d_city" />
+            <PropertyRef Name="d_state" />
+            <PropertyRef Name="d_country" />
+            <PropertyRef Name="d_phone" />
+            <PropertyRef Name="d_mobil_phone" />
+            <PropertyRef Name="d_fax" />
+            <PropertyRef Name="d_ext_field_1" />
+            <PropertyRef Name="d_ext_field_2" />
+            <PropertyRef Name="d_ext_field_3" />
+          </Key>
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="usergroup_id" Type="int" Nullable="false" />
+          <Property Name="payment_id" Type="int" Nullable="false" />
+          <Property Name="shipping_id" Type="int" Nullable="false" />
+          <Property Name="u_name" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="title" Type="bool" Nullable="false" />
+          <Property Name="f_name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="l_name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="firma_name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="client_type" Type="bool" Nullable="false" />
+          <Property Name="firma_code" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="tax_number" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="email" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="street" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="home" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="apartment" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="zip" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="city" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="state" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="country" Type="int" />
+          <Property Name="phone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="mobil_phone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="fax" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="ext_field_1" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="ext_field_2" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="ext_field_3" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="delivery_adress" Type="bool" Nullable="false" />
+          <Property Name="d_title" Type="bool" Nullable="false" />
+          <Property Name="d_f_name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="d_l_name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="d_firma_name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="d_email" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="d_street" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="d_home" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="d_apartment" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="d_zip" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="d_city" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="d_state" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="d_country" Type="int" Nullable="false" />
+          <Property Name="d_phone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="d_mobil_phone" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="d_fax" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="d_ext_field_1" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="d_ext_field_2" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="d_ext_field_3" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="m4m2n_menu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="menutype" Type="varchar" Nullable="false" MaxLength="24" />
+          <Property Name="title" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="alias" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="note" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="path" Type="varchar" Nullable="false" MaxLength="1024" />
+          <Property Name="link" Type="varchar" Nullable="false" MaxLength="1024" />
+          <Property Name="type" Type="varchar" Nullable="false" MaxLength="16" />
+          <Property Name="published" Type="tinyint" Nullable="false" />
+          <Property Name="parent_id" Type="uint" Nullable="false" />
+          <Property Name="level" Type="uint" Nullable="false" />
+          <Property Name="component_id" Type="uint" Nullable="false" />
+          <Property Name="checked_out" Type="uint" Nullable="false" />
+          <Property Name="checked_out_time" Type="timestamp" Nullable="false" />
+          <Property Name="browserNav" Type="tinyint" Nullable="false" />
+          <Property Name="access" Type="uint" Nullable="false" />
+          <Property Name="img" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="template_style_id" Type="uint" Nullable="false" />
+          <Property Name="params" Type="text" Nullable="false" />
+          <Property Name="lft" Type="int" Nullable="false" />
+          <Property Name="rgt" Type="int" Nullable="false" />
+          <Property Name="home" Type="utinyint" Nullable="false" />
+          <Property Name="language" Type="char" Nullable="false" MaxLength="7" />
+          <Property Name="client_id" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="m4m2n_users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="username" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="email" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="password" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="block" Type="tinyint" Nullable="false" />
+          <Property Name="sendEmail" Type="tinyint" />
+          <Property Name="registerDate" Type="datetime" Nullable="false" />
+          <Property Name="lastvisitDate" Type="datetime" Nullable="false" />
+          <Property Name="activation" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="params" Type="text" Nullable="false" />
+          <Property Name="lastResetTime" Type="datetime" Nullable="false" />
+          <Property Name="resetCount" Type="int" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FrontendModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FrontendEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="PRODUCTS" EntityType="FrontendModel.PRODUCTS" />
+          <EntitySet Name="ATTRs" EntityType="FrontendModel.ATTR" />
+          <EntitySet Name="ATTR_VALUES" EntityType="FrontendModel.ATTR_VALUES" />
+          <EntitySet Name="CATEGORIES" EntityType="FrontendModel.CATEGORIES" />
+          <EntitySet Name="PRODUCT_ATTRIBUTES" EntityType="FrontendModel.PRODUCT_ATTRIBUTES" />
+          <EntitySet Name="PRODUCT_TO_CATEGORY" EntityType="FrontendModel.PRODUCT_TO_CATEGORY" />
+          <AssociationSet Name="PRODUCTSPRODUCT_CATEGORY" Association="FrontendModel.PRODUCTSPRODUCT_CATEGORY">
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+            <End Role="PRODUCT_CATEGORY" EntitySet="PRODUCT_TO_CATEGORY" />
+          </AssociationSet>
+          <AssociationSet Name="PRODUCT_TO_CATEGORYCATEGORIES" Association="FrontendModel.PRODUCT_TO_CATEGORYCATEGORIES">
+            <End Role="PRODUCT_TO_CATEGORY" EntitySet="PRODUCT_TO_CATEGORY" />
+            <End Role="CATEGORIES" EntitySet="CATEGORIES" />
+          </AssociationSet>
+          <AssociationSet Name="PRODUCTSPRODUCT_ATTRIBUTES" Association="FrontendModel.PRODUCTSPRODUCT_ATTRIBUTES">
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+            <End Role="PRODUCT_ATTRIBUTES" EntitySet="PRODUCT_ATTRIBUTES" />
+          </AssociationSet>
+          <AssociationSet Name="PRODUCT_ATTRIBUTESATTR_VALUES" Association="FrontendModel.PRODUCT_ATTRIBUTESATTR_VALUES">
+            <End Role="PRODUCT_ATTRIBUTES" EntitySet="PRODUCT_ATTRIBUTES" />
+            <End Role="ATTR_VALUES" EntitySet="ATTR_VALUES" />
+          </AssociationSet>
+          <AssociationSet Name="PRODUCT_ATTRIBUTESATTR_VALUES1" Association="FrontendModel.PRODUCT_ATTRIBUTESATTR_VALUES1">
+            <End Role="PRODUCT_ATTRIBUTES" EntitySet="PRODUCT_ATTRIBUTES" />
+            <End Role="ATTR_VALUES" EntitySet="ATTR_VALUES" />
+          </AssociationSet>
+          <AssociationSet Name="ATTR_VALUESATTR" Association="FrontendModel.ATTR_VALUESATTR">
+            <End Role="ATTR_VALUES" EntitySet="ATTR_VALUES" />
+            <End Role="ATTR" EntitySet="ATTRs" />
+          </AssociationSet>
+          <EntitySet Name="IMAGES" EntityType="FrontendModel.IMAGES" />
+          <AssociationSet Name="PRODUCTSIMAGES" Association="FrontendModel.PRODUCTSIMAGES">
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+            <End Role="IMAGES" EntitySet="IMAGES" />
+          </AssociationSet>
+          <EntitySet Name="MENU" EntityType="FrontendModel.MENU" />
+          <EntitySet Name="REVIEWS" EntityType="FrontendModel.REVIEWS" />
+          <AssociationSet Name="PRODUCTSREVIEWS" Association="FrontendModel.PRODUCTSREVIEWS">
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+            <End Role="REVIEWS" EntitySet="REVIEWS" />
+          </AssociationSet>
+          <EntitySet Name="ORDER_ITEMS" EntityType="FrontendModel.ORDER_ITEMS" />
+          <EntitySet Name="ORDERS" EntityType="FrontendModel.ORDERS" />
+          <EntitySet Name="CUSTOMER_DETAILS" EntityType="FrontendModel.CUSTOMER_DETAILS" />
+          <EntitySet Name="CUSTOMERS" EntityType="FrontendModel.CUSTOMERS" />
+          <AssociationSet Name="PRODUCTSORDER_ITEM" Association="FrontendModel.PRODUCTSORDER_ITEM">
+            <End Role="PRODUCTS" EntitySet="PRODUCTS" />
+            <End Role="ORDER_ITEM" EntitySet="ORDER_ITEMS" />
+          </AssociationSet>
+          <AssociationSet Name="ORDER_ITEMSORDERS" Association="FrontendModel.ORDER_ITEMSORDERS">
+            <End Role="ORDER_ITEMS" EntitySet="ORDER_ITEMS" />
+            <End Role="ORDERS" EntitySet="ORDERS" />
+          </AssociationSet>
+          <AssociationSet Name="CUSTOMERSORDERS" Association="FrontendModel.CUSTOMERSORDERS">
+            <End Role="CUSTOMERS" EntitySet="CUSTOMERS" />
+            <End Role="ORDERS" EntitySet="ORDERS" />
+          </AssociationSet>
+          <AssociationSet Name="CUSTOMERSCUSTOMER_DETAILS" Association="FrontendModel.CUSTOMERSCUSTOMER_DETAILS">
+            <End Role="CUSTOMERS" EntitySet="CUSTOMERS" />
+            <End Role="CUSTOMER_DETAILS" EntitySet="CUSTOMER_DETAILS" />
+          </AssociationSet>
+          <EntitySet Name="STATUSES" EntityType="FrontendModel.STATUSES" />
+          <EntitySet Name="COUNTRIES" EntityType="FrontendModel.COUNTRIES" />
+          <AssociationSet Name="COUNTRIESCUSTOMER_DETAILS" Association="FrontendModel.COUNTRIESCUSTOMER_DETAILS">
+            <End Role="COUNTRIES" EntitySet="COUNTRIES" />
+            <End Role="CUSTOMER_DETAILS" EntitySet="CUSTOMER_DETAILS" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="PRODUCTS">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Type="Int32" Name="product_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="parent_id" Nullable="false" DefaultValue="0" />
+          <Property Type="String" Name="product_ean" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="product_quantity" Nullable="false" />
+          <Property Type="Boolean" Name="unlimited" Nullable="false" />
+          <Property Type="DateTime" Name="product_date_added" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="date_modify" Nullable="false" Precision="0" />
+          <Property Type="Boolean" Name="product_publish" Nullable="false" />
+          <Property Type="SByte" Name="product_tax_id" Nullable="false" />
+          <Property Type="Int32" Name="currency_id" Nullable="false" DefaultValue="1" />
+          <Property Type="String" Name="product_template" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="product_url" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="product_old_price" Nullable="false" DefaultValue="0" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="product_buy_price" Nullable="false" DefaultValue="0" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="product_price" Nullable="false" Precision="18" Scale="6" />
+          <Property Type="Decimal" Name="min_price" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="Boolean" Name="different_prices" Nullable="false" />
+          <Property Type="Decimal" Name="product_weight" Nullable="false" Precision="14" Scale="4" />
+          <Property Type="String" Name="image" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="product_manufacturer_id" Nullable="false" />
+          <Property Type="Boolean" Name="product_is_add_price" Nullable="false" />
+          <Property Type="Int32" Name="add_price_unit_id" Nullable="false" />
+          <Property Type="Single" Name="average_rating" Nullable="false" />
+          <Property Type="Int32" Name="reviews_count" Nullable="false" />
+          <Property Type="Int32" Name="delivery_times_id" Nullable="false" />
+          <Property Type="Int32" Name="hits" Nullable="false" />
+          <Property Type="Decimal" Name="weight_volume_units" Nullable="false" Precision="14" Scale="4" />
+          <Property Type="Int32" Name="basic_price_unit_id" Nullable="false" />
+          <Property Type="Int32" Name="label_id" Nullable="false" />
+          <Property Type="Int32" Name="vendor_id" Nullable="false" />
+          <Property Type="Int32" Name="access" Nullable="false" />
+          <Property Type="String" Name="name_de_DE" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="alias_de_DE" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="short_description_de_DE" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description_de_DE" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="meta_title_de_DE" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="meta_description_de_DE" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="meta_keyword_de_DE" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name_en_GB" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="alias_en_GB" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="short_description_en_GB" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description_en_GB" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="meta_title_en_GB" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="meta_description_en_GB" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="meta_keyword_en_GB" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="package_vip" Nullable="false" />
+          <NavigationProperty Name="PRODUCT_CATEGORY" Relationship="FrontendModel.PRODUCTSPRODUCT_CATEGORY" FromRole="PRODUCTS" ToRole="PRODUCT_CATEGORY" />
+          <NavigationProperty Name="PRODUCT_ATTRIBUTES" Relationship="FrontendModel.PRODUCTSPRODUCT_ATTRIBUTES" FromRole="PRODUCTS" ToRole="PRODUCT_ATTRIBUTES" />
+          <NavigationProperty Name="IMAGES" Relationship="FrontendModel.PRODUCTSIMAGES" FromRole="PRODUCTS" ToRole="IMAGES" />
+          <NavigationProperty Name="REVIEWS" Relationship="FrontendModel.PRODUCTSREVIEWS" FromRole="PRODUCTS" ToRole="REVIEWS" />
+          <NavigationProperty Name="ORDER_ITEM" Relationship="FrontendModel.PRODUCTSORDER_ITEM" FromRole="PRODUCTS" ToRole="ORDER_ITEM" />
+        </EntityType>
+        <EntityType Name="ATTR">
+          <Key>
+            <PropertyRef Name="attr_id" />
+          </Key>
+          <Property Type="Int32" Name="attr_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="attr_ordering" Nullable="false" />
+          <Property Type="Boolean" Name="attr_type" Nullable="false" />
+          <Property Type="Boolean" Name="independent" Nullable="false" />
+          <Property Type="Boolean" Name="allcats" Nullable="false" />
+          <Property Type="String" Name="cats" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name_de_DE" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description_de_DE" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name_en_GB" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description_en_GB" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ATTR_VALUES" Relationship="FrontendModel.ATTR_VALUESATTR" FromRole="ATTR" ToRole="ATTR_VALUES" />
+        </EntityType>
+        <EntityType Name="ATTR_VALUES">
+          <Key>
+            <PropertyRef Name="value_id" />
+          </Key>
+          <Property Type="Int32" Name="value_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="attr_id" Nullable="false" />
+          <Property Type="Int32" Name="value_ordering" Nullable="false" />
+          <Property Type="String" Name="image" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name_de_DE" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name_en_GB" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PRODUCT_ATTRIBUTES_TYPE" Relationship="FrontendModel.PRODUCT_ATTRIBUTESATTR_VALUES" FromRole="ATTR_VALUES" ToRole="PRODUCT_ATTRIBUTES" />
+          <NavigationProperty Name="PRODUCT_ATTRIBUTES_DATE" Relationship="FrontendModel.PRODUCT_ATTRIBUTESATTR_VALUES1" FromRole="ATTR_VALUES" ToRole="PRODUCT_ATTRIBUTES" />
+          <NavigationProperty Name="ATTRs" Relationship="FrontendModel.ATTR_VALUESATTR" FromRole="ATTR_VALUES" ToRole="ATTR" />
+        </EntityType>
+        <EntityType Name="CATEGORIES">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Type="Int32" Name="category_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="category_image" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="category_parent_id" Nullable="false" />
+          <Property Type="Boolean" Name="category_publish" Nullable="false" />
+          <Property Type="Boolean" Name="category_ordertype" Nullable="false" />
+          <Property Type="String" Name="category_template" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="ordering" Nullable="false" />
+          <Property Type="DateTime" Name="category_add_date" Precision="0" />
+          <Property Type="Int32" Name="products_page" Nullable="false" />
+          <Property Type="Int32" Name="products_row" Nullable="false" />
+          <Property Type="Int32" Name="access" Nullable="false" />
+          <Property Type="String" Name="name_de_DE" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="alias_de_DE" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="short_description_de_DE" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description_de_DE" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="meta_title_de_DE" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="meta_description_de_DE" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="meta_keyword_de_DE" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name_en_GB" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="alias_en_GB" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="short_description_en_GB" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description_en_GB" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="meta_title_en_GB" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="meta_description_en_GB" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="meta_keyword_en_GB" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PRODUCT_TO_CATEGORY" Relationship="FrontendModel.PRODUCT_TO_CATEGORYCATEGORIES" FromRole="CATEGORIES" ToRole="PRODUCT_TO_CATEGORY" />
+        </EntityType>
+        <EntityType Name="PRODUCT_ATTRIBUTES">
+          <Key>
+            <PropertyRef Name="product_attr_id" />
+          </Key>
+          <Property Type="Int32" Name="product_attr_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="product_id" Nullable="false" />
+          <Property Type="Decimal" Name="buy_price" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="price" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="old_price" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="Int32" Name="count" Nullable="false" />
+          <Property Type="String" Name="ean" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="weight" Nullable="false" Precision="12" Scale="4" />
+          <Property Type="Decimal" Name="weight_volume_units" Nullable="false" Precision="14" Scale="4" />
+          <Property Type="Int32" Name="ext_attribute_product_id" Nullable="false" />
+          <Property Type="Int32" Name="attr_4" Nullable="false" />
+          <Property Type="Int32" Name="attr_5" Nullable="false" />
+          <NavigationProperty Name="PRODUCT" Relationship="FrontendModel.PRODUCTSPRODUCT_ATTRIBUTES" FromRole="PRODUCT_ATTRIBUTES" ToRole="PRODUCTS" />
+          <NavigationProperty Name="ATTR_TYPE" Relationship="FrontendModel.PRODUCT_ATTRIBUTESATTR_VALUES" FromRole="PRODUCT_ATTRIBUTES" ToRole="ATTR_VALUES" />
+          <NavigationProperty Name="ATTR_DATE" Relationship="FrontendModel.PRODUCT_ATTRIBUTESATTR_VALUES1" FromRole="PRODUCT_ATTRIBUTES" ToRole="ATTR_VALUES" />
+        </EntityType>
+        <EntityType Name="PRODUCT_TO_CATEGORY">
+          <Key>
+            <PropertyRef Name="product_id" />
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Type="Int32" Name="product_id" Nullable="false" />
+          <Property Type="Int32" Name="category_id" Nullable="false" />
+          <Property Type="Int32" Name="product_ordering" Nullable="false" />
+          <NavigationProperty Name="PRODUCT" Relationship="FrontendModel.PRODUCTSPRODUCT_CATEGORY" FromRole="PRODUCT_CATEGORY" ToRole="PRODUCTS" />
+          <NavigationProperty Name="CATEGORIES" Relationship="FrontendModel.PRODUCT_TO_CATEGORYCATEGORIES" FromRole="PRODUCT_TO_CATEGORY" ToRole="CATEGORIES" />
+        </EntityType>
+        <Association Name="PRODUCTSPRODUCT_CATEGORY">
+          <End Type="FrontendModel.PRODUCTS" Role="PRODUCTS" Multiplicity="1" />
+          <End Type="FrontendModel.PRODUCT_TO_CATEGORY" Role="PRODUCT_CATEGORY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTS">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="PRODUCT_CATEGORY">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRODUCT_TO_CATEGORYCATEGORIES">
+          <End Type="FrontendModel.PRODUCT_TO_CATEGORY" Role="PRODUCT_TO_CATEGORY" Multiplicity="*" />
+          <End Type="FrontendModel.CATEGORIES" Role="CATEGORIES" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="CATEGORIES">
+              <PropertyRef Name="category_id" />
+            </Principal>
+            <Dependent Role="PRODUCT_TO_CATEGORY">
+              <PropertyRef Name="category_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRODUCTSPRODUCT_ATTRIBUTES">
+          <End Type="FrontendModel.PRODUCTS" Role="PRODUCTS" Multiplicity="1" />
+          <End Type="FrontendModel.PRODUCT_ATTRIBUTES" Role="PRODUCT_ATTRIBUTES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTS">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="PRODUCT_ATTRIBUTES">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRODUCT_ATTRIBUTESATTR_VALUES">
+          <End Type="FrontendModel.PRODUCT_ATTRIBUTES" Role="PRODUCT_ATTRIBUTES" Multiplicity="*" />
+          <End Type="FrontendModel.ATTR_VALUES" Role="ATTR_VALUES" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="ATTR_VALUES">
+              <PropertyRef Name="value_id" />
+            </Principal>
+            <Dependent Role="PRODUCT_ATTRIBUTES">
+              <PropertyRef Name="attr_4" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PRODUCT_ATTRIBUTESATTR_VALUES1">
+          <End Type="FrontendModel.PRODUCT_ATTRIBUTES" Role="PRODUCT_ATTRIBUTES" Multiplicity="*" />
+          <End Type="FrontendModel.ATTR_VALUES" Role="ATTR_VALUES" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="ATTR_VALUES">
+              <PropertyRef Name="value_id" />
+            </Principal>
+            <Dependent Role="PRODUCT_ATTRIBUTES">
+              <PropertyRef Name="attr_5" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ATTR_VALUESATTR">
+          <End Type="FrontendModel.ATTR_VALUES" Role="ATTR_VALUES" Multiplicity="*" />
+          <End Type="FrontendModel.ATTR" Role="ATTR" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="ATTR">
+              <PropertyRef Name="attr_id" />
+            </Principal>
+            <Dependent Role="ATTR_VALUES">
+              <PropertyRef Name="attr_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="IMAGES">
+          <Key>
+            <PropertyRef Name="image_id" />
+          </Key>
+          <Property Type="Int32" Name="image_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="product_id" Nullable="false" />
+          <Property Type="String" Name="image_name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="SByte" Name="ordering" Nullable="false" />
+          <NavigationProperty Name="PRODUCT" Relationship="FrontendModel.PRODUCTSIMAGES" FromRole="IMAGES" ToRole="PRODUCTS" />
+        </EntityType>
+        <Association Name="PRODUCTSIMAGES">
+          <End Type="FrontendModel.PRODUCTS" Role="PRODUCTS" Multiplicity="1" />
+          <End Type="FrontendModel.IMAGES" Role="IMAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTS">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="IMAGES">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MENU">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="menutype" Nullable="false" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="title" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="alias" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="note" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="path" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="link" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="type" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="SByte" Name="published" Nullable="false" />
+          <Property Type="Int64" Name="parent_id" Nullable="false" />
+          <Property Type="Int64" Name="level" Nullable="false" />
+          <Property Type="Int64" Name="component_id" Nullable="false" />
+          <Property Type="Int64" Name="checked_out" Nullable="false" />
+          <Property Type="SByte" Name="browserNav" Nullable="false" />
+          <Property Type="Int64" Name="access" Nullable="false" />
+          <Property Type="String" Name="img" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="template_style_id" Nullable="false" />
+          <Property Type="String" Name="param" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="lft" Nullable="false" />
+          <Property Type="Int32" Name="rgt" Nullable="false" />
+          <Property Type="Byte" Name="home" Nullable="false" />
+          <Property Type="String" Name="language" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Type="SByte" Name="client_id" Nullable="false" />
+          <Property Type="DateTime" Name="checked_out_date" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="REVIEWS">
+          <Key>
+            <PropertyRef Name="review_id" />
+          </Key>
+          <Property Type="Int32" Name="review_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="product_id" Nullable="false" />
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+          <Property Type="String" Name="user_name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="user_email" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="time" Nullable="false" Precision="0" />
+          <Property Type="String" Name="review" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="mark" Nullable="false" />
+          <Property Type="Boolean" Name="publish" Nullable="false" />
+          <Property Type="String" Name="ip" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PRODUCT" Relationship="FrontendModel.PRODUCTSREVIEWS" FromRole="REVIEWS" ToRole="PRODUCTS" />
+        </EntityType>
+        <Association Name="PRODUCTSREVIEWS">
+          <End Type="FrontendModel.PRODUCTS" Role="PRODUCTS" Multiplicity="1" />
+          <End Type="FrontendModel.REVIEWS" Role="REVIEWS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTS">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="REVIEWS">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ORDER_ITEMS">
+          <Key>
+            <PropertyRef Name="order_item_id" />
+          </Key>
+          <Property Type="Int32" Name="order_item_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="order_id" Nullable="false" />
+          <Property Type="Int32" Name="product_id" Nullable="false" />
+          <Property Type="String" Name="product_ean" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="product_name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="product_quantity" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="product_item_price" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="product_tax" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="String" Name="product_attributes" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="product_freeattributes" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="attributes" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="freeattributes" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="extra_fields" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="files" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="Single" Name="weight" Nullable="false" />
+          <Property Type="String" Name="thumb_image" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="manufacturer" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="delivery_times_id" Nullable="false" />
+          <Property Type="Int32" Name="vendor_id" Nullable="false" />
+          <Property Type="String" Name="params" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PRODUCT" Relationship="FrontendModel.PRODUCTSORDER_ITEM" FromRole="ORDER_ITEM" ToRole="PRODUCTS" />
+          <NavigationProperty Name="ORDERS" Relationship="FrontendModel.ORDER_ITEMSORDERS" FromRole="ORDER_ITEMS" ToRole="ORDERS" />
+        </EntityType>
+        <EntityType Name="ORDERS">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Type="Int32" Name="order_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="order_number" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+          <Property Type="Decimal" Name="order_total" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="order_subtotal" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="order_tax" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="String" Name="order_tax_ext" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="order_shipping" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="order_payment" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="order_discount" Nullable="false" Precision="12" Scale="2" />
+          <Property Type="Decimal" Name="shipping_tax" Nullable="false" Precision="8" Scale="2" />
+          <Property Type="Decimal" Name="payment_tax" Nullable="false" Precision="8" Scale="2" />
+          <Property Type="String" Name="currency_code" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="currency_code_iso" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="currency_exchange" Nullable="false" Precision="14" Scale="6" />
+          <Property Type="String" Name="order_status" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="order_created" Nullable="false" />
+          <Property Type="DateTime" Name="order_date" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="order_m_date" Nullable="false" Precision="0" />
+          <Property Type="Int32" Name="shipping_method_id" Nullable="false" />
+          <Property Type="Int32" Name="delivery_times_id" Nullable="false" />
+          <Property Type="Int32" Name="payment_method_id" Nullable="false" />
+          <Property Type="String" Name="payment_params" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="payment_params_data" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="delivery_time" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="coupon_id" Nullable="false" />
+          <Property Type="String" Name="ip_address" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="order_add_info" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="title" Nullable="false" />
+          <Property Type="String" Name="f_name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="l_name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="firma_name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="client_type" Nullable="false" />
+          <Property Type="String" Name="client_type_name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="firma_code" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tax_number" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="street" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="home" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="apartment" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="zip" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="city" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="state" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="country" Nullable="false" />
+          <Property Type="String" Name="phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="mobil_phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="fax" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ext_field_1" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ext_field_2" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ext_field_3" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="d_title" Nullable="false" />
+          <Property Type="String" Name="d_f_name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_l_name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_firma_name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_email" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_street" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_home" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_apartment" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_zip" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_city" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_state" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="d_country" Nullable="false" />
+          <Property Type="String" Name="d_phone" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_mobil_phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_fax" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_ext_field_1" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_ext_field_2" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_ext_field_3" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="pdf_file" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="order_hash" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="file_hash" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="file_stat_downloads" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="order_custom_info" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="display_price" Nullable="false" />
+          <Property Type="Boolean" Name="vendor_type" Nullable="false" />
+          <Property Type="Int32" Name="vendor_id" Nullable="false" />
+          <Property Type="String" Name="lang" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="transaction" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ORDER_ITEMS" Relationship="FrontendModel.ORDER_ITEMSORDERS" FromRole="ORDERS" ToRole="ORDER_ITEMS" />
+          <NavigationProperty Name="CUSTOMER" Relationship="FrontendModel.CUSTOMERSORDERS" FromRole="ORDERS" ToRole="CUSTOMERS" />
+        </EntityType>
+        <EntityType Name="CUSTOMER_DETAILS">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="usergroup_id" />
+            <PropertyRef Name="payment_id" />
+            <PropertyRef Name="shipping_id" />
+            <PropertyRef Name="u_name" />
+            <PropertyRef Name="title" />
+            <PropertyRef Name="f_name" />
+            <PropertyRef Name="l_name" />
+            <PropertyRef Name="firma_name" />
+            <PropertyRef Name="client_type" />
+            <PropertyRef Name="firma_code" />
+            <PropertyRef Name="tax_number" />
+            <PropertyRef Name="email" />
+            <PropertyRef Name="street" />
+            <PropertyRef Name="home" />
+            <PropertyRef Name="apartment" />
+            <PropertyRef Name="zip" />
+            <PropertyRef Name="city" />
+            <PropertyRef Name="state" />
+            <PropertyRef Name="phone" />
+            <PropertyRef Name="mobil_phone" />
+            <PropertyRef Name="fax" />
+            <PropertyRef Name="ext_field_1" />
+            <PropertyRef Name="ext_field_2" />
+            <PropertyRef Name="ext_field_3" />
+            <PropertyRef Name="delivery_adress" />
+            <PropertyRef Name="d_title" />
+            <PropertyRef Name="d_f_name" />
+            <PropertyRef Name="d_l_name" />
+            <PropertyRef Name="d_firma_name" />
+            <PropertyRef Name="d_email" />
+            <PropertyRef Name="d_street" />
+            <PropertyRef Name="d_home" />
+            <PropertyRef Name="d_apartment" />
+            <PropertyRef Name="d_zip" />
+            <PropertyRef Name="d_city" />
+            <PropertyRef Name="d_state" />
+            <PropertyRef Name="d_country" />
+            <PropertyRef Name="d_phone" />
+            <PropertyRef Name="d_mobil_phone" />
+            <PropertyRef Name="d_fax" />
+            <PropertyRef Name="d_ext_field_1" />
+            <PropertyRef Name="d_ext_field_2" />
+            <PropertyRef Name="d_ext_field_3" />
+          </Key>
+          <Property Type="Int32" Name="user_id" Nullable="false" />
+          <Property Type="Int32" Name="usergroup_id" Nullable="false" />
+          <Property Type="Int32" Name="payment_id" Nullable="false" />
+          <Property Type="Int32" Name="shipping_id" Nullable="false" />
+          <Property Type="String" Name="u_name" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="title" Nullable="false" />
+          <Property Type="String" Name="f_name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="l_name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="firma_name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="client_type" Nullable="false" />
+          <Property Type="String" Name="firma_code" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tax_number" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="street" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="home" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="apartment" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="zip" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="city" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="state" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="country" />
+          <Property Type="String" Name="phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="mobil_phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="fax" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ext_field_1" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ext_field_2" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ext_field_3" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="delivery_adress" Nullable="false" />
+          <Property Type="Boolean" Name="d_title" Nullable="false" />
+          <Property Type="String" Name="d_f_name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_l_name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_firma_name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_email" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_street" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_home" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_apartment" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_zip" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_city" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_state" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="d_country" Nullable="false" />
+          <Property Type="String" Name="d_phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_mobil_phone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_fax" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_ext_field_1" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_ext_field_2" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="d_ext_field_3" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CUSTOMER" Relationship="FrontendModel.CUSTOMERSCUSTOMER_DETAILS" FromRole="CUSTOMER_DETAILS" ToRole="CUSTOMERS" />
+          <NavigationProperty Name="COUNTRY" Relationship="FrontendModel.COUNTRIESCUSTOMER_DETAILS" FromRole="CUSTOMER_DETAILS" ToRole="COUNTRIES" />
+        </EntityType>
+        <EntityType Name="CUSTOMERS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="username" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="password" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="SByte" Name="block" Nullable="false" />
+          <Property Type="SByte" Name="sendEmail" />
+          <Property Type="DateTime" Name="registerDate" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="lastvisitDate" Nullable="false" Precision="0" />
+          <Property Type="String" Name="activation" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="params" Nullable="false" MaxLength="65535" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="lastResetTime" Nullable="false" Precision="0" />
+          <Property Type="Int32" Name="resetCount" Nullable="false" />
+          <NavigationProperty Name="ORDERS" Relationship="FrontendModel.CUSTOMERSORDERS" FromRole="CUSTOMERS" ToRole="ORDERS" />
+          <NavigationProperty Name="CUSTOMER_DETAILS" Relationship="FrontendModel.CUSTOMERSCUSTOMER_DETAILS" FromRole="CUSTOMERS" ToRole="CUSTOMER_DETAILS" />
+        </EntityType>
+        <Association Name="PRODUCTSORDER_ITEM">
+          <End Type="FrontendModel.PRODUCTS" Role="PRODUCTS" Multiplicity="1" />
+          <End Type="FrontendModel.ORDER_ITEMS" Role="ORDER_ITEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTS">
+              <PropertyRef Name="product_id" />
+            </Principal>
+            <Dependent Role="ORDER_ITEM">
+              <PropertyRef Name="product_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ORDER_ITEMSORDERS">
+          <End Type="FrontendModel.ORDER_ITEMS" Role="ORDER_ITEMS" Multiplicity="*" />
+          <End Type="FrontendModel.ORDERS" Role="ORDERS" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="ORDERS">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="ORDER_ITEMS">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CUSTOMERSORDERS">
+          <End Type="FrontendModel.CUSTOMERS" Role="CUSTOMERS" Multiplicity="1" />
+          <End Type="FrontendModel.ORDERS" Role="ORDERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUSTOMERS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ORDERS">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CUSTOMERSCUSTOMER_DETAILS">
+          <End Type="FrontendModel.CUSTOMERS" Role="CUSTOMERS" Multiplicity="1" />
+          <End Type="FrontendModel.CUSTOMER_DETAILS" Role="CUSTOMER_DETAILS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUSTOMERS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CUSTOMER_DETAILS">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="STATUSES">
+          <Key>
+            <PropertyRef Name="status_id" />
+          </Key>
+          <Property Type="Int32" Name="status_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="status_code" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="name_en_GB" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name_de_DE" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="COUNTRIES">
+          <Key>
+            <PropertyRef Name="country_id" />
+          </Key>
+          <Property Type="Int32" Name="country_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="SByte" Name="country_publish" Nullable="false" />
+          <Property Type="Int16" Name="ordering" Nullable="false" />
+          <Property Type="String" Name="country_code" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="country_code_2" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name_en_GB" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="name_de_DE" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CUSTOMER_DETAILS" Relationship="FrontendModel.COUNTRIESCUSTOMER_DETAILS" FromRole="COUNTRIES" ToRole="CUSTOMER_DETAILS" />
+        </EntityType>
+        <Association Name="COUNTRIESCUSTOMER_DETAILS">
+          <End Type="FrontendModel.COUNTRIES" Role="COUNTRIES" Multiplicity="0..1" />
+          <End Type="FrontendModel.CUSTOMER_DETAILS" Role="CUSTOMER_DETAILS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COUNTRIES">
+              <PropertyRef Name="country_id" />
+            </Principal>
+            <Dependent Role="CUSTOMER_DETAILS">
+              <PropertyRef Name="country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FrontendModelStoreContainer" CdmEntityContainer="FrontendEntities">
+          <EntitySetMapping Name="PRODUCTS">
+            <EntityTypeMapping TypeName="FrontendModel.PRODUCTS">
+              <MappingFragment StoreEntitySet="m4m2n_jshopping_products">
+                <ScalarProperty Name="package_vip" ColumnName="package_vip" />
+                <ScalarProperty Name="meta_keyword_en_GB" ColumnName="meta_keyword_en-GB" />
+                <ScalarProperty Name="meta_description_en_GB" ColumnName="meta_description_en-GB" />
+                <ScalarProperty Name="meta_title_en_GB" ColumnName="meta_title_en-GB" />
+                <ScalarProperty Name="description_en_GB" ColumnName="description_en-GB" />
+                <ScalarProperty Name="short_description_en_GB" ColumnName="short_description_en-GB" />
+                <ScalarProperty Name="alias_en_GB" ColumnName="alias_en-GB" />
+                <ScalarProperty Name="name_en_GB" ColumnName="name_en-GB" />
+                <ScalarProperty Name="meta_keyword_de_DE" ColumnName="meta_keyword_de-DE" />
+                <ScalarProperty Name="meta_description_de_DE" ColumnName="meta_description_de-DE" />
+                <ScalarProperty Name="meta_title_de_DE" ColumnName="meta_title_de-DE" />
+                <ScalarProperty Name="description_de_DE" ColumnName="description_de-DE" />
+                <ScalarProperty Name="short_description_de_DE" ColumnName="short_description_de-DE" />
+                <ScalarProperty Name="alias_de_DE" ColumnName="alias_de-DE" />
+                <ScalarProperty Name="name_de_DE" ColumnName="name_de-DE" />
+                <ScalarProperty Name="access" ColumnName="access" />
+                <ScalarProperty Name="vendor_id" ColumnName="vendor_id" />
+                <ScalarProperty Name="label_id" ColumnName="label_id" />
+                <ScalarProperty Name="basic_price_unit_id" ColumnName="basic_price_unit_id" />
+                <ScalarProperty Name="weight_volume_units" ColumnName="weight_volume_units" />
+                <ScalarProperty Name="hits" ColumnName="hits" />
+                <ScalarProperty Name="delivery_times_id" ColumnName="delivery_times_id" />
+                <ScalarProperty Name="reviews_count" ColumnName="reviews_count" />
+                <ScalarProperty Name="average_rating" ColumnName="average_rating" />
+                <ScalarProperty Name="add_price_unit_id" ColumnName="add_price_unit_id" />
+                <ScalarProperty Name="product_is_add_price" ColumnName="product_is_add_price" />
+                <ScalarProperty Name="product_manufacturer_id" ColumnName="product_manufacturer_id" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="product_weight" ColumnName="product_weight" />
+                <ScalarProperty Name="different_prices" ColumnName="different_prices" />
+                <ScalarProperty Name="min_price" ColumnName="min_price" />
+                <ScalarProperty Name="product_price" ColumnName="product_price" />
+                <ScalarProperty Name="product_buy_price" ColumnName="product_buy_price" />
+                <ScalarProperty Name="product_old_price" ColumnName="product_old_price" />
+                <ScalarProperty Name="product_url" ColumnName="product_url" />
+                <ScalarProperty Name="product_template" ColumnName="product_template" />
+                <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+                <ScalarProperty Name="product_tax_id" ColumnName="product_tax_id" />
+                <ScalarProperty Name="product_publish" ColumnName="product_publish" />
+                <ScalarProperty Name="date_modify" ColumnName="date_modify" />
+                <ScalarProperty Name="product_date_added" ColumnName="product_date_added" />
+                <ScalarProperty Name="unlimited" ColumnName="unlimited" />
+                <ScalarProperty Name="product_quantity" ColumnName="product_quantity" />
+                <ScalarProperty Name="product_ean" ColumnName="product_ean" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ATTRs">
+            <EntityTypeMapping TypeName="FrontendModel.ATTR">
+              <MappingFragment StoreEntitySet="m4m2n_jshopping_attr">
+                <ScalarProperty Name="description_en_GB" ColumnName="description_en-GB" />
+                <ScalarProperty Name="name_en_GB" ColumnName="name_en-GB" />
+                <ScalarProperty Name="description_de_DE" ColumnName="description_de-DE" />
+                <ScalarProperty Name="name_de_DE" ColumnName="name_de-DE" />
+                <ScalarProperty Name="cats" ColumnName="cats" />
+                <ScalarProperty Name="allcats" ColumnName="allcats" />
+                <ScalarProperty Name="independent" ColumnName="independent" />
+                <ScalarProperty Name="attr_type" ColumnName="attr_type" />
+                <ScalarProperty Name="attr_ordering" ColumnName="attr_ordering" />
+                <ScalarProperty Name="attr_id" ColumnName="attr_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ATTR_VALUES">
+            <EntityTypeMapping TypeName="FrontendModel.ATTR_VALUES">
+              <MappingFragment StoreEntitySet="m4m2n_jshopping_attr_values">
+                <ScalarProperty Name="name_en_GB" ColumnName="name_en-GB" />
+                <ScalarProperty Name="name_de_DE" ColumnName="name_de-DE" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="value_ordering" ColumnName="value_ordering" />
+                <ScalarProperty Name="attr_id" ColumnName="attr_id" />
+                <ScalarProperty Name="value_id" ColumnName="value_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CATEGORIES">
+            <EntityTypeMapping TypeName="FrontendModel.CATEGORIES">
+              <MappingFragment StoreEntitySet="m4m2n_jshopping_categories">
+                <ScalarProperty Name="meta_keyword_en_GB" ColumnName="meta_keyword_en-GB" />
+                <ScalarProperty Name="meta_description_en_GB" ColumnName="meta_description_en-GB" />
+                <ScalarProperty Name="meta_title_en_GB" ColumnName="meta_title_en-GB" />
+                <ScalarProperty Name="description_en_GB" ColumnName="description_en-GB" />
+                <ScalarProperty Name="short_description_en_GB" ColumnName="short_description_en-GB" />
+                <ScalarProperty Name="alias_en_GB" ColumnName="alias_en-GB" />
+                <ScalarProperty Name="name_en_GB" ColumnName="name_en-GB" />
+                <ScalarProperty Name="meta_keyword_de_DE" ColumnName="meta_keyword_de-DE" />
+                <ScalarProperty Name="meta_description_de_DE" ColumnName="meta_description_de-DE" />
+                <ScalarProperty Name="meta_title_de_DE" ColumnName="meta_title_de-DE" />
+                <ScalarProperty Name="description_de_DE" ColumnName="description_de-DE" />
+                <ScalarProperty Name="short_description_de_DE" ColumnName="short_description_de-DE" />
+                <ScalarProperty Name="alias_de_DE" ColumnName="alias_de-DE" />
+                <ScalarProperty Name="name_de_DE" ColumnName="name_de-DE" />
+                <ScalarProperty Name="access" ColumnName="access" />
+                <ScalarProperty Name="products_row" ColumnName="products_row" />
+                <ScalarProperty Name="products_page" ColumnName="products_page" />
+                <ScalarProperty Name="category_add_date" ColumnName="category_add_date" />
+                <ScalarProperty Name="ordering" ColumnName="ordering" />
+                <ScalarProperty Name="category_template" ColumnName="category_template" />
+                <ScalarProperty Name="category_ordertype" ColumnName="category_ordertype" />
+                <ScalarProperty Name="category_publish" ColumnName="category_publish" />
+                <ScalarProperty Name="category_parent_id" ColumnName="category_parent_id" />
+                <ScalarProperty Name="category_image" ColumnName="category_image" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCT_ATTRIBUTES">
+            <EntityTypeMapping TypeName="FrontendModel.PRODUCT_ATTRIBUTES">
+              <MappingFragment StoreEntitySet="m4m2n_jshopping_products_attr">
+                <ScalarProperty Name="attr_5" ColumnName="attr_5" />
+                <ScalarProperty Name="attr_4" ColumnName="attr_4" />
+                <ScalarProperty Name="ext_attribute_product_id" ColumnName="ext_attribute_product_id" />
+                <ScalarProperty Name="weight_volume_units" ColumnName="weight_volume_units" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="ean" ColumnName="ean" />
+                <ScalarProperty Name="count" ColumnName="count" />
+                <ScalarProperty Name="old_price" ColumnName="old_price" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="buy_price" ColumnName="buy_price" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="product_attr_id" ColumnName="product_attr_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCT_TO_CATEGORY">
+            <EntityTypeMapping TypeName="FrontendModel.PRODUCT_TO_CATEGORY">
+              <MappingFragment StoreEntitySet="m4m2n_jshopping_products_to_categories">
+                <ScalarProperty Name="product_ordering" ColumnName="product_ordering" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMAGES">
+            <EntityTypeMapping TypeName="FrontendModel.IMAGES">
+              <MappingFragment StoreEntitySet="m4m2n_jshopping_products_images">
+                <ScalarProperty Name="ordering" ColumnName="ordering" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="image_name" ColumnName="image_name" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="image_id" ColumnName="image_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MENU">
+            <EntityTypeMapping TypeName="FrontendModel.MENU">
+              <MappingFragment StoreEntitySet="m4m2n_menu">
+                <ScalarProperty Name="checked_out_date" ColumnName="checked_out_time" />
+                <ScalarProperty Name="client_id" ColumnName="client_id" />
+                <ScalarProperty Name="language" ColumnName="language" />
+                <ScalarProperty Name="home" ColumnName="home" />
+                <ScalarProperty Name="rgt" ColumnName="rgt" />
+                <ScalarProperty Name="lft" ColumnName="lft" />
+                <ScalarProperty Name="param" ColumnName="params" />
+                <ScalarProperty Name="template_style_id" ColumnName="template_style_id" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="access" ColumnName="access" />
+                <ScalarProperty Name="browserNav" ColumnName="browserNav" />
+                <ScalarProperty Name="checked_out" ColumnName="checked_out" />
+                <ScalarProperty Name="component_id" ColumnName="component_id" />
+                <ScalarProperty Name="level" ColumnName="level" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="published" ColumnName="published" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="alias" ColumnName="alias" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="menutype" ColumnName="menutype" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REVIEWS">
+            <EntityTypeMapping TypeName="FrontendModel.REVIEWS">
+              <MappingFragment StoreEntitySet="m4m2n_jshopping_products_reviews">
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="publish" ColumnName="publish" />
+                <ScalarProperty Name="mark" ColumnName="mark" />
+                <ScalarProperty Name="review" ColumnName="review" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="user_email" ColumnName="user_email" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="review_id" ColumnName="review_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDER_ITEMS">
+            <EntityTypeMapping TypeName="FrontendModel.ORDER_ITEMS">
+              <MappingFragment StoreEntitySet="m4m2n_jshopping_order_item">
+                <ScalarProperty Name="params" ColumnName="params" />
+                <ScalarProperty Name="vendor_id" ColumnName="vendor_id" />
+                <ScalarProperty Name="delivery_times_id" ColumnName="delivery_times_id" />
+                <ScalarProperty Name="manufacturer" ColumnName="manufacturer" />
+                <ScalarProperty Name="thumb_image" ColumnName="thumb_image" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="files" ColumnName="files" />
+                <ScalarProperty Name="extra_fields" ColumnName="extra_fields" />
+                <ScalarProperty Name="freeattributes" ColumnName="freeattributes" />
+                <ScalarProperty Name="attributes" ColumnName="attributes" />
+                <ScalarProperty Name="product_freeattributes" ColumnName="product_freeattributes" />
+                <ScalarProperty Name="product_attributes" ColumnName="product_attributes" />
+                <ScalarProperty Name="product_tax" ColumnName="product_tax" />
+                <ScalarProperty Name="product_item_price" ColumnName="product_item_price" />
+                <ScalarProperty Name="product_quantity" ColumnName="product_quantity" />
+                <ScalarProperty Name="product_name" ColumnName="product_name" />
+                <ScalarProperty Name="product_ean" ColumnName="product_ean" />
+                <ScalarProperty Name="product_id" ColumnName="product_id" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="order_item_id" ColumnName="order_item_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDERS">
+            <EntityTypeMapping TypeName="FrontendModel.ORDERS">
+              <MappingFragment StoreEntitySet="m4m2n_jshopping_orders">
+                <ScalarProperty Name="transaction" ColumnName="transaction" />
+                <ScalarProperty Name="lang" ColumnName="lang" />
+                <ScalarProperty Name="vendor_id" ColumnName="vendor_id" />
+                <ScalarProperty Name="vendor_type" ColumnName="vendor_type" />
+                <ScalarProperty Name="display_price" ColumnName="display_price" />
+                <ScalarProperty Name="order_custom_info" ColumnName="order_custom_info" />
+                <ScalarProperty Name="file_stat_downloads" ColumnName="file_stat_downloads" />
+                <ScalarProperty Name="file_hash" ColumnName="file_hash" />
+                <ScalarProperty Name="order_hash" ColumnName="order_hash" />
+                <ScalarProperty Name="pdf_file" ColumnName="pdf_file" />
+                <ScalarProperty Name="d_ext_field_3" ColumnName="d_ext_field_3" />
+                <ScalarProperty Name="d_ext_field_2" ColumnName="d_ext_field_2" />
+                <ScalarProperty Name="d_ext_field_1" ColumnName="d_ext_field_1" />
+                <ScalarProperty Name="d_fax" ColumnName="d_fax" />
+                <ScalarProperty Name="d_mobil_phone" ColumnName="d_mobil_phone" />
+                <ScalarProperty Name="d_phone" ColumnName="d_phone" />
+                <ScalarProperty Name="d_country" ColumnName="d_country" />
+                <ScalarProperty Name="d_state" ColumnName="d_state" />
+                <ScalarProperty Name="d_city" ColumnName="d_city" />
+                <ScalarProperty Name="d_zip" ColumnName="d_zip" />
+                <ScalarProperty Name="d_apartment" ColumnName="d_apartment" />
+                <ScalarProperty Name="d_home" ColumnName="d_home" />
+                <ScalarProperty Name="d_street" ColumnName="d_street" />
+                <ScalarProperty Name="d_email" ColumnName="d_email" />
+                <ScalarProperty Name="d_firma_name" ColumnName="d_firma_name" />
+                <ScalarProperty Name="d_l_name" ColumnName="d_l_name" />
+                <ScalarProperty Name="d_f_name" ColumnName="d_f_name" />
+                <ScalarProperty Name="d_title" ColumnName="d_title" />
+                <ScalarProperty Name="ext_field_3" ColumnName="ext_field_3" />
+                <ScalarProperty Name="ext_field_2" ColumnName="ext_field_2" />
+                <ScalarProperty Name="ext_field_1" ColumnName="ext_field_1" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="mobil_phone" ColumnName="mobil_phone" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+                <ScalarProperty Name="apartment" ColumnName="apartment" />
+                <ScalarProperty Name="home" ColumnName="home" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="tax_number" ColumnName="tax_number" />
+                <ScalarProperty Name="firma_code" ColumnName="firma_code" />
+                <ScalarProperty Name="client_type_name" ColumnName="client_type_name" />
+                <ScalarProperty Name="client_type" ColumnName="client_type" />
+                <ScalarProperty Name="firma_name" ColumnName="firma_name" />
+                <ScalarProperty Name="l_name" ColumnName="l_name" />
+                <ScalarProperty Name="f_name" ColumnName="f_name" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="order_add_info" ColumnName="order_add_info" />
+                <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+                <ScalarProperty Name="coupon_id" ColumnName="coupon_id" />
+                <ScalarProperty Name="delivery_time" ColumnName="delivery_time" />
+                <ScalarProperty Name="payment_params_data" ColumnName="payment_params_data" />
+                <ScalarProperty Name="payment_params" ColumnName="payment_params" />
+                <ScalarProperty Name="payment_method_id" ColumnName="payment_method_id" />
+                <ScalarProperty Name="delivery_times_id" ColumnName="delivery_times_id" />
+                <ScalarProperty Name="shipping_method_id" ColumnName="shipping_method_id" />
+                <ScalarProperty Name="order_m_date" ColumnName="order_m_date" />
+                <ScalarProperty Name="order_date" ColumnName="order_date" />
+                <ScalarProperty Name="order_created" ColumnName="order_created" />
+                <ScalarProperty Name="order_status" ColumnName="order_status" />
+                <ScalarProperty Name="currency_exchange" ColumnName="currency_exchange" />
+                <ScalarProperty Name="currency_code_iso" ColumnName="currency_code_iso" />
+                <ScalarProperty Name="currency_code" ColumnName="currency_code" />
+                <ScalarProperty Name="payment_tax" ColumnName="payment_tax" />
+                <ScalarProperty Name="shipping_tax" ColumnName="shipping_tax" />
+                <ScalarProperty Name="order_discount" ColumnName="order_discount" />
+                <ScalarProperty Name="order_payment" ColumnName="order_payment" />
+                <ScalarProperty Name="order_shipping" ColumnName="order_shipping" />
+                <ScalarProperty Name="order_tax_ext" ColumnName="order_tax_ext" />
+                <ScalarProperty Name="order_tax" ColumnName="order_tax" />
+                <ScalarProperty Name="order_subtotal" ColumnName="order_subtotal" />
+                <ScalarProperty Name="order_total" ColumnName="order_total" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="order_number" ColumnName="order_number" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUSTOMER_DETAILS">
+            <EntityTypeMapping TypeName="FrontendModel.CUSTOMER_DETAILS">
+              <MappingFragment StoreEntitySet="m4m2n_jshopping_users">
+                <ScalarProperty Name="d_ext_field_3" ColumnName="d_ext_field_3" />
+                <ScalarProperty Name="d_ext_field_2" ColumnName="d_ext_field_2" />
+                <ScalarProperty Name="d_ext_field_1" ColumnName="d_ext_field_1" />
+                <ScalarProperty Name="d_fax" ColumnName="d_fax" />
+                <ScalarProperty Name="d_mobil_phone" ColumnName="d_mobil_phone" />
+                <ScalarProperty Name="d_phone" ColumnName="d_phone" />
+                <ScalarProperty Name="d_country" ColumnName="d_country" />
+                <ScalarProperty Name="d_state" ColumnName="d_state" />
+                <ScalarProperty Name="d_city" ColumnName="d_city" />
+                <ScalarProperty Name="d_zip" ColumnName="d_zip" />
+                <ScalarProperty Name="d_apartment" ColumnName="d_apartment" />
+                <ScalarProperty Name="d_home" ColumnName="d_home" />
+                <ScalarProperty Name="d_street" ColumnName="d_street" />
+                <ScalarProperty Name="d_email" ColumnName="d_email" />
+                <ScalarProperty Name="d_firma_name" ColumnName="d_firma_name" />
+                <ScalarProperty Name="d_l_name" ColumnName="d_l_name" />
+                <ScalarProperty Name="d_f_name" ColumnName="d_f_name" />
+                <ScalarProperty Name="d_title" ColumnName="d_title" />
+                <ScalarProperty Name="delivery_adress" ColumnName="delivery_adress" />
+                <ScalarProperty Name="ext_field_3" ColumnName="ext_field_3" />
+                <ScalarProperty Name="ext_field_2" ColumnName="ext_field_2" />
+                <ScalarProperty Name="ext_field_1" ColumnName="ext_field_1" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="mobil_phone" ColumnName="mobil_phone" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+                <ScalarProperty Name="apartment" ColumnName="apartment" />
+                <ScalarProperty Name="home" ColumnName="home" />
+                <ScalarProperty Name="street" ColumnName="street" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="tax_number" ColumnName="tax_number" />
+                <ScalarProperty Name="firma_code" ColumnName="firma_code" />
+                <ScalarProperty Name="client_type" ColumnName="client_type" />
+                <ScalarProperty Name="firma_name" ColumnName="firma_name" />
+                <ScalarProperty Name="l_name" ColumnName="l_name" />
+                <ScalarProperty Name="f_name" ColumnName="f_name" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="u_name" ColumnName="u_name" />
+                <ScalarProperty Name="shipping_id" ColumnName="shipping_id" />
+                <ScalarProperty Name="payment_id" ColumnName="payment_id" />
+                <ScalarProperty Name="usergroup_id" ColumnName="usergroup_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUSTOMERS">
+            <EntityTypeMapping TypeName="FrontendModel.CUSTOMERS">
+              <MappingFragment StoreEntitySet="m4m2n_users">
+                <ScalarProperty Name="resetCount" ColumnName="resetCount" />
+                <ScalarProperty Name="lastResetTime" ColumnName="lastResetTime" />
+                <ScalarProperty Name="params" ColumnName="params" />
+                <ScalarProperty Name="activation" ColumnName="activation" />
+                <ScalarProperty Name="lastvisitDate" ColumnName="lastvisitDate" />
+                <ScalarProperty Name="registerDate" ColumnName="registerDate" />
+                <ScalarProperty Name="sendEmail" ColumnName="sendEmail" />
+                <ScalarProperty Name="block" ColumnName="block" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STATUSES">
+            <EntityTypeMapping TypeName="FrontendModel.STATUSES">
+              <MappingFragment StoreEntitySet="m4m2n_jshopping_order_status">
+                <ScalarProperty Name="name_de_DE" ColumnName="name_de-DE" />
+                <ScalarProperty Name="name_en_GB" ColumnName="name_en-GB" />
+                <ScalarProperty Name="status_code" ColumnName="status_code" />
+                <ScalarProperty Name="status_id" ColumnName="status_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COUNTRIES">
+            <EntityTypeMapping TypeName="FrontendModel.COUNTRIES">
+              <MappingFragment StoreEntitySet="m4m2n_jshopping_countries">
+                <ScalarProperty Name="name_de_DE" ColumnName="name_de-DE" />
+                <ScalarProperty Name="name_en_GB" ColumnName="name_en-GB" />
+                <ScalarProperty Name="country_code_2" ColumnName="country_code_2" />
+                <ScalarProperty Name="country_code" ColumnName="country_code" />
+                <ScalarProperty Name="ordering" ColumnName="ordering" />
+                <ScalarProperty Name="country_publish" ColumnName="country_publish" />
+                <ScalarProperty Name="country_id" ColumnName="country_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="SynchronizePropertyFacets" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BackendEntityModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BackendEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="CUSTOMERS" EntityType="BackendEntityModel.CUSTOMERS" />
+    <EntitySet Name="MEDIA" EntityType="BackendEntityModel.MEDIA" />
+    <EntitySet Name="MEDIA_POIS" EntityType="BackendEntityModel.MEDIA_POIS" />
+    <EntitySet Name="ORDERITEMS" EntityType="BackendEntityModel.ORDERITEMS" />
+    <EntitySet Name="ORDERS" EntityType="BackendEntityModel.ORDERS" />
+    <EntitySet Name="PASSES" EntityType="BackendEntityModel.PASSES" />
+    <EntitySet Name="POIS" EntityType="BackendEntityModel.POIS" />
+    <EntitySet Name="POIS_PRODUCTS" EntityType="BackendEntityModel.POIS_PRODUCTS" />
+    <EntitySet Name="PRODUCTCATEGORIES" EntityType="BackendEntityModel.PRODUCTCATEGORIES" />
+    <EntitySet Name="PRODUCTCATEGORIES_PRODUCTS" EntityType="BackendEntityModel.PRODUCTCATEGORIES_PRODUCTS" />
+    <EntitySet Name="PRODUCTS" EntityType="BackendEntityModel.PRODUCTS" />
+    <EntitySet Name="PRODUCTVARIANTATTRIBUTEVALUES_PRODUCTVARIANTS" EntityType="BackendEntityModel.PRODUCTVARIANTATTRIBUTEVALUES_PRODUCTVARIANTS" />
+    <EntitySet Name="USERS" EntityType="BackendEntityModel.USERS" />
+    <EntitySet Name="PRODUCTREVIEWS" EntityType="BackendEntityModel.PRODUCTREVIEWS" />
+    <EntitySet Name="AREAS" EntityType="BackendEntityModel.AREAS" />
+    <EntitySet Name="PRODUCTVARIANTATTRIBUTES" EntityType="BackendEntityModel.PRODUCTVARIANTATTRIBUTES" />
+    <EntitySet Name="PRODUCTVARIANTATTRIBUTEVALUES" EntityType="BackendEntityModel.PRODUCTVARIANTATTRIBUTEVALUES" />
+    <EntitySet Name="PRODUCTVARIANTS" EntityType="BackendEntityModel.PRODUCTVARIANTS" />
+    <EntitySet Name="ROLES" EntityType="BackendEntityModel.ROLES" />
+    <EntitySet Name="ROLES_USERS" EntityType="BackendEntityModel.ROLES_USERS" />
+  </EntityContainer>
+  <EntityType Name="CUSTOMERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+    <Property Name="FRONTEND_ID" Type="Int32" />
+    <Property Name="USERNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="FIRSTNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="LASTNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="COMPANY" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="STREET" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ZIP" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="CITY" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="STATE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="PHONE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="CREATED_AT" Type="DateTime" />
+    <Property Name="UPDATED_AT" Type="DateTime" />
+    <Property Type="String" Name="COUNTRY" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MEDIA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+    <Property Name="FRONTEND_ID" Type="Int32" />
+    <Property Name="NAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="1048576" Unicode="false" FixedLength="false" />
+    <Property Name="MEDIUMTYPE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="DATA" Type="String" MaxLength="1048576" Unicode="false" FixedLength="false" />
+    <Property Name="PATH" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="PUBLISHED" Type="Int16" />
+    <Property Name="CREATED_AT" Type="DateTime" />
+    <Property Name="UPDATED_AT" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="MEDIA_POIS">
+    <Key>
+      <PropertyRef Name="POI_ID" />
+      <PropertyRef Name="MEDIUM_ID" />
+    </Key>
+    <Property Name="POI_ID" Type="Int32" Nullable="false" />
+    <Property Name="MEDIUM_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ORDERITEMS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SYS_UUID" Type="String" MaxLength="36" Unicode="false" FixedLength="false" />
+    <Property Name="FRONTEND_ID" Type="Int32" />
+    <Property Name="ORDER_ID" Type="Int32" />
+    <Property Name="CREATED_AT" Type="DateTime" />
+    <Property Name="UPDATED_AT" Type="DateTime" />
+    <Property Type="Int32" Name="PRODUCT_ID" />
+    <Property Type="Int32" Name="PRODUCT_QUANTITY" />
+    <Property Type="Decimal" Name="PRODUCT_ITEM_PRICE" Precision="5" Scale="0" />
+    <Property Type="Decimal" Name="PRODUCT_TAX" Precision="5" Scale="0" />
+    <Property Type="String" Name="PRODUCT_ATTRIBUTES" MaxLength="1048576" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ORDERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+    <Property Name="FRONTEND_ID" Type="Int32" />
+    <Property Name="CUSTOMER_ID" Type="Int32" />
+    <Property Name="NUMBER" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="TOTAL" Type="Decimal" Precision="5" Scale="0" />
+    <Property Name="STATUS" Type="Int32" />
+    <Property Name="ORDER_DATE" Type="DateTime" />
+    <Property Name="FIRSTNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="LASTNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="COMPANY" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="STREET" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="ZIP" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="CITY" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="STATE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="COUNTRY" Type="Int32" />
+    <Property Name="PHONE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="HASHCODE" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="CREATED_AT" Type="DateTime" />
+    <Property Name="UPDATED_AT" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="PASSES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+    <Property Name="ORDER_ID" Type="Int32" />
+    <Property Name="TRANSMITTED" Type="Int16" />
+    <Property Name="CREATED_AT" Type="DateTime" />
+    <Property Name="UPDATED_AT" Type="DateTime" />
+    <Property Type="String" Name="HASHCODE" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="POIS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+    <Property Name="NAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="1048576" Unicode="false" FixedLength="false" />
+    <Property Name="LONGITUDE" Type="Decimal" Precision="5" Scale="0" />
+    <Property Name="LATITUDE" Type="Decimal" Precision="5" Scale="0" />
+    <Property Name="CREATED_AT" Type="DateTime" />
+    <Property Name="UPDATED_AT" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="POIS_PRODUCTS">
+    <Key>
+      <PropertyRef Name="PRODUCT_ID" />
+      <PropertyRef Name="POI_ID" />
+    </Key>
+    <Property Name="PRODUCT_ID" Type="Int32" Nullable="false" />
+    <Property Name="POI_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCTCATEGORIES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+    <Property Name="FRONTEND_ID" Type="Int32" />
+    <Property Name="NAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="CREATED_AT" Type="DateTime" />
+    <Property Name="UPDATED_AT" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="PRODUCTCATEGORIES_PRODUCTS">
+    <Key>
+      <PropertyRef Name="PRODUCT_ID" />
+      <PropertyRef Name="PRODUCTCATEGORY_ID" />
+    </Key>
+    <Property Name="PRODUCT_ID" Type="Int32" Nullable="false" />
+    <Property Name="PRODUCTCATEGORY_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCTS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+    <Property Name="FRONTEND_ID" Type="Int32" />
+    <Property Name="NAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="EAN" Type="Int32" />
+    <Property Name="QUANTITY" Type="Int32" />
+    <Property Name="PRICE" Type="Decimal" Precision="5" Scale="0" />
+    <Property Name="MIN_PRICE" Type="Decimal" Precision="5" Scale="0" />
+    <Property Name="PUBLISHED" Type="Int16" />
+    <Property Name="MEDIUM_ID" Type="Int32" />
+    <Property Name="AVERAGE_RATING" Type="Decimal" Precision="5" Scale="0" />
+    <Property Name="HITS" Type="Int32" />
+    <Property Name="SHORT_DESCRIPTION" Type="String" MaxLength="1048576" Unicode="false" FixedLength="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="1048576" Unicode="false" FixedLength="false" />
+    <Property Name="CREATED_AT" Type="DateTime" />
+    <Property Name="UPDATED_AT" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="PRODUCTVARIANTATTRIBUTEVALUES_PRODUCTVARIANTS">
+    <Key>
+      <PropertyRef Name="PRODUCTVARIANT_ID" />
+      <PropertyRef Name="PRODUCTVARIANTATTRIBUTEVALUE_ID" />
+    </Key>
+    <Property Name="PRODUCTVARIANT_ID" Type="Int32" Nullable="false" />
+    <Property Name="PRODUCTVARIANTATTRIBUTEVALUE_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SYSTEM_UUID" Type="String" Nullable="false" MaxLength="36" Unicode="false" FixedLength="false" />
+    <Property Name="FIRSTNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="LASTNAME" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="255" Unicode="false" FixedLength="false" Nullable="false" />
+    <Property Name="CREATED_AT" Type="DateTime" />
+    <Property Name="UPDATED_AT" Type="DateTime" />
+    <Property Type="String" Name="ENCRYPTED_PASSWORD" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RESET_PASSWORD_TOKEN" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="RESET_PASSWORD_SENT_AT" />
+    <Property Type="DateTime" Name="REMEMBER_CREATED_AT" />
+    <Property Type="Int32" Name="SIGN_IN_COUNT" Nullable="false" />
+    <Property Type="DateTime" Name="CURRENT_SIGN_IN_AT" />
+    <Property Type="DateTime" Name="LAST_SIGN_IN_AT" />
+    <Property Type="String" Name="CURRENT_SIGN_IN_IP" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LAST_SIGN_IN_IP" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PRODUCTREVIEWS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="PRODUCT_ID" />
+    <Property Type="DateTime" Name="TIME" />
+    <Property Type="String" Name="REVIEW" MaxLength="1048576" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="MARK" />
+    <Property Type="DateTime" Name="CREATED_AT" />
+    <Property Type="DateTime" Name="UPDATED_AT" />
+  </EntityType>
+  <EntityType Name="AREAS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SYSTEM_UUID" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="NAME" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CREATED_AT" />
+    <Property Type="DateTime" Name="UPDATED_AT" />
+  </EntityType>
+  <EntityType Name="PRODUCTVARIANTATTRIBUTES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SYSTEM_UUID" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="FRONTEND_ID" />
+    <Property Type="String" Name="NAME" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="DESCRIPTION" MaxLength="1048576" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CREATED_AT" />
+    <Property Type="DateTime" Name="UPDATED_AT" />
+  </EntityType>
+  <EntityType Name="PRODUCTVARIANTATTRIBUTEVALUES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SYSTEM_UUID" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="FRONTEND_ID" />
+    <Property Type="String" Name="NAME" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PRODUCTVARIANTATTRIBUTE_ID" />
+    <Property Type="DateTime" Name="CREATED_AT" />
+    <Property Type="DateTime" Name="UPDATED_AT" />
+  </EntityType>
+  <EntityType Name="PRODUCTVARIANTS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SYSTEM_UUID" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="FRONTEND_ID" />
+    <Property Type="Int32" Name="PRODUCT_ID" />
+    <Property Type="Decimal" Name="PRICE" Precision="5" Scale="0" />
+    <Property Type="Int32" Name="QUANTITY" />
+    <Property Type="DateTime" Name="CREATED_AT" />
+    <Property Type="DateTime" Name="UPDATED_AT" />
+  </EntityType>
+  <EntityType Name="ROLES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="SYSTEM_UUID" Nullable="false" MaxLength="36" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="NAME" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="CREATED_AT" />
+    <Property Type="DateTime" Name="UPDATED_AT" />
+  </EntityType>
+  <EntityType Name="ROLES_USERS">
+    <Key>
+      <PropertyRef Name="USER_ID" />
+      <PropertyRef Name="ROLE_ID" />
+    </Key>
+    <Property Type="Int32" Name="USER_ID" Nullable="false" />
+    <Property Type="Int32" Name="ROLE_ID" Nullable="false" />
+  </EntityType>
+</Schema>

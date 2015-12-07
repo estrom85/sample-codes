@@ -1,0 +1,146 @@
+/* 
+    Document   : login
+    Created on : 4.7.2012, 16:54:57
+    Author     : mato
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+@font-face {
+    font-family: 'DesyrelRegular';
+    src: url('../fonts/desyrel_-webfont.eot');
+    src: url('../fonts/desyrel_-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/desyrel_-webfont.woff') format('woff'),
+         url('../fonts/desyrel_-webfont.ttf') format('truetype'),
+         url('../fonts/desyrel_-webfont.svg#DesyrelRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+root { 
+    display: block;
+}
+
+#main{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width:1000px;
+    height: 600px;
+    background-image: url("../images/wall_texture.jpg");
+    border-width: 5px;
+    border-style: ridge;
+}
+
+#door{
+
+    border-bottom: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    position: absolute;
+    width: 500px;
+    left: 250px;
+    clip: rect(0px,500px,600px,0px);
+    
+}
+#door img{
+    width:500px;
+}
+
+#login{
+    position:absolute;
+    left:375px;
+    top:200px;
+    text-align: center;
+    font-family: 'DesyrelRegular', verona;
+
+    width:250px;
+    background-image: url("../images/paper_texture.jpg");
+    padding-top: 20px;
+    padding-bottom:20px;
+    border-style: outset;
+    border-width: 2px;
+    z-index: 5;
+}
+
+#main_window{
+    
+    width: 100%;
+    height:610px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: 0px;
+
+}
+
+#label{
+    position: absolute;
+    color: gold;
+    border-width: 5px;
+    border-style: groove;
+    border-color: peru;
+    font-weight: bold;
+    font-size: 25px;
+    font-style: italic;
+    font-family: 'DesyrelRegular', verona;
+    width: 350px;
+    left: 320px;
+    top: 50px;
+    text-align: center;
+    background-image: url("../images/wood_texture.jpg");
+}
+
+#error_msg_wrapper{
+    position: absolute;
+    width:200px;
+    height: 120px;
+    left:10px;
+    top:150px;
+    border-width: 15px;
+    border-style: ridge;
+    border-color: peru;
+    text-align: center;
+    color: crimson;
+    font-weight: bold;
+    font-family: 'DesyrelRegular', verona;
+    background-image: url("../images/paper_texture.jpg");
+    
+}
+
+#error_msg_warning{
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#error_msg_content{
+    font-size:17px;
+}
+
+#member_list{
+    position:absolute;
+    width:200px;
+    height:280px;
+    right:20px;
+    top:120px;
+    background-image: url("../images/paper_texture2.jpg");
+    border-width: 0px;
+    border-bottom-width: 2px;
+    border-right-width: 2px;
+    border-style: outset;
+    font-family: 'DesyrelRegular', verona;
+    background-repeat: repeat-y;
+}
+
+#member_list ul{
+    
+    margin: 0px;
+}
+
+#member_list ul li{
+    list-style: none;
+    padding-top: 2px;
+    font-family: "Times New Roman";
+    font-style: italic;
+    font-weight: bold;
+}

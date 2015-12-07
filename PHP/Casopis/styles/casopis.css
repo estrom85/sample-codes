@@ -1,0 +1,186 @@
+/* 
+    Document   : casopis
+    Created on : 8.7.2012, 16:53:53
+    Author     : mato
+    Description:
+        Purpose of the stylesheet follows.
+*/
+@font-face {
+    font-family: 'DesyrelRegular';
+    src: url('../redakcia/fonts/desyrel_-webfont.eot');
+    src: url('../redakcia/fonts/desyrel_-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../redakcia/fonts/desyrel_-webfont.woff') format('woff'),
+         url('../redakcia/fonts/desyrel_-webfont.ttf') format('truetype'),
+         url('../redakcia/fonts/desyrel_-webfont.svg#DesyrelRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+root { 
+    display: block;
+}
+
+#main{
+    min-width: 640px;
+    max-width: 1024px;
+    min-height: 480px;
+    border-bottom-width: 2px;
+    border-style: groove;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto; 
+    position:relative;
+}
+#header{
+    width:100%;
+    height:85px;
+    background-color: maroon;
+    color: yellow;
+    text-align: center;
+    margin: 0px;
+    
+    background-image: linear-gradient(bottom, rgb(117,17,45) 34%, rgb(99,21,125) 76%, rgb(143,40,98) 50%);
+    background-image: -o-linear-gradient(bottom, rgb(117,17,45) 34%, rgb(99,21,125) 76%, rgb(143,40,98) 50%);
+    background-image: -moz-linear-gradient(bottom, rgb(117,17,45) 34%, rgb(99,21,125) 76%, rgb(143,40,98) 50%);
+    background-image: -webkit-linear-gradient(bottom, rgb(117,17,45) 34%, rgb(99,21,125) 76%, rgb(143,40,98) 50%);
+    background-image: -ms-linear-gradient(bottom, rgb(117,17,45) 34%, rgb(99,21,125) 76%, rgb(143,40,98) 50%);
+
+    background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.34, rgb(117,17,45)),
+	color-stop(0.76, rgb(99,21,125)),
+	color-stop(0.5, rgb(143,40,98))
+    );
+}
+#footer{
+    width:100%;
+    height:50px;
+    background-color: maroon;
+    color: yellow;
+    margin-bottom: 0px;
+    margin-top:auto;
+    position:absolute;
+    bottom: 0px;
+    
+    background-image: linear-gradient(bottom, rgb(117,17,45) 34%, rgb(99,21,125) 76%, rgb(143,40,98) 50%);
+    background-image: -o-linear-gradient(bottom, rgb(117,17,45) 34%, rgb(99,21,125) 76%, rgb(143,40,98) 50%);
+    background-image: -moz-linear-gradient(bottom, rgb(117,17,45) 34%, rgb(99,21,125) 76%, rgb(143,40,98) 50%);
+    background-image: -webkit-linear-gradient(bottom, rgb(117,17,45) 34%, rgb(99,21,125) 76%, rgb(143,40,98) 50%);
+    background-image: -ms-linear-gradient(bottom, rgb(117,17,45) 34%, rgb(99,21,125) 76%, rgb(143,40,98) 50%);
+
+    background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.34, rgb(117,17,45)),
+	color-stop(0.76, rgb(99,21,125)),
+	color-stop(0.5, rgb(143,40,98))
+    );
+}
+#label{
+    font-size: 70px;
+    font-style: italic;
+    font-weight: bolder;
+    /*
+    text-transform: capitalize;
+    */
+    float: left;
+    margin-left: 10px;
+    /*margin-right: 10px;*/
+    color:gold;  
+}
+#name{
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'DesyrelRegular';
+}
+#title{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+#school{
+    font-style: italic;
+}
+
+ul.main_menu{
+    width: 100%;
+    background-color: maroon;
+    
+    
+
+    color: yellow;
+    text-align: center;
+    margin: 0px;
+    padding:0px;
+    border-color: gold;
+    border-width: 0px;
+    border-top-width: 2px;
+    border-bottom-width: 2px; 
+    
+    border-style:outset;
+    
+}
+ul.main_menu li{
+    font-weight: bold;
+    display:inline;
+    list-style-type:none;
+    padding-right: 20px;
+    padding-left: 20px;
+    
+}
+ul.main_menu li a{
+    font-weight: bold;
+    display:inline;
+    list-style-type:none;
+    text-decoration: none;
+    color: yellow;
+}
+
+ul.main_menu li a:hover{
+    color: maroon;
+    background-color: gold;
+    cursor: pointer;
+}
+ul.main_menu li:hover{
+    color: maroon;
+    background-color: gold;
+    cursor: pointer;
+}
+
+ul.sub_menu{
+     width: 100%;
+    background-color: cyan;
+    
+    
+
+    color: crimson;
+    text-align: center;
+    margin: 0px;
+    padding:0px;
+    border-color: gold;
+    border-width: 0px;
+    border-top-width: 0px;
+    border-bottom-width: 2px; 
+    
+    border-style:outset;
+}
+ul.sub_menu li{
+    font-weight: bold;
+    display:inline;
+    list-style-type:none;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+ul.sub_menu li:hover{
+    color: cyan;
+    background-color: crimson;
+    cursor: pointer;
+}
+
+#window_wrapper{
+    margin-bottom: 50px;
+}

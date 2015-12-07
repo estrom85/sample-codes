@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BackendEntityModelStoreContainer" CdmEntityContainer="BackendEntities">
+    <EntitySetMapping Name="CUSTOMERS">
+      <EntityTypeMapping TypeName="BackendEntityModel.CUSTOMERS">
+        <MappingFragment StoreEntitySet="CUSTOMERS">
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+          <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+          <ScalarProperty Name="COMPANY" ColumnName="COMPANY" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="STREET" ColumnName="STREET" />
+          <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEDIA">
+      <EntityTypeMapping TypeName="BackendEntityModel.MEDIA">
+        <MappingFragment StoreEntitySet="MEDIA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+          <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="MEDIUMTYPE" ColumnName="MEDIUMTYPE" />
+          <ScalarProperty Name="DATA" ColumnName="DATA" />
+          <ScalarProperty Name="PATH" ColumnName="PATH" />
+          <ScalarProperty Name="PUBLISHED" ColumnName="PUBLISHED" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEDIA_POIS">
+      <EntityTypeMapping TypeName="BackendEntityModel.MEDIA_POIS">
+        <MappingFragment StoreEntitySet="MEDIA_POIS">
+          <ScalarProperty Name="POI_ID" ColumnName="POI_ID" />
+          <ScalarProperty Name="MEDIUM_ID" ColumnName="MEDIUM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDERITEMS">
+      <EntityTypeMapping TypeName="BackendEntityModel.ORDERITEMS">
+        <MappingFragment StoreEntitySet="ORDERITEMS">
+          <ScalarProperty Name="PRODUCT_ATTRIBUTES" ColumnName="PRODUCT_ATTRIBUTES" />
+          <ScalarProperty Name="PRODUCT_TAX" ColumnName="PRODUCT_TAX" />
+          <ScalarProperty Name="PRODUCT_ITEM_PRICE" ColumnName="PRODUCT_ITEM_PRICE" />
+          <ScalarProperty Name="PRODUCT_QUANTITY" ColumnName="PRODUCT_QUANTITY" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SYS_UUID" ColumnName="SYS_UUID" />
+          <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+          <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ORDERS">
+      <EntityTypeMapping TypeName="BackendEntityModel.ORDERS">
+        <MappingFragment StoreEntitySet="ORDERS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+          <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+          <ScalarProperty Name="NUMBER" ColumnName="NUMBER" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="ORDER_DATE" ColumnName="ORDER_DATE" />
+          <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+          <ScalarProperty Name="COMPANY" ColumnName="COMPANY" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="STREET" ColumnName="STREET" />
+          <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="HASHCODE" ColumnName="HASHCODE" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PASSES">
+      <EntityTypeMapping TypeName="BackendEntityModel.PASSES">
+        <MappingFragment StoreEntitySet="PASSES">
+          <ScalarProperty Name="HASHCODE" ColumnName="HASHCODE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+          <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+          <ScalarProperty Name="TRANSMITTED" ColumnName="TRANSMITTED" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POIS">
+      <EntityTypeMapping TypeName="BackendEntityModel.POIS">
+        <MappingFragment StoreEntitySet="POIS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+          <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POIS_PRODUCTS">
+      <EntityTypeMapping TypeName="BackendEntityModel.POIS_PRODUCTS">
+        <MappingFragment StoreEntitySet="POIS_PRODUCTS">
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="POI_ID" ColumnName="POI_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTCATEGORIES">
+      <EntityTypeMapping TypeName="BackendEntityModel.PRODUCTCATEGORIES">
+        <MappingFragment StoreEntitySet="PRODUCTCATEGORIES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+          <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTCATEGORIES_PRODUCTS">
+      <EntityTypeMapping TypeName="BackendEntityModel.PRODUCTCATEGORIES_PRODUCTS">
+        <MappingFragment StoreEntitySet="PRODUCTCATEGORIES_PRODUCTS">
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="PRODUCTCATEGORY_ID" ColumnName="PRODUCTCATEGORY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTS">
+      <EntityTypeMapping TypeName="BackendEntityModel.PRODUCTS">
+        <MappingFragment StoreEntitySet="PRODUCTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+          <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="EAN" ColumnName="EAN" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="MIN_PRICE" ColumnName="MIN_PRICE" />
+          <ScalarProperty Name="PUBLISHED" ColumnName="PUBLISHED" />
+          <ScalarProperty Name="MEDIUM_ID" ColumnName="MEDIUM_ID" />
+          <ScalarProperty Name="AVERAGE_RATING" ColumnName="AVERAGE_RATING" />
+          <ScalarProperty Name="HITS" ColumnName="HITS" />
+          <ScalarProperty Name="SHORT_DESCRIPTION" ColumnName="SHORT_DESCRIPTION" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTVARIANTATTRIBUTEVALUES_PRODUCTVARIANTS">
+      <EntityTypeMapping TypeName="BackendEntityModel.PRODUCTVARIANTATTRIBUTEVALUES_PRODUCTVARIANTS">
+        <MappingFragment StoreEntitySet="PRODUCTVARIANTATTRIBUTEVALUES_PRODUCTVARIANTS">
+          <ScalarProperty Name="PRODUCTVARIANT_ID" ColumnName="PRODUCTVARIANT_ID" />
+          <ScalarProperty Name="PRODUCTVARIANTATTRIBUTEVALUE_ID" ColumnName="PRODUCTVARIANTATTRIBUTEVALUE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="BackendEntityModel.USERS">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="LAST_SIGN_IN_IP" ColumnName="LAST_SIGN_IN_IP" />
+          <ScalarProperty Name="CURRENT_SIGN_IN_IP" ColumnName="CURRENT_SIGN_IN_IP" />
+          <ScalarProperty Name="LAST_SIGN_IN_AT" ColumnName="LAST_SIGN_IN_AT" />
+          <ScalarProperty Name="CURRENT_SIGN_IN_AT" ColumnName="CURRENT_SIGN_IN_AT" />
+          <ScalarProperty Name="SIGN_IN_COUNT" ColumnName="SIGN_IN_COUNT" />
+          <ScalarProperty Name="REMEMBER_CREATED_AT" ColumnName="REMEMBER_CREATED_AT" />
+          <ScalarProperty Name="RESET_PASSWORD_SENT_AT" ColumnName="RESET_PASSWORD_SENT_AT" />
+          <ScalarProperty Name="RESET_PASSWORD_TOKEN" ColumnName="RESET_PASSWORD_TOKEN" />
+          <ScalarProperty Name="ENCRYPTED_PASSWORD" ColumnName="ENCRYPTED_PASSWORD" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+          <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+          <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTREVIEWS">
+      <EntityTypeMapping TypeName="BackendEntityModel.PRODUCTREVIEWS">
+        <MappingFragment StoreEntitySet="PRODUCTREVIEWS">
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="MARK" ColumnName="MARK" />
+          <ScalarProperty Name="REVIEW" ColumnName="REVIEW" />
+          <ScalarProperty Name="TIME" ColumnName="TIME" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AREAS">
+      <EntityTypeMapping TypeName="BackendEntityModel.AREAS">
+        <MappingFragment StoreEntitySet="AREAS">
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTVARIANTATTRIBUTES">
+      <EntityTypeMapping TypeName="BackendEntityModel.PRODUCTVARIANTATTRIBUTES">
+        <MappingFragment StoreEntitySet="PRODUCTVARIANTATTRIBUTES">
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+          <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTVARIANTATTRIBUTEVALUES">
+      <EntityTypeMapping TypeName="BackendEntityModel.PRODUCTVARIANTATTRIBUTEVALUES">
+        <MappingFragment StoreEntitySet="PRODUCTVARIANTATTRIBUTEVALUES">
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="PRODUCTVARIANTATTRIBUTE_ID" ColumnName="PRODUCTVARIANTATTRIBUTE_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+          <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTVARIANTS">
+      <EntityTypeMapping TypeName="BackendEntityModel.PRODUCTVARIANTS">
+        <MappingFragment StoreEntitySet="PRODUCTVARIANTS">
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+          <ScalarProperty Name="FRONTEND_ID" ColumnName="FRONTEND_ID" />
+          <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLES">
+      <EntityTypeMapping TypeName="BackendEntityModel.ROLES">
+        <MappingFragment StoreEntitySet="ROLES">
+          <ScalarProperty Name="UPDATED_AT" ColumnName="UPDATED_AT" />
+          <ScalarProperty Name="CREATED_AT" ColumnName="CREATED_AT" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="SYSTEM_UUID" ColumnName="SYSTEM_UUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLES_USERS">
+      <EntityTypeMapping TypeName="BackendEntityModel.ROLES_USERS">
+        <MappingFragment StoreEntitySet="ROLES_USERS">
+          <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

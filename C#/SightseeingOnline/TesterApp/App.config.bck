@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    
+  <configSections>
+    <sectionGroup name="SyncSettings">
+      <section name="TimerSettings" type="System.Configuration.AppSettingsSection, System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <section name="Synchronisation" type="System.Configuration.AppSettingsSection, System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <section name="DatabaseSettings" type="System.Configuration.AppSettingsSection, System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <section name="ConnectionSettings" type="System.Configuration.AppSettingsSection, System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    </sectionGroup>
+  </configSections>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
+  </startup>
+  <connectionStrings>
+    <add name="BackendEntities" connectionString="metadata=res://*/EntityModels.BackendModel.BackendModel.csdl|res://*/EntityModels.BackendModel.BackendModel.ssdl|res://*/EntityModels.BackendModel.BackendModel.msl;provider=IBM.Data.DB2;provider connection string=&quot;database=FST3_PRO;user id=Administrator;password=stdAdmPass4WinStudents;server=wi-gate.technikum-wien.at:60641;persist security info=True&quot;" providerName="System.Data.EntityClient" />
+    <add name="FrontendEntities" connectionString="metadata=res://*/EntityModels.FrontendModel.FrontendModel.csdl|res://*/EntityModels.FrontendModel.FrontendModel.ssdl|res://*/EntityModels.FrontendModel.FrontendModel.msl;provider=MySql.Data.MySqlClient;provider connection string=&quot;user id=syncApplication;server=wi-gate.technikum-wien.at;port=60541;database=fst3_prod;persistsecurityinfo=True;password=syncFST4&quot;" providerName="System.Data.EntityClient" />
+  </connectionStrings>
+  <!--
+  Custom settings for application purposes
+  Settings:
+  Timer Settings - settings connected to timer
+          Values:
+          type - type of timer
+               - "interval" - synchronisation is triggered within specific interval
+               - "schedule" - synchronisation is triggered in specific time in a day
+          time - time when timer is trigerred
+               - format: ([0-9]+H)?([0-9]+M)?([0-9]+S)?
+               - H - hours
+               - M - minutes
+               - S - seconds
+  Synchronisation Settings - settings connected with synchronisation service
+          Values:
+          lastSync - timestamp when last synchronisation occured
+  Database Settings - settings connected with database
+          Values:
+          frontendConnectionString - connection string to frontend database
+          backendConnectionString - connection string to backend database
+  Connection Settings - settings used to bind WCF service to 
+          Values:
+          address - endpoint address, if left empty default settings is used
+          behavior - endpoint behaviour, set by wcf config file
+          identity - host identity, if left empty, this value is ignored
+          
+  -->
+  <SyncSettings>
+    <TimerSettings>
+      <add key="type" value="interval"/>
+      <add key="time" value="1H"/>
+    </TimerSettings>
+    <Synchronisation>
+      <add key="lastSync" value=""/>
+    </Synchronisation>
+    <DatabaseSettings>
+      <add key="frontendConnectionString" value=""/>
+      <add key="backendConnectionString" value=""/>
+    </DatabaseSettings>
+    <ConnectionSettings>
+      <add key="address" value=""/>
+      <add key="behavior" value=""/>
+      <add key="idetity" value=""/>
+    </ConnectionSettings>
+  </SyncSettings>
+</configuration>

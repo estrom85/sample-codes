@@ -1,0 +1,100 @@
+/* 
+    Document   : article_list
+    Created on : 1.9.2012, 13:25:29
+    Author     : mato
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+#article_list{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width:100%;
+}
+
+#article_list_table{
+    float: none;
+}
+#article_list_table td,th{
+    padding: 2px;
+}
+
+#article_list_table td.art_name{
+    
+}
+#article_list_table td.art_name:hover{
+    background-color: gainsboro;
+    border-color: black;
+    cursor: pointer;
+    color: crimson;
+}
+
+#filters .label{
+    font-weight: bold;
+}
+
+ul.page_lister{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+ul.page_lister li{
+    display: inline;
+    list-style-type: none;
+    margin:5px;
+    position: relative;
+}
+.nav_item{
+    width:20px;
+    height:20px;
+    display:inline-block;
+    background-image: url("../../images/navigation.png");
+    margin-left: 5px;
+    margin-right: 5px;
+    
+
+}
+.nav_item:hover{
+    background-position-y:-21px;
+    cursor: pointer;
+}
+.nav_page{
+    background-color: maroon;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-image: none;
+    background-position-x: -40px;
+    font-weight: bold;
+    color: wheat;
+    font-size: 15px;
+}
+.nav_page:hover{
+    background-color: #C7C78F;
+}
+.first_page{ 
+}
+.prev_page{
+    background-position-x: -20px;
+}
+.next_page{
+    background-position-x: -60px;
+}
+.last_page{
+    background-position-x: -80px;
+}
+.nav_wrapper{
+    margin-left: auto;
+    margin-right: auto;
+  /*  position: relative;*/
+    margin-top: 20px;
+}
+ul.page_lister li div.active{
+    cursor:auto;
+    background-color: white;
+    color: black;
+}

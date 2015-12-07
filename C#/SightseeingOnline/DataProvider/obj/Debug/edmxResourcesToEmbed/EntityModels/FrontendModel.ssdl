@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FrontendModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="FrontendModelStoreContainer">
+    <EntitySet Name="m4m2n_jshopping_products" EntityType="FrontendModel.Store.m4m2n_jshopping_products" store:Type="Tables" Schema="fst3_prod" />
+  </EntityContainer>
+  <EntityType Name="m4m2n_jshopping_products">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="product_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="parent_id" Type="int" Nullable="false" />
+    <Property Name="product_ean" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="product_quantity" Type="int" Nullable="false" />
+    <Property Name="unlimited" Type="bool" Nullable="false" />
+    <Property Name="product_date_added" Type="datetime" Nullable="false" />
+    <Property Name="date_modify" Type="datetime" Nullable="false" />
+    <Property Name="product_publish" Type="bool" Nullable="false" />
+    <Property Name="product_tax_id" Type="tinyint" Nullable="false" />
+    <Property Name="currency_id" Type="int" Nullable="false" />
+    <Property Name="product_template" Type="varchar" Nullable="false" MaxLength="64" />
+    <Property Name="product_url" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="product_old_price" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+    <Property Name="product_buy_price" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+    <Property Name="product_price" Type="decimal" Nullable="false" Precision="18" Scale="6" />
+    <Property Name="min_price" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+    <Property Name="different_prices" Type="bool" Nullable="false" />
+    <Property Name="product_weight" Type="decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="image" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="product_manufacturer_id" Type="int" Nullable="false" />
+    <Property Name="product_is_add_price" Type="bool" Nullable="false" />
+    <Property Name="add_price_unit_id" Type="int" Nullable="false" />
+    <Property Name="average_rating" Type="float" Nullable="false" />
+    <Property Name="reviews_count" Type="int" Nullable="false" />
+    <Property Name="delivery_times_id" Type="int" Nullable="false" />
+    <Property Name="hits" Type="int" Nullable="false" />
+    <Property Name="weight_volume_units" Type="decimal" Nullable="false" Precision="14" Scale="4" />
+    <Property Name="basic_price_unit_id" Type="int" Nullable="false" />
+    <Property Name="label_id" Type="int" Nullable="false" />
+    <Property Name="vendor_id" Type="int" Nullable="false" />
+    <Property Name="access" Type="int" Nullable="false" />
+    <Property Name="name_de-DE" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="alias_de-DE" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="short_description_de-DE" Type="text" Nullable="false" />
+    <Property Name="description_de-DE" Type="text" Nullable="false" />
+    <Property Name="meta_title_de-DE" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="meta_description_de-DE" Type="text" Nullable="false" />
+    <Property Name="meta_keyword_de-DE" Type="text" Nullable="false" />
+    <Property Name="name_en-GB" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="alias_en-GB" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="short_description_en-GB" Type="text" Nullable="false" />
+    <Property Name="description_en-GB" Type="text" Nullable="false" />
+    <Property Name="meta_title_en-GB" Type="varchar" Nullable="false" MaxLength="255" />
+    <Property Name="meta_description_en-GB" Type="text" Nullable="false" />
+    <Property Name="meta_keyword_en-GB" Type="text" Nullable="false" />
+    <Property Name="package_vip" Type="bool" Nullable="false" />
+  </EntityType>
+</Schema>

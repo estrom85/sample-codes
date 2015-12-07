@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article>
+               <info>
+                    <id>1</id>
+                    <type>Rozhovor</type>
+                    <img>articles/1/pics/Dirty Dancing - Baby a Johnny 01.jpg</img>
+               </info>
+               <person>
+                    <name>Martin</name>
+                    <surname>Mačaj</surname>
+                    <birth_date/>
+                    <birth_place>Prešov</birth_place>
+                    <occupation>Účtovník</occupation>
+                    <biography>Narodil som sa, umrel som a este som sa s toho nespamatal, to je asi vsetko co som chcel o sebe povedat. Ale poviem ešte jedno, ja som si to nevybral tak ma prosím nechajte na pokoji, jasné... Ta ne?sfsfasf jfksajfl askljfkls jfkljs lfjas fjas fkl sa lfjas jfjsf jklsalfsaklfl skljf ls lf jsl fjsf ks fjasjfklsdiofwiojfvlsafl sdjfjas  fs jkf skl fljs lflsdkjfkljskf las fj sfjs f sj f s fls jfklsjf s jfkls fjs jf slf ls f sjfs f sf jls flsf asf  tak toto som posral ha ha ha.</biography>
+               </person>
+               <questions>
+                    <question>
+                        <id>0</id>
+			<quest>Nevieš náhodou spievať?</quest>
+			<answer>Ta co ši.</answer>
+                    </question>
+                    <question>
+                        <id>1</id>
+                        <quest>Nie si debil?</quest>
+			<answer>Áno som</answer>
+                    </question>
+                 </questions>
+
+            </article>
