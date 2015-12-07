@@ -1,0 +1,28 @@
+@CHARSET "UTF-8";
+
+#main{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.selected td{
+	color:red;
+	background-color: yellow;
+	font-weight: bold;
+}
+
+.selectable_table{
+	width:60%;
+
+}
+.selectable_table td {
+	cursor:pointer;
+	
+}
+
+.selectable_table tr.selected:hover td{
+	background-color: gold;
+}
+.selectable_table tr:hover td {
+	background-color: cyan;
+}
